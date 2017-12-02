@@ -167,13 +167,7 @@ module.exports = {
                   sourceMap: true,
                   minimize: true
                 },
-              },
-              {
-                loader: require.resolve('sass-loader'),
-                options:{
-                  //sourceMap: true
-                }
-              },
+              },              
               {
                 loader: require.resolve('postcss-loader'),
                 options: {
@@ -194,6 +188,12 @@ module.exports = {
                     }),
                   ],
                 },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options:{
+                  //sourceMap: true
+                }
               },
             ],
           },          
