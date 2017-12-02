@@ -1,0 +1,79 @@
+@media (max-width: 1366px) {
+    .leftArea{
+        width: 260px;
+    }
+    .rightArea{
+        width: calc(100% - 260px);
+    }
+    .menu ul li{
+        font-size: 18px;
+    }
+    .menu ul li a i{
+        font-size: 28px;
+    }   
+    .iboxHead h5{
+        font-size: 20px;
+        &:before{
+            top:12px;
+        }
+    }
+    .operatorArea{
+        p{
+            font-size: 18px;
+        }
+        span{
+            font-size: 14px;
+        }
+    }
+    .operatorArea .btn-available{
+        padding: 10px 16px;
+        font-size: 16px;
+    }
+    .callWatingTable{
+        h4{
+            font-size: 16px;
+            font-weight: 600;
+        }
+        p{
+            font-size: 14px;
+        }
+    }
+    .callWatingTable tr td:nth-child(2){
+        font-size: 14px;
+    }
+    .callWatingTable td a{
+        font-size: 25px;
+    }
+    .timeZone .timeText h2{
+        font-size: 20px;
+    }
+    .timeZone .timeText p{
+        font-size: 14px;
+    }
+    .calllistTable thead tr th{
+        font-size: 16px;
+    }
+    .calllistTable tbody tr td{
+        font-size: 14px;
+    }
+    .calllistTable td a{font-size: 25px; margin: 0px 5px 8px; line-height: 18px;}
+}
+@media (max-width: 1280px) {
+
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 991px) and (max-width: 1170px){
+
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 768px) {
+
+}
+/* Landscape phones and smaller*/
+@media (max-width: 480px) {
+
+}
+/* Landscape phones and smaller*/
+@media (max-width: 414px) {
+
+}
