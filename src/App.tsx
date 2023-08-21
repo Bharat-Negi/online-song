@@ -1,12 +1,11 @@
-import HomePage from './assets/index'
-import './App.scss'
+import HomePage from './screens/home';
 
 function App() {
 
   return (
-    <>
-      <HomePage />
-    </>
+      <>
+        <HomePage />
+      </>
   )
 }
 
