@@ -1,5 +1,9 @@
 {
   "user": [
-    
+    {
+      "id": "bharat",
+      "password": "admin",
+      "email": "bharat@gmail.com"
+    }
   ]
 }
