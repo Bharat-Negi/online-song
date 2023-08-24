@@ -1,11 +1,13 @@
 import { useState } from 'react';
+import LoginPage from './pages/login';
+import SignupPage from './pages/signup'
 
-function App() {
+
+export default function App() {
   return (
     <>
-      hello
+      <LoginPage />
+      {/* <SignupPage /> */}
     </>
   )
 }
-
-export default App

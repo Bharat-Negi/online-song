@@ -1,6 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './scss/main.scss'
+import App from './App'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/font.css'
+import './css/font-awesome.min.css'
+import './css/simple-line-icons.css'
+import './main.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
