@@ -4,6 +4,11 @@
       "id": "bharat",
       "password": "admin",
       "email": "bharat@gmail.com"
+    },
+    {
+      "id": "pinky",
+      "password": "pinky",
+      "email": "pinky@gmail.com"
     }
   ]
 }

@@ -1,0 +1,218 @@
+[
+    {
+        "id": 1,
+        "disImg": "images/p1.jpg",
+        "disName": "Tempered Song",
+        "disSinger": "Miaow",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "on",
+        "disPlayTime" : "on",
+        "disBage": "off"
+    },
+    {
+        "id": 2,
+        "disImg": "images/p2.jpg",
+        "disName": "Vivamus vel tincidunt libero",
+        "disSinger": "Lauren Taylor",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 3,
+        "disImg": "images/p3.jpg",
+        "disName": "Morbi id neque quam liquam sollicitudin",
+        "disSinger": "Allen JH",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 4,
+        "disImg": "images/p4.jpg",
+        "disName": "Tincidunt libero",
+        "disSinger": "Amanda Conlan",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 5,
+        "disImg": "images/p5.jpg",
+        "disName": "Fermentum diam",
+        "disSinger": "Nisa Colen",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 6,
+        "disImg": "images/p6.jpg",
+        "disName": "Habitant",
+        "disSinger": "Dan Doorack",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 7,
+        "disImg": "images/p7.jpg",
+        "disName": "Vivamus vel tincidunt libero",
+        "disSinger": "Ligula H",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 8,
+        "disImg": "images/p8.jpg",
+        "disName": "Aliquam sollicitudin venenati",
+        "disSinger": "James East",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 9,
+        "disImg": "images/p9.jpg",
+        "disName": "Lementum ligula vitae",
+        "disSinger": "Lauren Taylor",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 10,
+        "disImg": "images/p10.jpg",
+        "disName": "Egestas dui nec fermentum",
+        "disSinger": "Chris Fox",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 11,
+        "disImg": "images/p11.jpg",
+        "disName": "Aliquam sollicitudin venenatis ipsum",
+        "disSinger": "Jack Jason",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    },
+    {
+        "id": 12,
+        "disImg": "images/p12.jpg",
+        "disName": "Vestibulum ullamcorper",
+        "disSinger": "MM & DD",
+        "disStar" : [
+            {
+                "star1" : 1,
+                "star2" : 2,
+                "star3" : 3,
+                "star4" : 4,
+                "star5" : 5
+            }
+        ],
+        "disBook" : "off",
+        "disPlayTime" : "off",
+        "disBage": "off"
+    }
+]

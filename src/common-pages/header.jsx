@@ -90,7 +90,7 @@ export default function HeaderPage() {
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                                 <img src="images/a0.png" alt="..." />
                             </span>
-                            John.Smith <b className="caret"></b>
+                            Bharat Negi <b className="caret"></b>
                         </a>
                         <ul className="dropdown-menu">
                             <li>
@@ -111,7 +111,7 @@ export default function HeaderPage() {
                             </li>
                             <li className="divider"></li>
                             <li>
-                                <a href="#">Logout</a>
+                                <Link to='/login'>Logout</Link>
                             </li>
                         </ul>
                     </li>

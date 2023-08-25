@@ -1,5 +1,6 @@
 import JsPlayer from '../common-pages/jsPlayer'
 import Connected from '../common-pages/connected'
+import DiscoverPage from '../component/discover'
 
 export default function whatsNew() {
     return (
@@ -20,113 +21,8 @@ export default function whatsNew() {
                                     <span className="bar5 a5 bg-danger dker"></span>
                                 </span>
                             </h2>
-                            <div className="row row-sm">
-                                <div className="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div className="item">
-                                        <div className="pos-rlt">
-                                            <div className="bottom">
-                                                <span className="badge bg-info m-l-sm m-b-sm">03:20</span>
-                                            </div>
-                                            <div className="item-overlay opacity r r-2x bg-black">
-                                                <div className="text-info padder m-t-sm text-sm star-space">
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star-o text-muted"></i>
-                                                </div>
-                                                <div className="center text-center m-t-n">
-                                                    <a href="#"><i className="icon-control-play i-2x"></i></a>
-                                                </div>
-                                                <div className="bottom padder m-b-sm">
-                                                    <a href="#" className="pull-right">
-                                                        <i className="fa fa-heart-o"></i>
-                                                    </a>
-                                                    <a href="#">
-                                                        <i className="fa fa-plus-circle"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <a href="#"><img src="images/p1.jpg" alt="" className="r r-2x img-full" /></a>
-                                        </div>
-                                        <div className="padder-v">
-                                            <a href="#" className="text-ellipsis">Tempered Song</a>
-                                            <a href="#" className="text-ellipsis text-xs text-muted">Miaow</a>
-                                        </div>
-                                    </div>
-                                </div>
 
-                                <div className="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div className="item">
-                                        <div className="pos-rlt">
-                                            <div className="item-overlay opacity r r-2x bg-black active">
-                                                <div className="text-info padder m-t-sm text-sm star-space">
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star-o text-muted"></i>
-                                                    <i className="fa fa-star-o text-muted"></i>
-                                                </div>
-                                                <div className="center text-center m-t-n">
-                                                    <a href="#" data-toggle="class">
-                                                        <i className="icon-control-play i-2x text"></i>
-                                                        <i className="icon-control-pause i-2x text-active"></i>
-                                                    </a>
-                                                </div>
-                                                <div className="bottom padder m-b-sm">
-                                                    <a href="#" className="pull-right active">
-                                                        <i className="fa fa-heart-o text"></i>
-                                                        <i className="fa fa-heart text-active text-danger"></i>
-                                                    </a>
-                                                    <a href="#" className='active'>
-                                                        <i className="fa fa-plus-circle text"></i>
-                                                        <i className="fa fa-check-circle text-active text-info"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <a href="#"><img src="images/p2.jpg" alt="" className="r r-2x img-full" /></a>
-                                        </div>
-                                        <div className="padder-v">
-                                            <a href="#" className="text-ellipsis">Vivamus vel tincidunt libero</a>
-                                            <a href="#" className="text-ellipsis text-xs text-muted">Lauren Taylor</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div className="clearfix visible-xs"></div>
-
-                                <div className="col-xs-6 col-sm-4 col-md-3 col-lg-2">
-                                    <div className="item">
-                                        <div className="pos-rlt">
-                                            <div className="item-overlay opacity r r-2x bg-black">
-                                                <div className="text-info padder m-t-sm text-sm star-space">
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star"></i>
-                                                    <i className="fa fa-star-o text-muted"></i>
-                                                </div>
-                                                <div className="center text-center m-t-n">
-                                                    <a href="#"><i className="icon-control-play i-2x"></i></a>
-                                                </div>
-                                                <div className="bottom padder m-b-sm">
-                                                    <a href="#" className="pull-right">
-                                                        <i className="fa fa-heart-o"></i>
-                                                    </a>
-                                                    <a href="#">
-                                                        <i className="fa fa-plus-circle"></i>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <a href="#"><img src="images/p3.jpg" alt="" className="r r-2x img-full" /></a>
-                                        </div>
-                                        <div className="padder-v">
-                                            <a href="#" className="text-ellipsis">Morbi id neque quam liquam sollicitudin</a>
-                                            <a href="#" className="text-ellipsis text-xs text-muted">Allen JH</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <DiscoverPage />
 
                             <div className="row">
                                 <div className="col-md-7">
@@ -318,6 +214,7 @@ export default function whatsNew() {
                                     </div>
                                 </div>
                             </div>
+
                             <div className="row m-t-lg m-b-lg">
                                 <div className="col-sm-6">
                                     <div className="bg-primary wrapper-md r">
@@ -337,8 +234,9 @@ export default function whatsNew() {
                                 </div>
                             </div>
                         </section>
-                        <JsPlayer />                           
-                    </section>                     
+                        
+                        <JsPlayer />
+                    </section>
                 </section>
                 <Connected />
             </section>

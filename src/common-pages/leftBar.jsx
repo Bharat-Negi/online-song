@@ -121,7 +121,7 @@ export default function LeftBar(isLogo) {
                                     </span>
                                     <span className="hidden-nav-xs clear">
                                         <span className="block m-l">
-                                            <strong className="font-bold text-lt">John.Smith</strong>
+                                            <strong className="font-bold text-lt">Bharat Negi</strong>
                                             <b className="caret"></b>
                                         </span>
                                         <span className="text-muted text-xs block m-l">Art Director</span>
@@ -146,7 +146,7 @@ export default function LeftBar(isLogo) {
                                     </li>
                                     <li className="divider"></li>
                                     <li>
-                                        <a href="">Logout</a>
+                                        <Link to='/login'>Logout</Link>
                                     </li>
                                 </ul>
                             </div>

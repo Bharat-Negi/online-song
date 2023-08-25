@@ -1,0 +1,69 @@
+import DiscoverData from '../json-data/discover.json'
+
+export default function DiscoverPage() {
+    return (
+        <div className="row row-sm">
+
+            {
+                DiscoverData && DiscoverData.map(DiscoverData => {
+                    return (
+                        <div className="col-xs-6 col-sm-4 col-md-3 col-lg-2" key={DiscoverData.id}>
+                            <div className="item">
+                                <div className="pos-rlt">
+                                    {
+                                        DiscoverData.disPlayTime == 'on' ?
+                                            <div className="bottom">
+                                                <span className="badge bg-info m-l-sm m-b-sm">03:20</span>
+                                            </div> : null
+                                    }
+                                    {
+                                        DiscoverData.disBook == 'on' ?
+                                            <div class="top">
+                                                <span class="pull-right m-t-n-xs m-r-sm text-white">
+                                                    <i class="fa fa-bookmark i-lg"></i>
+                                                </span>
+                                            </div> : null
+                                    }
+                                    {
+                                        DiscoverData.disBage == 'on' ?
+                                            <div class="top">
+                                                <span class="pull-right m-t-sm m-r-sm badge bg-info">6</span>
+                                            </div> : null
+                                    }
+                                    <div className="item-overlay opacity r r-2x bg-black">
+                                        <div className="text-info padder m-t-sm text-sm star-space">
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star"></i>
+                                            <i className="fa fa-star-o text-muted"></i>
+                                        </div>
+                                        <div className="center text-center m-t-n">
+                                            <a href="#"><i className="icon-control-play i-2x"></i></a>
+                                        </div>
+                                        <div className="bottom padder m-b-sm">
+                                            <a href="#" className="pull-right">
+                                                <i className="fa fa-heart-o"></i>
+                                            </a>
+                                            <a href="#">
+                                                <i className="fa fa-plus-circle"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <a href="#">
+                                        <img src={DiscoverData.disImg} alt="" className="r r-2x img-full" />
+                                    </a>
+                                </div>
+                                <div className="padder-v">
+                                    <a href="#" className="text-ellipsis">{DiscoverData.disName}</a>
+                                    <a href="#" className="text-ellipsis text-xs text-muted">{DiscoverData.disSinger}</a>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                })
+            }
+
+        </div>
+    )
+}
