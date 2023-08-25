@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import { useState } from 'react';
 
-export default function LeftBar() {
+export default function LeftBar(isLogo) {
+    const [isActive, setActive] = useState("false");
+
+    const ToggleClass = () => {
+        setActive(!isActive);
+    };    
+
     return (
         <>
-            <aside className="bg-black dk nav-xs aside hidden-print">
+            <aside className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}>
                 <section className="vbox">
                     <section className="w-f-md scrollable">
                         <div className="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px">
@@ -106,8 +113,8 @@ export default function LeftBar() {
 
                     <footer className="footer hidden-xs no-padder text-center-nav-xs">
                         <div className="bg hidden-xs ">
-                            <div className="dropdown dropup wrapper-sm clearfix">
-                                <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                            <div className={isActive ? "dropdown dropup wrapper-sm clearfix" : "dropdown dropup wrapper-sm clearfix open"}>
+                                <a href="#" className="dropdown-toggle" onClick={ToggleClass}>
                                     <span className="thumb-sm avatar pull-left m-l-xs">
                                         <img src="images/a3.png" className="dker" alt="..." />
                                         <i className="on b-black"></i>
@@ -139,7 +146,7 @@ export default function LeftBar() {
                                     </li>
                                     <li className="divider"></li>
                                     <li>
-                                        <a href="modal.lockme.html" data-toggle="ajaxModal">Logout</a>
+                                        <a href="">Logout</a>
                                     </li>
                                 </ul>
                             </div>

@@ -21,7 +21,7 @@ export default function jsPlayer() {
                                 <div className="hide"><a className="jp-stop"><i className="fa fa-stop"></i></a></div>
                                 <div><a className="" data-toggle="dropdown" data-target="#playlist"><i className="icon-list"></i></a></div>
                                 <div className="jp-progress hidden-xs">
-                                    <div className="jp-seek-bar dk">
+                                    <div className="jp-seek-bar dk" style={{width: '100%'}}>
                                         <div className="jp-play-bar bg-info">
                                         </div>
                                         <div className="jp-title text-lt">
@@ -31,8 +31,8 @@ export default function jsPlayer() {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
-                                <div className="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
+                                <div className="hidden-xs hidden-sm jp-current-time text-xs text-muted">00:00</div>
+                                <div className="hidden-xs hidden-sm jp-duration text-xs text-muted">00:00</div>
                                 <div className="hidden-xs hidden-sm">
                                     <a className="jp-mute" title="mute"><i className="icon-volume-2"></i></a>
                                     <a className="jp-unmute hid" title="unmute"><i className="icon-volume-off"></i></a>

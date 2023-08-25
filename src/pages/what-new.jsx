@@ -28,7 +28,7 @@ export default function whatsNew() {
                                                 <span className="badge bg-info m-l-sm m-b-sm">03:20</span>
                                             </div>
                                             <div className="item-overlay opacity r r-2x bg-black">
-                                                <div className="text-info padder m-t-sm text-sm">
+                                                <div className="text-info padder m-t-sm text-sm star-space">
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
@@ -60,7 +60,7 @@ export default function whatsNew() {
                                     <div className="item">
                                         <div className="pos-rlt">
                                             <div className="item-overlay opacity r r-2x bg-black active">
-                                                <div className="text-info padder m-t-sm text-sm">
+                                                <div className="text-info padder m-t-sm text-sm star-space">
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
@@ -74,11 +74,11 @@ export default function whatsNew() {
                                                     </a>
                                                 </div>
                                                 <div className="bottom padder m-b-sm">
-                                                    <a href="#" className="pull-right active" data-toggle="class">
+                                                    <a href="#" className="pull-right active">
                                                         <i className="fa fa-heart-o text"></i>
                                                         <i className="fa fa-heart text-active text-danger"></i>
                                                     </a>
-                                                    <a href="#" data-toggle="class">
+                                                    <a href="#" className='active'>
                                                         <i className="fa fa-plus-circle text"></i>
                                                         <i className="fa fa-check-circle text-active text-info"></i>
                                                     </a>
@@ -99,7 +99,7 @@ export default function whatsNew() {
                                     <div className="item">
                                         <div className="pos-rlt">
                                             <div className="item-overlay opacity r r-2x bg-black">
-                                                <div className="text-info padder m-t-sm text-sm">
+                                                <div className="text-info padder m-t-sm text-sm star-space">
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
                                                     <i className="fa fa-star"></i>
