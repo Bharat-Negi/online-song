@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import DiscoverData from '../json-data/discover.json'
+import AddBtnPage from '../component-small/addBtn'
 
 export default function DiscoverPage() {
+    
     return (
         <div className="row row-sm">
 
@@ -18,16 +21,16 @@ export default function DiscoverPage() {
                                     }
                                     {
                                         DiscoverData.disBook == 'on' ?
-                                            <div class="top">
-                                                <span class="pull-right m-t-n-xs m-r-sm text-white">
-                                                    <i class="fa fa-bookmark i-lg"></i>
+                                            <div className="top">
+                                                <span className="pull-right m-t-n-xs m-r-sm text-white">
+                                                    <i className="fa fa-bookmark i-lg"></i>
                                                 </span>
                                             </div> : null
                                     }
                                     {
                                         DiscoverData.disBage == 'on' ?
-                                            <div class="top">
-                                                <span class="pull-right m-t-sm m-r-sm badge bg-info">6</span>
+                                            <div className="top">
+                                                <span className="pull-right m-t-sm m-r-sm badge bg-info">6</span>
                                             </div> : null
                                     }
                                     <div className="item-overlay opacity r r-2x bg-black">
@@ -41,14 +44,7 @@ export default function DiscoverPage() {
                                         <div className="center text-center m-t-n">
                                             <a href="#"><i className="icon-control-play i-2x"></i></a>
                                         </div>
-                                        <div className="bottom padder m-b-sm">
-                                            <a href="#" className="pull-right">
-                                                <i className="fa fa-heart-o"></i>
-                                            </a>
-                                            <a href="#">
-                                                <i className="fa fa-plus-circle"></i>
-                                            </a>
-                                        </div>
+                                        <AddBtnPage />                                            
                                     </div>
                                     <a href="#">
                                         <img src={DiscoverData.disImg} alt="" className="r r-2x img-full" />

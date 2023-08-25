@@ -13,42 +13,42 @@ export default function LeftBar(isLogo) {
             <aside className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}>
                 <section className="vbox">
                     <section className="w-f-md scrollable">
-                        <div className="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" data-size="10px">
+                        <div className="slim-scroll">
                             <nav className="nav-primary hidden-xs">
                                 <ul className="nav bg clearfix">
                                     <li className="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                                         Discover
                                     </li>
                                     <li>
-                                        <a href="index.html">
+                                        <Link to='/'>
                                             <i className="icon-disc icon text-success"></i>
                                             <span className="font-bold">What's new</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="genres.html">
+                                        <Link to='/genres'>
                                             <i className="icon-music-tone-alt icon text-info"></i>
                                             <span className="font-bold">Genres</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="events.html">
+                                        <Link to='/listen'>
                                             <i className="icon-drawer icon text-primary-lter"></i>
                                             <b className="badge bg-primary pull-right">6</b>
                                             <span className="font-bold">Events</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="listen.html">
-                                            <i className="icon-list icon  text-info-dker"></i>
+                                        <Link to='/events'>
+                                            <i className="icon-list icon text-info-dker"></i>
                                             <span className="font-bold">Listen</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="video.html" data-target="#content" data-el="#bjax-el" data-replace="true">
-                                            <i className="icon-social-youtube icon  text-primary"></i>
+                                        <Link to='/video'>
+                                        <i className="icon-social-youtube icon text-primary"></i>
                                             <span className="font-bold">Video</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="m-b hidden-nav-xs"></li>
                                 </ul>
@@ -62,8 +62,7 @@ export default function LeftBar(isLogo) {
                                                 <i className="fa fa-angle-left text"></i>
                                                 <i className="fa fa-angle-down text-active"></i>
                                             </span>
-                                            <i className="icon-grid icon">
-                                            </i>
+                                            <i className="icon-grid icon"></i>
                                             <span>Pages</span>
                                         </a>
                                         <ul className="nav dk text-sm">

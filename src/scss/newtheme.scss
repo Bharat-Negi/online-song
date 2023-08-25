@@ -4,3 +4,9 @@
 .star-space{
     letter-spacing: 3px;
 }
+.heart.active i:nth-child(1), .plus.active i:nth-child(1){
+    display: none;
+}
+.heart i:nth-child(2), .plus i:nth-child(2){
+    display: block;
+}
