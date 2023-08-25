@@ -132,16 +132,13 @@ export default function LeftBar(isLogo) {
                                         <a href="#">Settings</a>
                                     </li>
                                     <li>
-                                        <a href="profile.html">Profile</a>
+                                        <Link to='/profile'>Profile</Link>
                                     </li>
                                     <li>
                                         <a href="#">
                                             <span className="badge bg-danger pull-right">3</span>
                                             Notifications
                                         </a>
-                                    </li>
-                                    <li>
-                                        <a href="docs.html">Help</a>
                                     </li>
                                     <li className="divider"></li>
                                     <li>
