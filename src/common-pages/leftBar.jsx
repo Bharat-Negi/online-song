@@ -7,10 +7,12 @@ const LeftBar = (isLogo) => {
     const ToggleClass = () => {
         setActive(!isActive);
     };
-
+    
     return (
         <>
-            <aside className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}>
+            <aside             
+                className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}                           
+            >
                 <section className="vbox">
                     <section className="w-f-md scrollable">
                         <div className="slim-scroll">
