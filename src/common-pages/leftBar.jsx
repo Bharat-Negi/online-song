@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
-export default function LeftBar(isLogo) {
+const LeftBar = (isLogo) => {
     const [isActive, setActive] = useState("false");
 
     const ToggleClass = () => {
         setActive(!isActive);
-    };    
+    };
 
     return (
         <>
@@ -153,3 +153,5 @@ export default function LeftBar(isLogo) {
         </>
     )
 }
+
+export default LeftBar;
