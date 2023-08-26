@@ -34,8 +34,7 @@ export default function HeaderPage() {
             <ul className="nav navbar-nav hidden-xs">
                 <li>
                     <a href="#" className="text-muted" onClick={leftLogoOpen}>
-                        <i className="fa fa-indent text"></i>
-                        <i className="fa fa-dedent text-active"></i>
+                        <i className={isLogo ? "fa fa-indent text" : "fa fa-dedent text-active"}></i>
                     </a>
                 </li>
             </ul>
