@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import HomePage from './pages/home'
+import { ToastContainer } from 'react-toastify';
+import HomePage from './pages/home';
 import LoginPage from './pages/login';
 import SignupPage from './pages/signup';
-import { ToastContainer } from 'react-toastify';
 import GenresPage from './pages/genres';
 import ListenPage from './pages/listen';
 import EventsPage from './pages/events';
@@ -13,6 +13,7 @@ export default function App() {
   return (
     <>
     <ToastContainer></ToastContainer>
+
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage/>}></Route>

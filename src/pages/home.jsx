@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { useNavigate, BrowserRouter, Routes, Route } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import HeaderPage from '../common-pages/header';
 import LeftBar from '../common-pages/leftBar';
-import WhatsNew from '../pages/what-new'
+import WhatsNew from '../pages/what-new';
 
 export default function HomePage() {
 

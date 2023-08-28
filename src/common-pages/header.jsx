@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 export default function HeaderPage() {
@@ -15,7 +15,7 @@ export default function HeaderPage() {
     const notificationOpen = () => {
         setIsNoti(!isNoti);
     };
-
+    
     return (
         <header className="bg-white-only header header-md navbar navbar-fixed-top-xs">
             <div className={isLogo ? "navbar-header aside bg-info nav-xs" : "navbar-header aside bg-info"}>
@@ -30,7 +30,7 @@ export default function HeaderPage() {
                 <a className="btn btn-link visible-xs">
                     <i className="icon-settings"></i>
                 </a>
-            </div>      
+            </div>
             <ul className="nav navbar-nav hidden-xs">
                 <li>
                     <a href="#" className="text-muted" onClick={leftLogoOpen}>

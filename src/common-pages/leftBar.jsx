@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
-const LeftBar = (isLogo) => {
+const LeftBar = ({isLogo}) => {
     const [isActive, setActive] = useState("false");
 
     const ToggleClass = () => {
@@ -61,8 +61,7 @@ const LeftBar = (isLogo) => {
                                     <li>
                                         <a href="#" className="auto">
                                             <span className="pull-right text-muted">
-                                                <i className="fa fa-angle-left text"></i>
-                                                <i className="fa fa-angle-down text-active"></i>
+                                                <i className={isLogo ? "fa fa-angle-left text-active" : "fa fa-angle-down text"}></i>
                                             </span>
                                             <i className="icon-grid icon"></i>
                                             <span>Pages</span>
@@ -122,7 +121,7 @@ const LeftBar = (isLogo) => {
                                     </span>
                                     <span className="hidden-nav-xs clear">
                                         <span className="block m-l">
-                                            <strong className="font-bold text-lt">Bharat Negi</strong>
+                                            <strong className="font-bold text-lt">Bharat Negi </strong>
                                             <b className="caret"></b>
                                         </span>
                                         <span className="text-muted text-xs block m-l">Art Director</span>
