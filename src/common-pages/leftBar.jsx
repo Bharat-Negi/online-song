@@ -2,16 +2,21 @@ import { Link } from "react-router-dom";
 import { useState } from 'react';
 
 const LeftBar = ({isLogo}) => {
-    const [isActive, setActive] = useState("false");
+    const [isActive, setActive] = useState(false);
+    const [isleft, setIsleft] = useState(false);
 
     const ToggleClass = () => {
         setActive(!isActive);
     };
-    
+
+    const LeftDropBar = () => {
+        setIsleft(!isleft);
+    };    
+            
     return (
         <>
             <aside             
-                className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}                           
+                className={isLogo ? "bg-black dk aside hidden-print" : "bg-black dk nav-xs aside hidden-print"}                           
             >
                 <section className="vbox">
                     <section className="w-f-md scrollable">
@@ -58,29 +63,31 @@ const LeftBar = ({isLogo}) => {
                                     <li className="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                                         Interface
                                     </li>
-                                    <li>
-                                        <a href="#" className="auto">
+                                    <li className={isleft ? "active" : null}>
+                                        <a href="#" onClick={LeftDropBar}>
                                             <span className="pull-right text-muted">
-                                                <i className={isLogo ? "fa fa-angle-left text-active" : "fa fa-angle-down text"}></i>
+                                                {
+                                                    isleft ? <i className="fa fa-angle-down text-active"></i> : <i className="fa fa-angle-left text"></i>
+                                                }
                                             </span>
                                             <i className="icon-grid icon"></i>
                                             <span>Pages</span>
                                         </a>
                                         <ul className="nav dk text-sm">
                                             <li>
-                                                <a href="profile.html" className="auto">
+                                                <a href="profile.html">
                                                     <i className="fa fa-angle-right text-xs"></i>
                                                     <span>Profile</span>
                                                 </a>
                                             </li>
                                             <li >
-                                                <a href="blog.html" className="auto">
+                                                <a href="blog.html">
                                                     <i className="fa fa-angle-right text-xs"></i>
                                                     <span>Blog</span>
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="invoice.html" className="auto">
+                                                <a href="invoice.html">
                                                     <i className="fa fa-angle-right text-xs"></i>
                                                     <span>Invoice</span>
                                                 </a>
@@ -113,7 +120,7 @@ const LeftBar = ({isLogo}) => {
 
                     <footer className="footer hidden-xs no-padder text-center-nav-xs">
                         <div className="bg hidden-xs ">
-                            <div className={isActive ? "dropdown dropup wrapper-sm clearfix" : "dropdown dropup wrapper-sm clearfix open"}>
+                            <div className={isActive ? "dropdown dropup wrapper-sm clearfix open" : "dropdown dropup wrapper-sm clearfix"}>
                                 <a href="#" className="dropdown-toggle" onClick={ToggleClass}>
                                     <span className="thumb-sm avatar pull-left m-l-xs">
                                         <img src="images/a3.png" className="dker" alt="..." />

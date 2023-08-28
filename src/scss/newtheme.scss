@@ -10,3 +10,17 @@
 .heart i:nth-child(2), .plus i:nth-child(2){
     display: block;
 }
+.topSongName{
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cus-hand{
+    i{
+        cursor: pointer;
+    }
+}
+.showDropBar{
+    display: block;
+}

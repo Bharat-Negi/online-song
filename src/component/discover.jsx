@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import DiscoverData from '../json-data/discover.json'
-import AddBtnPage from '../component-small/addBtn'
+import DiscoverData from '../json-data/discover.json';
+import AddBtnPage from '../component-small/addBtn';
+import PlayPause from '../component-small/play-pause'
 
 export default function DiscoverPage() {
     
@@ -35,15 +36,20 @@ export default function DiscoverPage() {
                                     }
                                     <div className="item-overlay opacity r r-2x bg-black">
                                         <div className="text-info padder m-t-sm text-sm star-space">
+                                            {
+                                                DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => {
+                                                    return(
+                                                        <i className="fa fa-star" key={idx}>{data.star}</i>
+                                                    )                                                     
+                                                })
+                                            }
+                                            {/* <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
                                             <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o text-muted"></i>
+                                            <i className="fa fa-star-o text-muted"></i> */}
                                         </div>
-                                        <div className="center text-center m-t-n">
-                                            <a href="#"><i className="icon-control-play i-2x"></i></a>
-                                        </div>
+                                        <PlayPause />                                        
                                         <AddBtnPage />                                            
                                     </div>
                                     <a href="#">

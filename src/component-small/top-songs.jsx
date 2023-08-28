@@ -8,13 +8,13 @@ export default function TopSongs() {
                 {
                     TopSongdb && TopSongdb.map(TopSongdb => {
                         return (
-                            <a href={TopSongdb.topUrl} className="list-group-item clearfix" key={TopSongdb.id}>
+                            <a href={TopSongdb.topUrl} className="list-group-item" key={TopSongdb.id}>
                                 <span className="pull-right h2 text-muted m-l">{TopSongdb.id}</span>
                                 <span className="pull-left thumb-sm avatar m-r">
                                     <img src={TopSongdb.topImg} alt="..." />
                                 </span>
                                 <span className="clear">
-                                    <span>{TopSongdb.topName}</span>
+                                    <span className="topSongName">{TopSongdb.topName}</span>
                                     <small className="text-muted clear text-ellipsis">by {TopSongdb.topArtist}</small>
                                 </span>
                             </a>

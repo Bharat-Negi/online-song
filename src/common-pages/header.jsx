@@ -1,24 +1,20 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-export default function HeaderPage() {
-    const [isActive, setActive] = useState("false");
-    const [isLogo, setIsLogo] = useState("false");
-    const [isNoti, setIsNoti] = useState("false");
+export default function HeaderPage({leftLogoOpen, isLogo}) {
+    const [isActive, setActive] = useState(false);    
+    const [isNoti, setIsNoti] = useState(false);
 
     const ToggleClass = () => {
         setActive(!isActive);
-    };
-    const leftLogoOpen = () => {
-        setIsLogo(!isLogo);
-    };
+    };    
     const notificationOpen = () => {
         setIsNoti(!isNoti);
     };
     
     return (
         <header className="bg-white-only header header-md navbar navbar-fixed-top-xs">
-            <div className={isLogo ? "navbar-header aside bg-info nav-xs" : "navbar-header aside bg-info"}>
+            <div className={isLogo ? "navbar-header aside bg-info" : "navbar-header aside bg-info nav-xs"}>
                 <a className="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
                     <i className="icon-list"></i>
                 </a>
@@ -50,7 +46,7 @@ export default function HeaderPage() {
             </form>
             <div className="navbar-right">
                 <ul className="nav navbar-nav m-n hidden-xs nav-user user">
-                    <li className={isNoti ? "hidden-xs" : "hidden-xs open"}>
+                    <li className={isNoti ? "hidden-xs open" : "hidden-xs"}>
                         <a href="#" className="dropdown-toggle lt" onClick={notificationOpen}>
                             <i className="icon-bell"></i>
                             <span className="badge badge-sm up bg-danger count">2</span>
@@ -84,7 +80,7 @@ export default function HeaderPage() {
                             </section>
                         </section>
                     </li>
-                    <li className={isActive ? "dropdown" : "dropdown open"}>
+                    <li className={isActive ? "dropdown open" : "dropdown"}>
                         <a href="#" className="dropdown-toggle bg clear" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                                 <img src="images/a0.png" alt="..." />

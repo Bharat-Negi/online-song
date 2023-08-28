@@ -6,11 +6,7 @@
         "disSinger": "Miaow",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 1
             }
         ],
         "disBook" : "on",
@@ -24,11 +20,7 @@
         "disSinger": "Lauren Taylor",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -42,11 +34,7 @@
         "disSinger": "Allen JH",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 5
             }
         ],
         "disBook" : "off",
@@ -60,11 +48,7 @@
         "disSinger": "Amanda Conlan",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -78,11 +62,7 @@
         "disSinger": "Nisa Colen",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 2
             }
         ],
         "disBook" : "off",
@@ -96,11 +76,7 @@
         "disSinger": "Dan Doorack",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 5
             }
         ],
         "disBook" : "off",
@@ -114,11 +90,7 @@
         "disSinger": "Ligula H",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -132,11 +104,7 @@
         "disSinger": "James East",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -150,11 +118,7 @@
         "disSinger": "Lauren Taylor",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 4
             }
         ],
         "disBook" : "off",
@@ -168,11 +132,7 @@
         "disSinger": "Chris Fox",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -186,11 +146,7 @@
         "disSinger": "Jack Jason",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
@@ -204,11 +160,7 @@
         "disSinger": "MM & DD",
         "disStar" : [
             {
-                "star1" : 1,
-                "star2" : 2,
-                "star3" : 3,
-                "star4" : 4,
-                "star5" : 5
+                "star" : 3
             }
         ],
         "disBook" : "off",
