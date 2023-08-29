@@ -19,11 +19,11 @@ export default function App() {
           <Route path="/" exact element={<Layout><HomePage /></Layout>}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
-          <Route path="/genres" element={<Layout><GenresPage /> </Layout>}></Route>
-          <Route path="/listen" element={<Layout><ListenPage /> </Layout>}></Route>
-          <Route path="/events" element={<Layout><EventsPage /> </Layout>}></Route>
-          <Route path="/video" element={<Layout><VideoPage /> </Layout>}></Route>
-          <Route path="/profile" element={<Layout><ProfilePage /> </Layout>}></Route>
+          <Route path="/genres" element={<Layout><GenresPage /></Layout>}></Route>
+          <Route path="/listen" element={<Layout><ListenPage /></Layout>}></Route>
+          <Route path="/events" element={<Layout><EventsPage /></Layout>}></Route>
+          <Route path="/video" element={<Layout><VideoPage /></Layout>}></Route>
+          <Route path="/profile" element={<Layout><ProfilePage /></Layout>}></Route>
         </Routes>
       </BrowserRouter>
     </>

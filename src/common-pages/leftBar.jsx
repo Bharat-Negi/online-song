@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 
-const LeftBar = ({isLogo}) => {
+const LeftBar = ({isLogo, personName}) => {
     const [isActive, setActive] = useState(false);
     const [isleft, setIsleft] = useState(false);
 
@@ -128,7 +128,7 @@ const LeftBar = ({isLogo}) => {
                                     </span>
                                     <span className="hidden-nav-xs clear">
                                         <span className="block m-l">
-                                            <strong className="font-bold text-lt">Bharat Negi </strong>
+                                            <strong className="font-bold text-lt userName">{personName} </strong>
                                             <b className="caret"></b>
                                         </span>
                                         <span className="text-muted text-xs block m-l">Art Director</span>

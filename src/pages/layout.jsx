@@ -3,9 +3,8 @@ import { useNavigate } from "react-router-dom";
 import HeaderPage from "../common-pages/header";
 import LeftBar from "../common-pages/leftBar";
 
-function Layout({ children }) {
-    const [isLogo, setIsLogo] = useState(false);
-    const [customerlist, listupdate] = useState(null);
+function Layout({ children, username }) {
+    const [isLogo, setIsLogo] = useState(false);    
     const usenavigate = useNavigate();
 
     const leftLogoOpen = () => {
@@ -18,13 +17,15 @@ function Layout({ children }) {
             usenavigate('/login');
         }
     }, []);
+
+    let personName = sessionStorage.getItem('username');
   
   return (
     <>
       <section className="vbox">
-        <HeaderPage leftLogoOpen={leftLogoOpen} isLogo={isLogo} />
+        <HeaderPage leftLogoOpen={leftLogoOpen} isLogo={isLogo} personName={personName} />
         <section className="hbox stretch">
-          <LeftBar isLogo={isLogo} />
+          <LeftBar isLogo={isLogo} personName={personName} />
           {children}
         </section>
       </section>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
-export default function HeaderPage({leftLogoOpen, isLogo}) {
+export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
     const [isActive, setActive] = useState(false);    
     const [isNoti, setIsNoti] = useState(false);
 
@@ -81,11 +81,11 @@ export default function HeaderPage({leftLogoOpen, isLogo}) {
                         </section>
                     </li>
                     <li className={isActive ? "dropdown open" : "dropdown"}>
-                        <a href="#" className="dropdown-toggle bg clear" onClick={ToggleClass}>
+                        <a href="#" className="dropdown-toggle bg clear userName" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                                 <img src="images/a0.png" alt="..." />
                             </span>
-                            Bharat Negi <b className="caret"></b>
+                            {personName} <b className="caret"></b>
                         </a>
                         <ul className="dropdown-menu">
                             <li>
