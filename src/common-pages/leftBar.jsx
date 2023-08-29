@@ -61,7 +61,7 @@ const LeftBar = ({isLogo}) => {
                                 </ul>
                                 <ul className="nav" data-ride="collapse">
                                     <li className="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                                        Interface
+                                        User Details
                                     </li>
                                     <li className={isleft ? "active" : null}>
                                         <a href="#" onClick={LeftDropBar}>
