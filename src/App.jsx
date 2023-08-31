@@ -13,6 +13,11 @@ import BlogPage from './pages/blog';
 import InvoicePage from './pages/invoice';
 import VideoDetailPage from './pages/video-detail';
 
+import AcousticPage from './genres-pages/acoustic';
+import AmbientPage from './genres-pages/ambient';
+import BluesPage from './genres-pages/blues';
+import ClassicalPage from './genres-pages/classical';
+
 export default function App() {
   return (
     <>
@@ -22,7 +27,12 @@ export default function App() {
           <Route path="/" exact element={<Layout><HomePage /></Layout>}></Route>
           <Route path="/login" element={<LoginPage />}></Route>
           <Route path="/signup" element={<SignupPage />}></Route>
-          <Route path="/genres" element={<Layout><GenresPage /></Layout>}></Route>
+          <Route path="/genres" element={<Layout><GenresPage /></Layout>}>
+            <Route path="acoustic" element={<AcousticPage />} />
+            <Route path="ambient" element={<AmbientPage />} />
+            <Route path="blues" element={<BluesPage />} />
+            <Route path="classical" element={<ClassicalPage />} />
+          </Route>
           <Route path="/listen" element={<Layout><ListenPage /></Layout>}></Route>
           <Route path="/events" element={<Layout><EventsPage /></Layout>}></Route>
           <Route path="/video" element={<Layout><VideoPage /></Layout>}></Route>
