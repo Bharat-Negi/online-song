@@ -9,6 +9,11 @@
       "id": "pinky",
       "password": "pinky",
       "email": "pinky@gmail.com"
+    },
+    {
+      "id": "Bharat Negi",
+      "password": "negi@123",
+      "email": "bharat@gmail.com"
     }
   ]
 }

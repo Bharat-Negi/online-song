@@ -22,7 +22,7 @@ export default function DiscoverPage() {
                                     }
                                     {
                                         DiscoverData.disBook == 'on' ?
-                                            <div className="top">
+                                            <div className="top" style={{ zIndex : 1 }}>
                                                 <span className="pull-right m-t-n-xs m-r-sm text-white">
                                                     <i className="fa fa-bookmark i-lg"></i>
                                                 </span>
@@ -40,7 +40,7 @@ export default function DiscoverPage() {
                                                 DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => {
                                                     return(
                                                         <i className="fa fa-star" key={idx}>{data.star}</i>
-                                                    )                                                     
+                                                    )                                                                                                     
                                                 })
                                             }
                                             {/* <i className="fa fa-star"></i>

@@ -27,3 +27,12 @@
 .userName{
     text-transform: capitalize;
 }
+.leftMenuScroll{
+    height: calc(100vh - 120px);
+}
+.noJsplayer, .profileScroll{
+    height: calc(100vh - 60px);
+}
+.profileScrollTab{
+    height: calc(100vh - 110px);
+}

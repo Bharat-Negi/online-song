@@ -8,7 +8,10 @@ import ListenPage from "./pages/listen";
 import EventsPage from "./pages/events";
 import VideoPage from "./pages/video";
 import ProfilePage from "./pages/profile";
-import Layout from './pages/layout'
+import Layout from './pages/layout';
+import BlogPage from './pages/blog';
+import InvoicePage from './pages/invoice';
+import VideoDetailPage from './pages/video-detail';
 
 export default function App() {
   return (
@@ -24,6 +27,9 @@ export default function App() {
           <Route path="/events" element={<Layout><EventsPage /></Layout>}></Route>
           <Route path="/video" element={<Layout><VideoPage /></Layout>}></Route>
           <Route path="/profile" element={<Layout><ProfilePage /></Layout>}></Route>
+          <Route path="/blog" element={<Layout><BlogPage /></Layout>}></Route>
+          <Route path="/invoice" element={<Layout><InvoicePage /></Layout>}></Route>
+          <Route path="/video-detail" element={<Layout><VideoDetailPage /></Layout>}></Route>
         </Routes>
       </BrowserRouter>
     </>

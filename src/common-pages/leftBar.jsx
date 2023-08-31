@@ -16,10 +16,10 @@ const LeftBar = ({isLogo, personName}) => {
     return (
         <>
             <aside             
-                className={isLogo ? "bg-black dk aside hidden-print" : "bg-black dk nav-xs aside hidden-print"}                           
+                className={isLogo ? "bg-black dk nav-xs aside hidden-print" : "bg-black dk aside hidden-print"}                           
             >
                 <section className="vbox">
-                    <section className="w-f-md scrollable">
+                    <section className="w-f-md scrollable leftMenuScroll">
                         <div className="slim-scroll">
                             <nav className="nav-primary hidden-xs">
                                 <ul className="nav bg clearfix">
@@ -39,14 +39,14 @@ const LeftBar = ({isLogo, personName}) => {
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to='/listen'>
+                                        <Link to='/events'>
                                             <i className="icon-drawer icon text-primary-lter"></i>
                                             <b className="badge bg-primary pull-right">6</b>
                                             <span className="font-bold">Events</span>
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link to='/events'>
+                                        <Link to='/listen'>
                                             <i className="icon-list icon text-info-dker"></i>
                                             <span className="font-bold">Listen</span>
                                         </Link>
@@ -75,22 +75,22 @@ const LeftBar = ({isLogo, personName}) => {
                                         </a>
                                         <ul className="nav dk text-sm">
                                             <li>
-                                                <a href="profile.html">
+                                                <Link to='/Profile'>
                                                     <i className="fa fa-angle-right text-xs"></i>
                                                     <span>Profile</span>
-                                                </a>
-                                            </li>
-                                            <li >
-                                                <a href="blog.html">
-                                                    <i className="fa fa-angle-right text-xs"></i>
-                                                    <span>Blog</span>
-                                                </a>
+                                                </Link>
                                             </li>
                                             <li>
-                                                <a href="invoice.html">
+                                                <Link to='/blog'>
+                                                    <i className="fa fa-angle-right text-xs"></i>
+                                                    <span>Blog</span>
+                                                </Link>
+                                            </li>
+                                            <li>
+                                                 <Link to='/invoice'>
                                                     <i className="fa fa-angle-right text-xs"></i>
                                                     <span>Invoice</span>
-                                                </a>
+                                                </Link>
                                             </li>
                                         </ul>
                                     </li>

@@ -14,8 +14,8 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
     
     return (
         <header className="bg-white-only header header-md navbar navbar-fixed-top-xs">
-            <div className={isLogo ? "navbar-header aside bg-info" : "navbar-header aside bg-info nav-xs"}>
-                <a className="btn btn-link visible-xs" data-toggle="class:nav-off-screen,open" data-target="#nav,html">
+            <div className={isLogo ? "navbar-header aside bg-info nav-xs" : "navbar-header aside bg-info"}>
+                <a className="btn btn-link visible-xs">
                     <i className="icon-list"></i>
                 </a>
                 <Link to='/' className="navbar-brand text-lt">
