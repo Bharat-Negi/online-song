@@ -24,22 +24,22 @@ export default function App() {
       <ToastContainer></ToastContainer>
       <BrowserRouter>
         <Routes>
-          <Route path="/" exact element={<Layout><HomePage /></Layout>}></Route>
-          <Route path="/login" element={<LoginPage />}></Route>
-          <Route path="/signup" element={<SignupPage />}></Route>
+          <Route path="/" exact element={<Layout><HomePage /></Layout>} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignupPage />} />
           <Route path="/genres" element={<Layout><GenresPage /></Layout>}>
             <Route path="acoustic" element={<AcousticPage />} />
             <Route path="ambient" element={<AmbientPage />} />
             <Route path="blues" element={<BluesPage />} />
             <Route path="classical" element={<ClassicalPage />} />
           </Route>
-          <Route path="/listen" element={<Layout><ListenPage /></Layout>}></Route>
-          <Route path="/events" element={<Layout><EventsPage /></Layout>}></Route>
-          <Route path="/video" element={<Layout><VideoPage /></Layout>}></Route>
-          <Route path="/profile" element={<Layout><ProfilePage /></Layout>}></Route>
-          <Route path="/blog" element={<Layout><BlogPage /></Layout>}></Route>
-          <Route path="/invoice" element={<Layout><InvoicePage /></Layout>}></Route>
-          <Route path="/video-detail" element={<Layout><VideoDetailPage /></Layout>}></Route>
+          <Route path="/listen" element={<Layout><ListenPage /></Layout>} />
+          <Route path="/events" element={<Layout><EventsPage /></Layout>} />
+          <Route path="/video" element={<Layout><VideoPage /></Layout>} />
+          <Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
+          <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
+          <Route path="/invoice" element={<Layout><InvoicePage /></Layout>} />
+          <Route path="/video-detail" element={<Layout><VideoDetailPage /></Layout>} />
         </Routes>
       </BrowserRouter>
     </>

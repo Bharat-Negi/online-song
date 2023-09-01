@@ -1,0 +1,130 @@
+[
+    {   
+        "genTag" : "acoustic",
+        "alldata" : [
+            {
+                "genImg" : "../images/m1.jpg",
+                "genName": "Tempered Song",
+                "genSinger": "Miaow",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m2.jpg",
+                "genName": "Morbi id neque quam",
+                "genSinger": "Phasellus",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m3.jpg",
+                "genName": "Aliquam sollicitudin venenatis ipsum",
+                "genSinger": "Malesuada",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m4.jpg",
+                "genName": "Citudin venenatis ipsum ac",
+                "genSinger": "Volutpat",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m5.jpg",
+                "genName": "Vestibulum ullamcorper sodales nisi",
+                "genSinger": "Mauris Qiaos",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m6.jpg",
+                "genName": "Mauris convallis mauris at",
+                "genSinger": "Neque",
+                "genLink" : "/genres/acoustic"
+            }
+        ]
+    },
+    {
+        "genTag" : "ambient",
+        "alldata" : [
+            {
+                "genImg" : "../images/m7.jpg",
+                "genName": "Sodales nisi nec condimentum",
+                "genSinger": "Augue",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m8.jpg",
+                "genName": "Nisi nec condimentum",
+                "genSinger": "Miaow",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m9.jpg",
+                "genName": "Phasellus at ultricies nequ",
+                "genSinger": "Volutpat",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m10.jpg",
+                "genName": "Quis malesuada augue",
+                "genSinger": "Feugiat",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m11.jpg",
+                "genName": "Ipsum ac feugiat",
+                "genSinger": "Quam AC",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m12.jpg",
+                "genName": "Ullamcorper sodales nisi nec condimentu",
+                "genSinger": "Convallis",
+                "genLink" : "/genres/acoustic"
+            }
+        ]
+    },
+    {
+        "genTag" : "blues",
+        "alldata" : [
+            {
+                "genImg" : "../images/m13.jpg",
+                "genName": "Tudin venenatis ulum ullamcorper",
+                "genSinger": "Pellent Esque",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m14.jpg",
+                "genName": "Sodales nisi nec condimentum",
+                "genSinger": "Utricies",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m15.jpg",
+                "genName": "Sec condimentum augue",
+                "genSinger": "Quis Fox",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m16.jpg",
+                "genName": "Dimentum at pellentesque volutpat",
+                "genSinger": "Suada",
+                "genLink" : "/genres/acoustic"
+            }
+        ]
+    },
+    {
+        "genTag" : "classical",
+        "alldata" : [
+            {
+                "genImg" : "../images/m17.jpg",
+                "genName": "Natis ipsum ac feugiat",
+                "genSinger": "Monvallis",
+                "genLink" : "/genres/acoustic"
+            },
+            {
+                "genImg" : "../images/m18.jpg",
+                "genName": "Dimentum tesque volut icies neque",
+                "genSinger": "Londi Mentum",
+                "genLink" : "/genres/acoustic"
+            }
+        ]
+    }
+]

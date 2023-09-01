@@ -20,7 +20,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                 </a>
                 <Link to='/' className="navbar-brand text-lt">
                     <i className="icon-earphones"></i>
-                    <img src="images/logo.png" alt="." className="hide" />
+                    <img src="../images/logo.png" alt="." className="hide" />
                     <span className="hidden-nav-xs m-l-sm">Online Song</span>
                 </Link>
                 <a className="btn btn-link visible-xs">
@@ -59,7 +59,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                                 <div className="list-group list-group-alt">
                                     <a href="#" className="media list-group-item">
                                         <span className="pull-left thumb-sm">
-                                            <img src="images/a0.png" alt="..." className="img-circle" />
+                                            <img src="../images/a0.png" alt="..." className="img-circle" />
                                         </span>
                                         <span className="media-body block m-b-none">
                                             Use awesome animate.css<br />
@@ -83,7 +83,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                     <li className={isActive ? "dropdown open" : "dropdown"}>
                         <a href="#" className="dropdown-toggle bg clear userName" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                                <img src="images/a0.png" alt="..." />
+                                <img src="../images/a0.png" alt="..." />
                             </span>
                             {personName} <b className="caret"></b>
                         </a>

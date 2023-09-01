@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from 'react';
 
 const LeftBar = ({isLogo, personName}) => {
     const [isActive, setActive] = useState(false);
     const [isleft, setIsleft] = useState(false);
+    const location = useLocation();
 
     const ToggleClass = () => {
         setActive(!isActive);
@@ -26,32 +27,32 @@ const LeftBar = ({isLogo, personName}) => {
                                     <li className="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
                                         Discover
                                     </li>
-                                    <li>
+                                    <li className={`nav-item ${location.pathname === '/' ? 'active' : ''}`}>
                                         <Link to='/'>
                                             <i className="icon-disc icon text-success"></i>
                                             <span className="font-bold">What's new</span>
                                         </Link>
                                     </li>
-                                    <li>
-                                        <Link to='/genres'>
+                                    <li className={`nav-item ${location.pathname === '/genres/acoustic' ? 'active' : ''}`}>
+                                        <Link to='/genres/acoustic'>
                                             <i className="icon-music-tone-alt icon text-info"></i>
                                             <span className="font-bold">Genres</span>
                                         </Link>
                                     </li>
-                                    <li>
+                                    <li className={`nav-item ${location.pathname === '/events' ? 'active' : ''}`}>
                                         <Link to='/events'>
                                             <i className="icon-drawer icon text-primary-lter"></i>
                                             <b className="badge bg-primary pull-right">6</b>
                                             <span className="font-bold">Events</span>
                                         </Link>
                                     </li>
-                                    <li>
+                                    <li className={`nav-item ${location.pathname === '/listen' ? 'active' : ''}`}>
                                         <Link to='/listen'>
                                             <i className="icon-list icon text-info-dker"></i>
                                             <span className="font-bold">Listen</span>
                                         </Link>
                                     </li>
-                                    <li>
+                                    <li className={`nav-item ${location.pathname === '/video' ? 'active' : ''}`}>
                                         <Link to='/video'>
                                         <i className="icon-social-youtube icon text-primary"></i>
                                             <span className="font-bold">Video</span>
@@ -123,7 +124,7 @@ const LeftBar = ({isLogo, personName}) => {
                             <div className={isActive ? "dropdown dropup wrapper-sm clearfix open" : "dropdown dropup wrapper-sm clearfix"}>
                                 <a href="#" className="dropdown-toggle" onClick={ToggleClass}>
                                     <span className="thumb-sm avatar pull-left m-l-xs">
-                                        <img src="images/a3.png" className="dker" alt="..." />
+                                        <img src="../images/a3.png" className="dker" alt="..." />
                                         <i className="on b-black"></i>
                                     </span>
                                     <span className="hidden-nav-xs clear">
