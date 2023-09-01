@@ -2,6 +2,7 @@ import { useState } from 'react';
 import DiscoverData from '../json-data/discover.json';
 import AddBtnPage from '../component-small/addBtn';
 import PlayPause from '../component-small/play-pause'
+import { Link } from 'react-router-dom';
 
 export default function DiscoverPage() {
     
@@ -37,10 +38,12 @@ export default function DiscoverPage() {
                                     <div className="item-overlay opacity r r-2x bg-black">
                                         <div className="text-info padder m-t-sm text-sm star-space">
                                             {
-                                                DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => {
-                                                    return(
-                                                        <i className="fa fa-star" key={idx}>{data.star}</i>
-                                                    )                                                                                                     
+                                                DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => {                                                    
+                                                    for (let b = 0; b < data.star; b++) {
+                                                        return(
+                                                            <i className="fa fa-star" key={idx}>{data.star}</i>                                                            
+                                                        )                                                                
+                                                    }                                                                                                                                                            
                                                 })
                                             }
                                             {/* <i className="fa fa-star"></i>
@@ -52,13 +55,13 @@ export default function DiscoverPage() {
                                         <PlayPause />                                        
                                         <AddBtnPage />                                            
                                     </div>
-                                    <a href="#">
+                                    <Link>
                                         <img src={DiscoverData.disImg} alt="" className="r r-2x img-full" />
-                                    </a>
+                                    </Link>
                                 </div>
                                 <div className="padder-v">
-                                    <a href="#" className="text-ellipsis">{DiscoverData.disName}</a>
-                                    <a href="#" className="text-ellipsis text-xs text-muted">{DiscoverData.disSinger}</a>
+                                    <Link className="text-ellipsis">{DiscoverData.disName}</Link>
+                                    <Link className="text-ellipsis text-xs text-muted">{DiscoverData.disSinger}</Link>
                                 </div>
                             </div>
                         </div>

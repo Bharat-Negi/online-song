@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProfileTab() {
     const [tabState, setTabState] = useState(1);
@@ -13,13 +14,13 @@ export default function ProfileTab() {
                 <header className="header bg-light lt">
                     <ul className="nav nav-tabs nav-white">
                         <li className={tabState === 1 ? 'active' : null}>
-                            <a href="#" onClick={()=> tabClick(1)}>Activity</a>
+                            <Link onClick={()=> tabClick(1)}>Activity</Link>
                         </li>
                         <li className={tabState === 2 ? 'active' : null}>
-                            <a href="#" onClick={()=> tabClick(2)}>Events</a>
+                            <Link onClick={()=> tabClick(2)}>Events</Link>
                         </li>
                         <li className={tabState === 3 ? 'active' : null}>
-                            <a href="#" onClick={()=> tabClick(3)}>Interaction</a>
+                            <Link onClick={()=> tabClick(3)}>Interaction</Link>
                         </li>
                     </ul>
                 </header>
