@@ -8,7 +8,6 @@ export default function DiscoverPage() {
     
     return (
         <div className="row row-sm">
-
             {
                 DiscoverData && DiscoverData.map(DiscoverData => {
                     return (

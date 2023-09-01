@@ -4,8 +4,8 @@ export default function playPause() {
 
     const [isplay, setIsPlay] = useState("false");
 
-    const PlayPausebtn = () => {
-        setIsPlay(!isplay);
+    const PlayPausebtn = () => {        
+        setIsPlay(!isplay);        
     };
 
     return (

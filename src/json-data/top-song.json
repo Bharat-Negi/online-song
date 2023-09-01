@@ -1,32 +1,32 @@
 [
     {
         "id" : 1,
-        "topImg" : "images/a4.png",
+        "topImg" : "../images/a4.png",
         "topName" : "Little Town",
         "topArtist" : "Chris Fox",
         "topUrl" : "http://www.google.com"
     },
     {
         "id" : 2,
-        "topImg" : "images/a4.png",
+        "topImg" : "../images/a4.png",
         "topName" : "Lementum ligula vitae",
         "topArtist" : "Amanda Conlan"
     },
     {
         "id" : 3,
-        "topImg" : "images/a4.png",
+        "topImg" : "../images/a4.png",
         "topName" : "Aliquam sollicitudin venenatis",
         "topArtist" : "Dan Doorack"
     },
     {
         "id" : 4,
-        "topImg" : "images/a4.png",
+        "topImg" : "../images/a4.png",
         "topName" : "Aliquam sollicitudin venenatis ipsum",
         "topArtist" : "Lauren Taylor"
     },
     {
         "id" : 5,
-        "topImg" : "images/a4.png",
+        "topImg" : "../images/a4.png",
         "topName" : "Vestibulum ullamcorper",
         "topArtist" : "Dan Doorack",
         "topUrl" : "http://www.google.com"

@@ -65,7 +65,7 @@ const LeftBar = ({isLogo, personName}) => {
                                         User Details
                                     </li>
                                     <li className={isleft ? "active" : null}>
-                                        <a href="#" onClick={LeftDropBar}>
+                                        <Link onClick={LeftDropBar}>
                                             <span className="pull-right text-muted">
                                                 {
                                                     isleft ? <i className="fa fa-angle-down text-active"></i> : <i className="fa fa-angle-left text"></i>
@@ -73,7 +73,7 @@ const LeftBar = ({isLogo, personName}) => {
                                             </span>
                                             <i className="icon-grid icon"></i>
                                             <span>Pages</span>
-                                        </a>
+                                        </Link>
                                         <ul className="nav dk text-sm">
                                             <li>
                                                 <Link to='/Profile'>
@@ -98,21 +98,23 @@ const LeftBar = ({isLogo, personName}) => {
                                 </ul>
                                 <ul className="nav text-sm">
                                     <li className="hidden-nav-xs padder m-t m-b-sm text-xs text-muted">
-                                        <span className="pull-right"><a href="#"><i className="icon-plus i-lg"></i></a></span>
+                                        <span className="pull-right">
+                                            <Link><i className="icon-plus i-lg"></i></Link>
+                                        </span>
                                         Playlist
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <Link>
                                             <i className="icon-music-tone icon"></i>
                                             <span>Hip-Pop</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <Link>
                                             <i className="icon-playlist icon text-success-lter"></i>
                                             <b className="badge bg-success dker pull-right">9</b>
                                             <span>Jazz</span>
-                                        </a>
+                                        </Link>
                                     </li>
                                 </ul>
                             </nav>
@@ -122,7 +124,7 @@ const LeftBar = ({isLogo, personName}) => {
                     <footer className="footer hidden-xs no-padder text-center-nav-xs">
                         <div className="bg hidden-xs ">
                             <div className={isActive ? "dropdown dropup wrapper-sm clearfix open" : "dropdown dropup wrapper-sm clearfix"}>
-                                <a href="#" className="dropdown-toggle" onClick={ToggleClass}>
+                                <Link className="dropdown-toggle" onClick={ToggleClass}>
                                     <span className="thumb-sm avatar pull-left m-l-xs">
                                         <img src="../images/a3.png" className="dker" alt="..." />
                                         <i className="on b-black"></i>
@@ -134,20 +136,20 @@ const LeftBar = ({isLogo, personName}) => {
                                         </span>
                                         <span className="text-muted text-xs block m-l">Art Director</span>
                                     </span>
-                                </a>
+                                </Link>
                                 <ul className="dropdown-menu animated fadeInRight aside text-left">
                                     <li>
                                         <span className="arrow bottom hidden-nav-xs"></span>
-                                        <a href="#">Settings</a>
+                                        <Link>Settings</Link>
                                     </li>
                                     <li>
                                         <Link to='/profile'>Profile</Link>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <Link>
                                             <span className="badge bg-danger pull-right">3</span>
                                             Notifications
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li className="divider"></li>
                                     <li>
