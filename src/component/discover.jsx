@@ -6,6 +6,16 @@ import { Link } from 'react-router-dom';
 
 export default function DiscoverPage() {
     
+    const renderStar = (data)=> {
+        let startLink = [];
+        for (let b = 1; b <= data.disStar; b++) {
+            // console.log(data);
+            startLink.push(<i className="fa fa-star" key={`${b}`} />);                    
+        }
+        // console.log(startLink);
+        return startLink
+    }
+
     return (
         <div className="row row-sm">
             {
@@ -37,19 +47,12 @@ export default function DiscoverPage() {
                                     <div className="item-overlay opacity r r-2x bg-black">
                                         <div className="text-info padder m-t-sm text-sm star-space">
                                             {
-                                                DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => {                                                    
-                                                    for (let b = 0; b < data.star; b++) {
-                                                        return(
-                                                            <i className="fa fa-star" key={idx}>{data.star}</i>                                                            
-                                                        )                                                                
-                                                    }                                                                                                                                                            
-                                                })
+                                                renderStar(DiscoverData)
+                                                // DiscoverData.disStar && DiscoverData.disStar.map((data,idx) => { 
+                                                //     return renderStar(DiscoverData, idx, data);                                                                                                                                     
+                                                // })
                                             }
-                                            {/* <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star"></i>
-                                            <i className="fa fa-star-o text-muted"></i> */}
+                                            {/* <i className="fa fa-star-o text-muted"></i> */}
                                         </div>
                                         <PlayPause />                                        
                                         <AddBtnPage />                                            

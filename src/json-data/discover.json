@@ -4,11 +4,7 @@
         "disImg": "../images/p1.jpg",
         "disName": "Tempered Song",
         "disSinger": "Miaow",
-        "disStar" : [
-            {
-                "star" : 1
-            }
-        ],
+        "disStar" : 1,
         "disBook" : "off",
         "disPlayTime" : "on",
         "disBage": "off"
@@ -18,11 +14,7 @@
         "disImg": "../images/p2.jpg",
         "disName": "Vivamus vel tincidunt libero",
         "disSinger": "Lauren Taylor",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "on"
@@ -32,11 +24,7 @@
         "disImg": "../images/p3.jpg",
         "disName": "Morbi id neque quam liquam sollicitudin",
         "disSinger": "Allen JH",
-        "disStar" : [
-            {
-                "star" : 5
-            }
-        ],
+        "disStar" : 5,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -46,11 +34,7 @@
         "disImg": "../images/p4.jpg",
         "disName": "Tincidunt libero",
         "disSinger": "Amanda Conlan",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "on",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -60,11 +44,7 @@
         "disImg": "../images/p5.jpg",
         "disName": "Fermentum diam",
         "disSinger": "Nisa Colen",
-        "disStar" : [
-            {
-                "star" : 2
-            }
-        ],
+        "disStar" : 2,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -74,11 +54,7 @@
         "disImg": "../images/p6.jpg",
         "disName": "Habitant",
         "disSinger": "Dan Doorack",
-        "disStar" : [
-            {
-                "star" : 5
-            }
-        ],
+        "disStar" : 5,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -86,13 +62,9 @@
     {
         "id": 7,
         "disImg": "../images/p7.jpg",
-        "disName": "Vivamus vel tincidunt libero",
+        "disName": "Vivamus vel tincidunt libero 2",
         "disSinger": "Ligula H",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -102,11 +74,7 @@
         "disImg": "../images/p8.jpg",
         "disName": "Aliquam sollicitudin venenati",
         "disSinger": "James East",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -116,11 +84,7 @@
         "disImg": "../images/p9.jpg",
         "disName": "Lementum ligula vitae",
         "disSinger": "Lauren Taylor",
-        "disStar" : [
-            {
-                "star" : 4
-            }
-        ],
+        "disStar" : 4,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -130,11 +94,7 @@
         "disImg": "../images/p10.jpg",
         "disName": "Egestas dui nec fermentum",
         "disSinger": "Chris Fox",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -144,11 +104,7 @@
         "disImg": "../images/p11.jpg",
         "disName": "Aliquam sollicitudin venenatis ipsum",
         "disSinger": "Jack Jason",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"
@@ -158,11 +114,7 @@
         "disImg": "../images/p12.jpg",
         "disName": "Vestibulum ullamcorper",
         "disSinger": "MM & DD",
-        "disStar" : [
-            {
-                "star" : 3
-            }
-        ],
+        "disStar" : 3,
         "disBook" : "off",
         "disPlayTime" : "off",
         "disBage": "off"

@@ -1,10 +1,9 @@
 import { useState } from 'react';
 
 export default function playPause() {
-
     const [isplay, setIsPlay] = useState("false");
 
-    const PlayPausebtn = () => {        
+    const PlayPausebtn = () => { 
         setIsPlay(!isplay);        
     };
 

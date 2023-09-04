@@ -1,4 +1,4 @@
-import { Link, Outlet, useLocation } from 'react-router-dom'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 import JsPlayer from '../common-pages/jsPlayer'
 
 export default function Genres() {
@@ -14,18 +14,21 @@ export default function Genres() {
                                 {/* <Link to='/genres/all' className="list-group-item">
                                     all
                                 </Link> */}
-                                <Link to='/genres/acoustic' className={`nav-item ${location.pathname === '/genres/acoustic' ? 'list-group-item active' : 'list-group-item'}`}>
+                                <NavLink to='/genres/acoustic' className="list-group-item">
                                     acoustic
-                                </Link>
-                                <Link to='/genres/ambient' className={`nav-item ${location.pathname === '/genres/ambient' ? 'list-group-item active' : 'list-group-item'}`}>
+                                </NavLink>
+                                <NavLink to='/genres/ambient' className="list-group-item">
                                     ambient
-                                </Link>
-                                <Link to='/genres/blues' className={`nav-item ${location.pathname === '/genres/blues' ? 'list-group-item active' : 'list-group-item'}`}>
+                                </NavLink>
+                                <NavLink to='/genres/blues' className="list-group-item">
                                     blues
-                                </Link>
-                                <Link to='/genres/classical' className={`nav-item ${location.pathname === '/genres/classical' ? 'list-group-item active' : 'list-group-item'}`}>
+                                </NavLink>
+                                <NavLink to='/genres/classical' className="list-group-item">
                                     classical
-                                </Link>                                                             
+                                </NavLink>
+                                <a href="#" className="list-group-item">
+                                    country
+                                </a>                                                             
                                 <a href="#" className="list-group-item">
                                     country
                                 </a>
