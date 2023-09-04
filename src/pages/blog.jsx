@@ -1,7 +1,7 @@
 export default function BlogPage() {
     return (
         <>
-            <section className="scrollable wrapper-lg">
+            <section className="scrollable wrapper-lg noJsplayer">
                 <div className="row">
                     <div className="col-sm-9">
                         <div className="blog-post">
