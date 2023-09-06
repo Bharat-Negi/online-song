@@ -1,0 +1,58 @@
+[
+    {
+        "id" : 1,
+        "vidImg" : "../images/m40.jpg",
+        "vidName" : "Tempered Song",
+        "vidCast" : "Miaow",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 2,
+        "vidImg" : "../images/m41.jpg",
+        "vidName" : "Morbi id neque quam",
+        "vidCast" : "Phasellus",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 3,
+        "vidImg" : "../images/m42.jpg",
+        "vidName" : "Aliquam sollicitudin venenatis ipsum",
+        "vidCast" : "Malesuada",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 4,
+        "vidImg" : "../images/m43.jpg",
+        "vidName" : "Citudin venenatis ipsum ac",
+        "vidCast" : "Volutpat",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 5,
+        "vidImg" : "../images/m44.jpg",
+        "vidName" : "Vestibulum ullamcorper sodales nisi",
+        "vidCast" : "Mauris Qiaos",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 6,
+        "vidImg" : "../images/m45.jpg",
+        "vidName" : "Mauris convallis mauris at",
+        "vidCast" : "Neque",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 7,
+        "vidImg" : "../images/m41.jpg",
+        "vidName" : "Sodales nisi nec condimentum",
+        "vidCast" : "Augue",
+        "vidLink" : "/video-detail"
+    },
+    {
+        "id" : 8,
+        "vidImg" : "../images/m42.jpg",
+        "vidName" : "Nisi nec condimentum",
+        "vidCast" : "Miaow",
+        "vidLink" : "/video-detail"
+    }
+]

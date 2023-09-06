@@ -1,0 +1,26 @@
+[
+    {
+        "id" : 1,
+        "vidImg" : "../images/m40.jpg",
+        "vidName" : "Tempered Song",
+        "vidCast" : "Miaow",
+        "vidLink" : "/video-detail",
+        "vidTime" : "03:30"
+    },
+    {
+        "id" : 2,
+        "vidImg" : "../images/m41.jpg",
+        "vidName" : "Morbi id neque quam",
+        "vidCast" : "Phasellus",
+        "vidLink" : "/video-detail",
+        "vidTime" : "04:00"
+    },
+    {
+        "id" : 3,
+        "vidImg" : "../images/m42.jpg",
+        "vidName" : "Aliquam sollicitudin venenatis ipsum",
+        "vidCast" : "Malesuada",
+        "vidLink" : "/video-detail",
+        "vidTime" : "05:30"
+    }
+]
