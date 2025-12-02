@@ -2,29 +2,31 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
-    const [isActive, setIsActive] = useState(false);    
+    const [isActive, setIsActive] = useState(false);
     const [isNoti, setIsNoti] = useState(false);
-    const dropdownRef = useRef(null);
 
-    const ToggleClass = () => {
-        setIsActive(!isActive);
-    };   
-    const notificationOpen = () => {
-        setIsNoti(!isNoti);
-    };
+    const userRef = useRef(null);       // 👈 user dropdown
+    const notiRef = useRef(null);       // 👈 notification dropdown
+
+    const ToggleClass = () => setIsActive(!isActive);
+    const notificationOpen = () => setIsNoti(!isNoti);
 
     // 🔥 Close dropdown when clicking outside
     useEffect(() => {
         const handleClickOutside = (event) => {
-            // if click is NOT inside dropdown
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            // Close user dropdown
+            if (userRef.current && !userRef.current.contains(event.target)) {
                 setIsActive(false);
             }
+            // Close notification dropdown
+            if (notiRef.current && !notiRef.current.contains(event.target)) {
+                setIsNoti(false);
+            }
         };
+
         document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+
     }, []);
     
     return (
@@ -61,7 +63,8 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
             </form>
             <div className="navbar-right">
                 <ul className="nav navbar-nav m-n hidden-xs nav-user user">
-                    <li className={isNoti ? "hidden-xs open" : "hidden-xs"}>
+                {/* 🔔 Notification Dropdown */}
+                    <li className={isNoti ? "hidden-xs open" : "hidden-xs"} ref={notiRef}>
                         <a href="#" className="dropdown-toggle lt" onClick={notificationOpen}>
                             <i className="icon-bell"></i>
                             <span className="badge badge-sm up bg-danger count">2</span>
@@ -95,7 +98,9 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                             </section>
                         </section>
                     </li>
-                    <li className={isActive ? "dropdown open" : "dropdown"} ref={dropdownRef}>
+
+                    {/* 👤 User Dropdown */}
+                    <li className={isActive ? "dropdown open" : "dropdown"} ref={userRef}>
                         <a href="#" className="dropdown-toggle bg clear userName" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                                 <img src="../images/a0.png" alt="..." />
