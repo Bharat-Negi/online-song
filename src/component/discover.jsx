@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import DiscoverData from '../json-data/discover.json';
 import AddBtnPage from '../component-small/addBtn';
 import PlayPause from '../component-small/play-pause';
 import { Link } from 'react-router-dom';
 
 export default function DiscoverPage() {
+    const [currentPlayId, setCurrentPlayId] = useState(null);
+
+    const togglePlay = (id) => {
+        setCurrentPlayId(prev => (prev === id ? null : id));
+    };
 
     const renderStar = (data) => {
         const maxStars = 5;
@@ -50,8 +56,10 @@ export default function DiscoverPage() {
                                 <div className="text-info padder m-t-sm text-sm star-space">
                                     {renderStar(item)}
                                 </div>
-
-                                <PlayPause />
+                                <PlayPause 
+                                    isPlay={currentPlayId === item.id}
+                                    onToggle={() => togglePlay(item.id)}
+                                 />
                                 <AddBtnPage />
                             </div>
 

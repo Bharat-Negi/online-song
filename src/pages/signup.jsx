@@ -35,10 +35,10 @@ export default function SignupPage() {
             toast.warning(errormessage);
         } else {
             if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
-
+                toast.warning('Correct');
             } else {
                 isproceed = false;
-                toast.warning('Please enter the valid email')
+                toast.warning('Please enter the valid email');
             }
         }
 

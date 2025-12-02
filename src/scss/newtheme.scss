@@ -4,6 +4,9 @@
 .star-space{
     letter-spacing: 3px;
 }
+.padder .heart, .padder .plus{
+    cursor: pointer;
+}
 .heart.active i:nth-child(1), .plus.active i:nth-child(1){
     display: none;
 }
