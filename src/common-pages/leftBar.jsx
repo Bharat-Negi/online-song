@@ -1,18 +1,33 @@
 import { Link, useLocation } from "react-router-dom";
-import { useState } from 'react';
+import { useState,  useRef, useEffect } from 'react';
 
 const LeftBar = ({isLogo, personName}) => {
-    const [isActive, setActive] = useState(false);
+    const [isActive, setIsActive] = useState(false);
     const [isleft, setIsleft] = useState(false);
     const location = useLocation();
+    const dropdownRef = useRef(null);
 
     const ToggleClass = () => {
-        setActive(!isActive);
-    };
+        setIsActive(!isActive);
+    }; 
 
     const LeftDropBar = () => {
         setIsleft(!isleft);
-    };    
+    };
+    
+    // 🔥 Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // if click is NOT inside dropdown
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsActive(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
             
     return (
         <>
@@ -123,7 +138,7 @@ const LeftBar = ({isLogo, personName}) => {
 
                     <footer className="footer hidden-xs no-padder text-center-nav-xs">
                         <div className="bg hidden-xs ">
-                            <div className={isActive ? "dropdown dropup wrapper-sm clearfix open" : "dropdown dropup wrapper-sm clearfix"}>
+                            <div className={isActive ? "dropdown dropup wrapper-sm clearfix open" : "dropdown dropup wrapper-sm clearfix"} ref={dropdownRef}>
                                 <Link className="dropdown-toggle" onClick={ToggleClass}>
                                     <span className="thumb-sm avatar pull-left m-l-xs">
                                         <img src="../images/a3.png" className="dker" alt="..." />

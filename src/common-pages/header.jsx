@@ -1,16 +1,31 @@
-import { useState, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
-    const [isActive, setActive] = useState(false);    
+    const [isActive, setIsActive] = useState(false);    
     const [isNoti, setIsNoti] = useState(false);
+    const dropdownRef = useRef(null);
 
     const ToggleClass = () => {
-        setActive(!isActive);
-    };    
+        setIsActive(!isActive);
+    };   
     const notificationOpen = () => {
         setIsNoti(!isNoti);
     };
+
+    // 🔥 Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            // if click is NOT inside dropdown
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsActive(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
     
     return (
         <header className="bg-white-only header header-md navbar navbar-fixed-top-xs">
@@ -80,7 +95,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                             </section>
                         </section>
                     </li>
-                    <li className={isActive ? "dropdown open" : "dropdown"}>
+                    <li className={isActive ? "dropdown open" : "dropdown"} ref={dropdownRef}>
                         <a href="#" className="dropdown-toggle bg clear userName" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
                                 <img src="../images/a0.png" alt="..." />
