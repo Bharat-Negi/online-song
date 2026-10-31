@@ -1,7 +1,25 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 import ProfileTab from '../component-small/profile-tab'
 import ProfileDetails from '../component-small/profile-details'
+import { Avatar } from '../common-pages/avatar'
+import { usePlayer, discoverSongs } from '../common-pages/playerContext'
+import ConnectedData from '../json-data/connected.json'
 
-export default function profile() {
+export default function Profile() {
+  const player = usePlayer();
+  const user = sessionStorage.getItem('username') || '';
+  const [email, setEmail] = useState('');
+
+  // Only the email is used from the account record
+  useEffect(() => {
+    fetch('http://localhost:8000/user/' + encodeURIComponent(user)).then((res) => {
+      return res.ok ? res.json() : {};
+    }).then((resp) => setEmail(resp.email || '')).catch(() => setEmail(''));
+  }, [user]);
+
+  const friends = ConnectedData.filter((m) => m.connectOn === 'online' && m.connectName.toLowerCase() !== user.toLowerCase());
+
   return (
     <>
       <section className="scrollable noJsplayer">
@@ -12,33 +30,44 @@ export default function profile() {
             <section className="vbox">
               <section className="scrollable padder-v profileScroll">
                 <div className="panel">
-                  <h4 className="font-thin padder">Latest Tweets</h4>
+                  <h4 className="font-thin padder">Account</h4>
                   <ul className="list-group">
                     <li className="list-group-item">
-                      <p>Wellcome <a href="#" className="text-info">@Drew Wllon</a> and play this web application template, have fun1 </p>
-                      <small className="block text-muted"><i className="fa fa-clock-o"></i> 2 minuts ago</small>
+                      <small className="text-muted block">Username</small>
+                      <strong>{user}</strong>
                     </li>
                     <li className="list-group-item">
-                      <p>Morbi nec <a href="#" className="text-info">@Jonathan George</a> nunc condimentum ipsum dolor sit amet, consectetur</p>
-                      <small className="block text-muted"><i className="fa fa-clock-o"></i> 1 hour ago</small>
+                      <small className="text-muted block">Email</small>
+                      {email ? <a href={'mailto:' + email}>{email}</a> : <span className="text-muted">Not available</span>}
                     </li>
                     <li className="list-group-item">
-                      <p><a href="#" className="text-info">@Josh Long</a> Vestibulum ullamcorper sodales nisi nec adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis</p>
-                      <small className="block text-muted"><i className="fa fa-clock-o"></i> 2 hours ago</small>
+                      <Link to="/my-playlist"><i className="icon-heart text-danger m-r-xs"></i>My Playlist</Link>
                     </li>
                   </ul>
                 </div>
-                <div className="panel clearfix">
-                  <div className="panel-body">
-                    <a href="#" className="thumb pull-left m-r">
-                      <img src="images/a0.png" className="img-circle" />
-                    </a>
-                    <div className="clear">
-                      <a href="#" className="text-info">@Mike Mcalidek <i className="fa fa-twitter"></i></a>
-                      <small className="block text-muted">2,415 followers / 225 tweets</small>
-                      <a href="#" className="btn btn-xs btn-success m-t-xs">Follow</a>
-                    </div>
-                  </div>
+                <div className="panel">
+                  <h4 className="font-thin padder">Friends online <small className="text-success">{friends.length}</small></h4>
+                  <ul className="list-group">
+                    {friends.length === 0 && <li className="list-group-item text-muted">Nobody is online right now.</li>}
+                    {friends.map((f) => {
+                      const song = f.listening && discoverSongs.find((s) => s.id === f.listening);
+                      const isSame = song && player.isSongPlaying(song.id);
+                      return (
+                        <li className="list-group-item profile-friend" key={f.id}>
+                          <span className="profile-friend-avatar"><Avatar name={f.connectName} /></span>
+                          <span className="profile-row-text">
+                            <strong className="text-ellipsis">{f.connectName}</strong>
+                            <small className="text-success text-ellipsis">{song ? '♪ ' + song.name : 'Online'}</small>
+                          </span>
+                          {song && (
+                            <a className="cus-hand" onClick={() => player.toggleSong(song)} title={isSame ? 'Pause' : 'Listen along'}>
+                              <i className={isSame ? "fa fa-pause text-success" : "fa fa-play text-info"}></i>
+                            </a>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
                 </div>
               </section>
             </section>

@@ -1,129 +1,1867 @@
 [
-    {   
-        "genTag" : "acoustic",
-        "alldata" : [
+    {
+        "slug": "acoustic",
+        "name": "Acoustic",
+        "description": "Unplugged guitars and voices.",
+        "songs": [
             {
-                "genImg" : "../images/m1.jpg",
-                "genName": "Tempered Song",
-                "genSinger": "Miaow",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-1",
+                "name": "Tempered Song",
+                "artist": "Miaow",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
             },
             {
-                "genImg" : "../images/m2.jpg",
-                "genName": "Morbi id neque quam",
-                "genSinger": "Phasellus",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-2",
+                "name": "Morbi id neque quam",
+                "artist": "Phasellus",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
             },
             {
-                "genImg" : "../images/m3.jpg",
-                "genName": "Aliquam sollicitudin venenatis ipsum",
-                "genSinger": "Malesuada",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-3",
+                "name": "Aliquam sollicitudin venenatis ipsum",
+                "artist": "Malesuada",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
             },
             {
-                "genImg" : "../images/m4.jpg",
-                "genName": "Citudin venenatis ipsum ac",
-                "genSinger": "Volutpat",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-4",
+                "name": "Citudin venenatis ipsum ac",
+                "artist": "Volutpat",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
             },
             {
-                "genImg" : "../images/m5.jpg",
-                "genName": "Vestibulum ullamcorper sodales nisi",
-                "genSinger": "Mauris Qiaos",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-5",
+                "name": "Vestibulum ullamcorper sodales nisi",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
             },
             {
-                "genImg" : "../images/m6.jpg",
-                "genName": "Mauris convallis mauris at",
-                "genSinger": "Neque",
-                "genLink" : "/genres/acoustic"
+                "id": "g-acoustic-6",
+                "name": "Mauris convallis mauris at",
+                "artist": "Neque",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
             }
         ]
     },
     {
-        "genTag" : "ambient",
-        "alldata" : [
+        "slug": "ambient",
+        "name": "Ambient",
+        "description": "Calm, atmospheric sound for focus and rest.",
+        "songs": [
             {
-                "genImg" : "../images/m7.jpg",
-                "genName": "Sodales nisi nec condimentum",
-                "genSinger": "Augue",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-1",
+                "name": "Sodales nisi nec condimentum",
+                "artist": "Augue",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
             },
             {
-                "genImg" : "../images/m8.jpg",
-                "genName": "Nisi nec condimentum",
-                "genSinger": "Miaow",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-2",
+                "name": "Nisi nec condimentum",
+                "artist": "Miaow",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
             },
             {
-                "genImg" : "../images/m9.jpg",
-                "genName": "Phasellus at ultricies nequ",
-                "genSinger": "Volutpat",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-3",
+                "name": "Phasellus at ultricies nequ",
+                "artist": "Volutpat",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
             },
             {
-                "genImg" : "../images/m10.jpg",
-                "genName": "Quis malesuada augue",
-                "genSinger": "Feugiat",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-4",
+                "name": "Quis malesuada augue",
+                "artist": "Feugiat",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
             },
             {
-                "genImg" : "../images/m11.jpg",
-                "genName": "Ipsum ac feugiat",
-                "genSinger": "Quam AC",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-5",
+                "name": "Ipsum ac feugiat",
+                "artist": "Quam AC",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
             },
             {
-                "genImg" : "../images/m12.jpg",
-                "genName": "Ullamcorper sodales nisi nec condimentu",
-                "genSinger": "Convallis",
-                "genLink" : "/genres/acoustic"
+                "id": "g-ambient-6",
+                "name": "Ullamcorper sodales nisi nec condimentu",
+                "artist": "Convallis",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
             }
         ]
     },
     {
-        "genTag" : "blues",
-        "alldata" : [
+        "slug": "blues",
+        "name": "Blues",
+        "description": "Soulful guitar, twelve-bar grooves and heartfelt vocals.",
+        "songs": [
             {
-                "genImg" : "../images/m13.jpg",
-                "genName": "Tudin venenatis ulum ullamcorper",
-                "genSinger": "Pellent Esque",
-                "genLink" : "/genres/acoustic"
+                "id": "g-blues-1",
+                "name": "Tudin venenatis ulum ullamcorper",
+                "artist": "Pellent Esque",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
             },
             {
-                "genImg" : "../images/m14.jpg",
-                "genName": "Sodales nisi nec condimentum",
-                "genSinger": "Utricies",
-                "genLink" : "/genres/acoustic"
+                "id": "g-blues-2",
+                "name": "Sodales nisi nec condimentum",
+                "artist": "Utricies",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
             },
             {
-                "genImg" : "../images/m15.jpg",
-                "genName": "Sec condimentum augue",
-                "genSinger": "Quis Fox",
-                "genLink" : "/genres/acoustic"
+                "id": "g-blues-3",
+                "name": "Sec condimentum augue",
+                "artist": "Quis Fox",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
             },
             {
-                "genImg" : "../images/m16.jpg",
-                "genName": "Dimentum at pellentesque volutpat",
-                "genSinger": "Suada",
-                "genLink" : "/genres/acoustic"
+                "id": "g-blues-4",
+                "name": "Dimentum at pellentesque volutpat",
+                "artist": "Suada",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
             }
         ]
     },
     {
-        "genTag" : "classical",
-        "alldata" : [
+        "slug": "classical",
+        "name": "Classical",
+        "description": "Orchestral and chamber music.",
+        "songs": [
             {
-                "genImg" : "../images/m17.jpg",
-                "genName": "Natis ipsum ac feugiat",
-                "genSinger": "Monvallis",
-                "genLink" : "/genres/acoustic"
+                "id": "g-classical-1",
+                "name": "Natis ipsum ac feugiat",
+                "artist": "Monvallis",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
             },
             {
-                "genImg" : "../images/m18.jpg",
-                "genName": "Dimentum tesque volut icies neque",
-                "genSinger": "Londi Mentum",
-                "genLink" : "/genres/acoustic"
+                "id": "g-classical-2",
+                "name": "Dimentum tesque volut icies neque",
+                "artist": "Londi Mentum",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            }
+        ]
+    },
+    {
+        "slug": "country",
+        "name": "Country",
+        "description": "Stories of the road, home and heartbreak.",
+        "songs": [
+            {
+                "id": "g-country-1",
+                "name": "Panda Style",
+                "artist": "Lauren Taylor",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-country-2",
+                "name": "Natis ipsum",
+                "artist": "Soyia Jess",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-country-3",
+                "name": "Egestas dui",
+                "artist": "Pett JA",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-country-4",
+                "name": "Praesent commodo",
+                "artist": "Miya",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-country-5",
+                "name": "Sec condimentum",
+                "artist": "Malesuada",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-country-6",
+                "name": "Faucibus dolor",
+                "artist": "Malesuada",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-country-7",
+                "name": "Lementum ligula",
+                "artist": "Soyia Jess",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-country-8",
+                "name": "Fermentum diam",
+                "artist": "Pett JA",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-country-9",
+                "name": "Sodales nisi",
+                "artist": "Pett JA",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-country-10",
+                "name": "Mauris convallis",
+                "artist": "Pett JA",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-country-11",
+                "name": "Urna mollis",
+                "artist": "Soph Ashe",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-country-12",
+                "name": "Hook Me",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            }
+        ]
+    },
+    {
+        "slug": "electronic",
+        "name": "Electronic",
+        "description": "Synths, beats and club energy.",
+        "songs": [
+            {
+                "id": "g-electronic-1",
+                "name": "Panda Style",
+                "artist": "Soyia Jess",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-electronic-2",
+                "name": "Tincidunt libero",
+                "artist": "Dan Doorack",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-electronic-3",
+                "name": "Urna mollis",
+                "artist": "Neque",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-electronic-4",
+                "name": "Habitant",
+                "artist": "Pett JA",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-electronic-5",
+                "name": "Blandit tempus",
+                "artist": "Volutpat",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-electronic-6",
+                "name": "Mauris convallis",
+                "artist": "Malesuada",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-electronic-7",
+                "name": "Vivamus sagittis",
+                "artist": "Willion",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-electronic-8",
+                "name": "Tempered Song",
+                "artist": "Soyia Jess",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-electronic-9",
+                "name": "Lementum ligula",
+                "artist": "Foxes",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-electronic-10",
+                "name": "Aliquam sollicitudin",
+                "artist": "Amanda Conlan",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-electronic-11",
+                "name": "Morbi id neque quam",
+                "artist": "Soph Ashe",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-electronic-12",
+                "name": "Natis ipsum",
+                "artist": "Soph Ashe",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-electronic-13",
+                "name": "Sodales nisi",
+                "artist": "Dan Doorack",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            }
+        ]
+    },
+    {
+        "slug": "emo",
+        "name": "Emo",
+        "description": "Emotional, guitar-driven rock.",
+        "songs": [
+            {
+                "id": "g-emo-1",
+                "name": "Donec sed odio",
+                "artist": "Foxes",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-emo-2",
+                "name": "Aliquam sollicitudin",
+                "artist": "Willion",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-emo-3",
+                "name": "Panda Style",
+                "artist": "Miya",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-emo-4",
+                "name": "Tincidunt libero",
+                "artist": "Foxes",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-emo-5",
+                "name": "Little Town",
+                "artist": "Hamburg",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-emo-6",
+                "name": "Nothing",
+                "artist": "Malesuada",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-emo-7",
+                "name": "Egestas dui",
+                "artist": "Foxes",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-emo-8",
+                "name": "Blandit tempus",
+                "artist": "Chris Fox",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-emo-9",
+                "name": "Faucibus dolor",
+                "artist": "Pett JA",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-emo-10",
+                "name": "Hope",
+                "artist": "Malesuada",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-emo-11",
+                "name": "Nisi nec condimentum",
+                "artist": "Malesuada",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-emo-12",
+                "name": "Lementum ligula",
+                "artist": "Dan Doorack",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-emo-13",
+                "name": "Spring Rain",
+                "artist": "Amanda Conlan",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-emo-14",
+                "name": "Tempered Song",
+                "artist": "Lauren Taylor",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            }
+        ]
+    },
+    {
+        "slug": "folk",
+        "name": "Folk",
+        "description": "Traditional songs and modern storytellers.",
+        "songs": [
+            {
+                "id": "g-folk-1",
+                "name": "Hook Me",
+                "artist": "Chris Fox",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-folk-2",
+                "name": "Breaking Me",
+                "artist": "Volutpat",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-folk-3",
+                "name": "Curabitur blandit",
+                "artist": "Augue",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-folk-4",
+                "name": "Blandit tempus",
+                "artist": "Soph Ashe",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-folk-5",
+                "name": "Nothing",
+                "artist": "Hamburg",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-folk-6",
+                "name": "Aliquam sollicitudin",
+                "artist": "Amanda Conlan",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-folk-7",
+                "name": "Fermentum diam",
+                "artist": "Filex",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            }
+        ]
+    },
+    {
+        "slug": "hardcore",
+        "name": "Hardcore",
+        "description": "Fast, loud and raw.",
+        "songs": [
+            {
+                "id": "g-hardcore-1",
+                "name": "Nothing",
+                "artist": "Soyia Jess",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-hardcore-2",
+                "name": "Praesent commodo",
+                "artist": "Milian",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-hardcore-3",
+                "name": "Citudin venenatis",
+                "artist": "Lauren Taylor",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-hardcore-4",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Malesuada",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-hardcore-5",
+                "name": "Nisi nec condimentum",
+                "artist": "Soph Ashe",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-hardcore-6",
+                "name": "Curabitur blandit",
+                "artist": "Hamburg",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-hardcore-7",
+                "name": "Natis ipsum",
+                "artist": "Filex",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-hardcore-8",
+                "name": "Tempered Song",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-hardcore-9",
+                "name": "Morbi id neque quam",
+                "artist": "Chris Fox",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-hardcore-10",
+                "name": "Panda Style",
+                "artist": "Foxes",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-hardcore-11",
+                "name": "Hook Me",
+                "artist": "Miya",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-hardcore-12",
+                "name": "Mauris convallis",
+                "artist": "Phasellus",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-hardcore-13",
+                "name": "Egestas dui",
+                "artist": "Soyia Jess",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            }
+        ]
+    },
+    {
+        "slug": "hip-hop",
+        "name": "Hip hop",
+        "description": "Beats, rhymes and flow.",
+        "songs": [
+            {
+                "id": "g-hip-hop-1",
+                "name": "Little Town",
+                "artist": "Lauren Taylor",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-hip-hop-2",
+                "name": "Natis ipsum",
+                "artist": "Lauren Taylor",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-hip-hop-3",
+                "name": "Faucibus dolor",
+                "artist": "Malesuada",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-hip-hop-4",
+                "name": "Fermentum diam",
+                "artist": "Neque",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-hip-hop-5",
+                "name": "Spring Rain",
+                "artist": "Willion",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-hip-hop-6",
+                "name": "Tempered Song",
+                "artist": "Miaow",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-hip-hop-7",
+                "name": "Sodales nisi",
+                "artist": "Soyia Jess",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-hip-hop-8",
+                "name": "Mauris convallis",
+                "artist": "Willion",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-hip-hop-9",
+                "name": "Breaking Me",
+                "artist": "Augue",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-hip-hop-10",
+                "name": "Habitant",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-hip-hop-11",
+                "name": "Vivamus sagittis",
+                "artist": "Willion",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-hip-hop-12",
+                "name": "Citudin venenatis",
+                "artist": "Volutpat",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-hip-hop-13",
+                "name": "Morbi id neque quam",
+                "artist": "Hamburg",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            }
+        ]
+    },
+    {
+        "slug": "indie",
+        "name": "Indie",
+        "description": "Independent artists and fresh sounds.",
+        "songs": [
+            {
+                "id": "g-indie-1",
+                "name": "Sodales nisi",
+                "artist": "Dan Doorack",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-indie-2",
+                "name": "Fermentum diam",
+                "artist": "Volutpat",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-indie-3",
+                "name": "Tincidunt libero",
+                "artist": "Filex",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-indie-4",
+                "name": "Nisi nec condimentum",
+                "artist": "Neque",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-indie-5",
+                "name": "Tempered Song",
+                "artist": "Augue",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-indie-6",
+                "name": "Habitant",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-indie-7",
+                "name": "Listen Wind",
+                "artist": "Miaow",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-indie-8",
+                "name": "Urna mollis",
+                "artist": "Malesuada",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-indie-9",
+                "name": "Praesent commodo",
+                "artist": "Chris Fox",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-indie-10",
+                "name": "Panda Style",
+                "artist": "Soph Ashe",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-indie-11",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Miya",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-indie-12",
+                "name": "Blandit tempus",
+                "artist": "Soph Ashe",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-indie-13",
+                "name": "Hook Me",
+                "artist": "Augue",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-indie-14",
+                "name": "Donec sed odio",
+                "artist": "Lauren Taylor",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            }
+        ]
+    },
+    {
+        "slug": "jazz",
+        "name": "Jazz",
+        "description": "Swing, improvisation and smooth standards.",
+        "songs": [
+            {
+                "id": "g-jazz-1",
+                "name": "Breaking Me",
+                "artist": "Hamburg",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-jazz-2",
+                "name": "Blandit tempus",
+                "artist": "Miaow",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-jazz-3",
+                "name": "Hook Me",
+                "artist": "Filex",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-jazz-4",
+                "name": "Habitant",
+                "artist": "Augue",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-jazz-5",
+                "name": "Aliquam sollicitudin",
+                "artist": "Amanda Conlan",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-jazz-6",
+                "name": "Nothing",
+                "artist": "Malesuada",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-jazz-7",
+                "name": "Morbi id neque quam",
+                "artist": "Soph Ashe",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-jazz-8",
+                "name": "Citudin venenatis",
+                "artist": "Foxes",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-jazz-9",
+                "name": "Curabitur blandit",
+                "artist": "Willion",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-jazz-10",
+                "name": "Urna mollis",
+                "artist": "Miaow",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            }
+        ]
+    },
+    {
+        "slug": "latin",
+        "name": "Latin",
+        "description": "Reggaeton, salsa and Latin pop.",
+        "songs": [
+            {
+                "id": "g-latin-1",
+                "name": "Lementum ligula",
+                "artist": "Malesuada",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-latin-2",
+                "name": "Mauris convallis",
+                "artist": "Lauren Taylor",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-latin-3",
+                "name": "Urna mollis",
+                "artist": "Neque",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-latin-4",
+                "name": "Aliquam sollicitudin",
+                "artist": "Foxes",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-latin-5",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Lauren Taylor",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-latin-6",
+                "name": "Nisi nec condimentum",
+                "artist": "Malesuada",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-latin-7",
+                "name": "Hook Me",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-latin-8",
+                "name": "Egestas dui",
+                "artist": "Pett JA",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-latin-9",
+                "name": "Tincidunt libero",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-latin-10",
+                "name": "Habitant",
+                "artist": "Willion",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-latin-11",
+                "name": "Donec sed odio",
+                "artist": "Chris Fox",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-latin-12",
+                "name": "Vivamus sagittis",
+                "artist": "Soyia Jess",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            }
+        ]
+    },
+    {
+        "slug": "metal",
+        "name": "Metal",
+        "description": "Heavy riffs and big drums.",
+        "songs": [
+            {
+                "id": "g-metal-1",
+                "name": "Spring Rain",
+                "artist": "Volutpat",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-metal-2",
+                "name": "Listen Wind",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-metal-3",
+                "name": "Lementum ligula",
+                "artist": "Augue",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-metal-4",
+                "name": "Fermentum diam",
+                "artist": "Filex",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-metal-5",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Miya",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-metal-6",
+                "name": "Aliquam sollicitudin",
+                "artist": "Pett JA",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-metal-7",
+                "name": "Blandit tempus",
+                "artist": "Soyia Jess",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            }
+        ]
+    },
+    {
+        "slug": "pop",
+        "name": "Pop",
+        "description": "Today's catchiest hits.",
+        "songs": [
+            {
+                "id": "g-pop-1",
+                "name": "Sec condimentum",
+                "artist": "Chris Fox",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-pop-2",
+                "name": "Tempered Song",
+                "artist": "Pett JA",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-pop-3",
+                "name": "Hook Me",
+                "artist": "Miya",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-pop-4",
+                "name": "Listen Wind",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-pop-5",
+                "name": "Curabitur blandit",
+                "artist": "Miaow",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-pop-6",
+                "name": "Spring Rain",
+                "artist": "Neque",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-pop-7",
+                "name": "Morbi id neque quam",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-pop-8",
+                "name": "Blandit tempus",
+                "artist": "Hamburg",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-pop-9",
+                "name": "Habitant",
+                "artist": "Volutpat",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            }
+        ]
+    },
+    {
+        "slug": "pop-punk",
+        "name": "Pop punk",
+        "description": "Punk energy with pop hooks.",
+        "songs": [
+            {
+                "id": "g-pop-punk-1",
+                "name": "Egestas dui",
+                "artist": "Miya",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-pop-punk-2",
+                "name": "Listen Wind",
+                "artist": "Hamburg",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-pop-punk-3",
+                "name": "Urna mollis",
+                "artist": "Soyia Jess",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-pop-punk-4",
+                "name": "Morbi id neque quam",
+                "artist": "Augue",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-pop-punk-5",
+                "name": "Natis ipsum",
+                "artist": "Volutpat",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-pop-punk-6",
+                "name": "Faucibus dolor",
+                "artist": "Soyia Jess",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-pop-punk-7",
+                "name": "Curabitur blandit",
+                "artist": "Malesuada",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            }
+        ]
+    },
+    {
+        "slug": "punk",
+        "name": "Punk",
+        "description": "Short, fast and rebellious.",
+        "songs": [
+            {
+                "id": "g-punk-1",
+                "name": "Natis ipsum",
+                "artist": "Miya",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-punk-2",
+                "name": "Sec condimentum",
+                "artist": "Augue",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-punk-3",
+                "name": "Nothing",
+                "artist": "Miya",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-punk-4",
+                "name": "Faucibus dolor",
+                "artist": "Hamburg",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-punk-5",
+                "name": "Tempered Song",
+                "artist": "Miya",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-punk-6",
+                "name": "Hook Me",
+                "artist": "Soyia Jess",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-punk-7",
+                "name": "Fermentum diam",
+                "artist": "Amanda Conlan",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-punk-8",
+                "name": "Vivamus sagittis",
+                "artist": "Volutpat",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-punk-9",
+                "name": "Habitant",
+                "artist": "Foxes",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-punk-10",
+                "name": "Breaking Me",
+                "artist": "Soph Ashe",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-punk-11",
+                "name": "Tincidunt libero",
+                "artist": "Augue",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-punk-12",
+                "name": "Urna mollis",
+                "artist": "Volutpat",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            }
+        ]
+    },
+    {
+        "slug": "reggae",
+        "name": "Reggae",
+        "description": "Laid-back island rhythms.",
+        "songs": [
+            {
+                "id": "g-reggae-1",
+                "name": "Panda Style",
+                "artist": "Filex",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-reggae-2",
+                "name": "Sec condimentum",
+                "artist": "Soph Ashe",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-reggae-3",
+                "name": "Vivamus sagittis",
+                "artist": "Hamburg",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-reggae-4",
+                "name": "Egestas dui",
+                "artist": "Soph Ashe",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-reggae-5",
+                "name": "Aliquam sollicitudin",
+                "artist": "Milian",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-reggae-6",
+                "name": "Lementum ligula",
+                "artist": "Foxes",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-reggae-7",
+                "name": "Praesent commodo",
+                "artist": "Chris Fox",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-reggae-8",
+                "name": "Tempered Song",
+                "artist": "Chris Fox",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-reggae-9",
+                "name": "Spring Rain",
+                "artist": "Soyia Jess",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-reggae-10",
+                "name": "Habitant",
+                "artist": "Miaow",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-reggae-11",
+                "name": "Faucibus dolor",
+                "artist": "Miya",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-reggae-12",
+                "name": "Hook Me",
+                "artist": "Miya",
+                "image": "../images/m17.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            }
+        ]
+    },
+    {
+        "slug": "rnb",
+        "name": "R&B",
+        "description": "Smooth vocals and groove.",
+        "songs": [
+            {
+                "id": "g-rnb-1",
+                "name": "Lementum ligula",
+                "artist": "Soph Ashe",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-rnb-2",
+                "name": "Mauris convallis",
+                "artist": "Filex",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-rnb-3",
+                "name": "Praesent commodo",
+                "artist": "Neque",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-rnb-4",
+                "name": "Hope",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m6.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-rnb-5",
+                "name": "Donec sed odio",
+                "artist": "Filex",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-rnb-6",
+                "name": "Panda Style",
+                "artist": "Soyia Jess",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-rnb-7",
+                "name": "Hook Me",
+                "artist": "Hamburg",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-rnb-8",
+                "name": "Nisi nec condimentum",
+                "artist": "Filex",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            }
+        ]
+    },
+    {
+        "slug": "rock",
+        "name": "Rock",
+        "description": "Guitars up, volume up.",
+        "songs": [
+            {
+                "id": "g-rock-1",
+                "name": "Sec condimentum",
+                "artist": "Malesuada",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            },
+            {
+                "id": "g-rock-2",
+                "name": "Sodales nisi",
+                "artist": "Malesuada",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-rock-3",
+                "name": "Blandit tempus",
+                "artist": "Willion",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-rock-4",
+                "name": "Breaking Me",
+                "artist": "Filex",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-rock-5",
+                "name": "Nisi nec condimentum",
+                "artist": "Miaow",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-rock-6",
+                "name": "Fermentum diam",
+                "artist": "Milian",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-rock-7",
+                "name": "Hope",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-rock-8",
+                "name": "Natis ipsum",
+                "artist": "Soph Ashe",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-rock-9",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Filex",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            }
+        ]
+    },
+    {
+        "slug": "soul",
+        "name": "Soul",
+        "description": "Deep vocals and classic grooves.",
+        "songs": [
+            {
+                "id": "g-soul-1",
+                "name": "Panda Style",
+                "artist": "Dan Doorack",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-soul-2",
+                "name": "Hook Me",
+                "artist": "Augue",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-soul-3",
+                "name": "Little Town",
+                "artist": "Miya",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-soul-4",
+                "name": "Sodales nisi",
+                "artist": "Chris Fox",
+                "image": "../images/m2.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-soul-5",
+                "name": "Nothing",
+                "artist": "Phasellus",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-soul-6",
+                "name": "Breaking Me",
+                "artist": "Miya",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-soul-7",
+                "name": "Tincidunt libero",
+                "artist": "Miya",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
+            },
+            {
+                "id": "g-soul-8",
+                "name": "Lementum ligula",
+                "artist": "Amanda Conlan",
+                "image": "../images/m9.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+                "time": "09:11"
+            },
+            {
+                "id": "g-soul-9",
+                "name": "Blandit tempus",
+                "artist": "Milian",
+                "image": "../images/m0.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+                "time": "08:34"
+            }
+        ]
+    },
+    {
+        "slug": "world",
+        "name": "World",
+        "description": "Music from every corner of the globe.",
+        "songs": [
+            {
+                "id": "g-world-1",
+                "name": "Donec sed odio",
+                "artist": "Lauren Taylor",
+                "image": "../images/m8.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+                "time": "07:50"
+            },
+            {
+                "id": "g-world-2",
+                "name": "Curabitur blandit",
+                "artist": "Augue",
+                "image": "../images/m7.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+                "time": "08:36"
+            },
+            {
+                "id": "g-world-3",
+                "name": "Little Town",
+                "artist": "Augue",
+                "image": "../images/m4.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+                "time": "07:18"
+            },
+            {
+                "id": "g-world-4",
+                "name": "Fermentum diam",
+                "artist": "Chris Fox",
+                "image": "../images/m1.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+                "time": "08:03"
+            },
+            {
+                "id": "g-world-5",
+                "name": "Listen Wind",
+                "artist": "Mauris Qiaos",
+                "image": "../images/m3.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+                "time": "11:16"
+            },
+            {
+                "id": "g-world-6",
+                "name": "Spring Rain",
+                "artist": "Filex",
+                "image": "../images/m18.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+                "time": "06:13"
+            },
+            {
+                "id": "g-world-7",
+                "name": "Tincidunt libero",
+                "artist": "Phasellus",
+                "image": "../images/m16.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+                "time": "07:06"
+            },
+            {
+                "id": "g-world-8",
+                "name": "Vivamus sagittis",
+                "artist": "Lauren Taylor",
+                "image": "../images/m10.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+                "time": "05:44"
+            },
+            {
+                "id": "g-world-9",
+                "name": "Tempered Song",
+                "artist": "Dan Doorack",
+                "image": "../images/m19.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+                "time": "05:03"
+            },
+            {
+                "id": "g-world-10",
+                "name": "Urna mollis",
+                "artist": "Dan Doorack",
+                "image": "../images/m12.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+                "time": "05:54"
+            },
+            {
+                "id": "g-world-11",
+                "name": "Vestibulum ullamcorper",
+                "artist": "Neque",
+                "image": "../images/m5.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+                "time": "04:40"
+            },
+            {
+                "id": "g-world-12",
+                "name": "Breaking Me",
+                "artist": "Amanda Conlan",
+                "image": "../images/m13.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+                "time": "07:01"
+            },
+            {
+                "id": "g-world-13",
+                "name": "Panda Style",
+                "artist": "Chris Fox",
+                "image": "../images/m15.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+                "time": "05:25"
+            },
+            {
+                "id": "g-world-14",
+                "name": "Sodales nisi",
+                "artist": "Foxes",
+                "image": "../images/m11.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+                "time": "06:29"
+            },
+            {
+                "id": "g-world-15",
+                "name": "Sec condimentum",
+                "artist": "Dan Doorack",
+                "image": "../images/m14.jpg",
+                "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+                "time": "08:47"
             }
         ]
     }

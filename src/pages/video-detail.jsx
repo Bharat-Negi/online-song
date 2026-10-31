@@ -1,206 +1,88 @@
+import { useEffect, useRef } from 'react';
+import { Link, Navigate, useParams } from 'react-router-dom';
+import CommentSection from '../common-pages/commentSection';
+import useComments from '../common-pages/useComments';
+import { usePlayer } from '../common-pages/playerContext';
+import VideoData from '../json-data/videos.json';
+
 export default function VideoDetailPage() {
+    const { id } = useParams();
+    const video = VideoData.find((item) => String(item.id) === id);
+    const comments = useComments('video-' + id);
+    const player = usePlayer();
+    const scrollRef = useRef(null);
+    const commentsRef = useRef(null);
+
+    // Back to the top when switching to another video
+    useEffect(() => {
+        if (scrollRef.current) {
+            scrollRef.current.scrollTop = 0;
+        }
+    }, [id]);
+
+    if (!video) {
+        return <Navigate to="/video" replace />;
+    }
+
+    const index = VideoData.indexOf(video);
+    const prev = VideoData[index - 1];
+    const next = VideoData[index + 1];
+    const suggestions = VideoData.filter((item) => item.id !== video.id);
+
+    const scrollToComments = (e) => {
+        e.preventDefault();
+        commentsRef.current.scrollIntoView({ behavior: 'smooth' });
+    };
+
     return(
         <>
-            <section className="scrollable wrapper-lg noJsplayer">
+            <section className="scrollable wrapper-lg noJsplayer" ref={scrollRef}>
               <div className="row">
                 <div className="col-sm-8">
                   <div className="panel">
-                    <div id="jp_container_1">
-                      <div className="jp-type-single pos-rlt">
-                        <div id="jplayer_1" className="jp-jplayer jp-video"></div>
-                        <div className="jp-gui">
-                          <div className="jp-video-play">
-                            <a className="fa fa-5x text-white fa-play-circle"></a>
-                          </div>
-                          <div className="jp-interface bg-info padder">
-                            <div className="jp-controls">
-                              <div>
-                                <a className="jp-play"><i className="icon-control-play i-2x"></i></a>
-                                <a className="jp-pause hid"><i className="icon-control-pause i-2x"></i></a>
-                              </div>
-                              <div className="jp-progress">
-                                <div className="jp-seek-bar dker">
-                                  <div className="jp-play-bar dk">
-                                  </div>
-                                  <div className="jp-title text-lt">
-                                    <ul>
-                                      <li></li>
-                                    </ul>
-                                  </div>
-                                </div>
-                              </div>
-                              <div className="hidden-xs hidden-sm jp-current-time text-xs text-muted"></div>
-                              <div className="hidden-xs hidden-sm jp-duration text-xs text-muted"></div>
-                              <div className="hidden-xs hidden-sm">
-                                <a className="jp-mute" title="mute"><i className="icon-volume-2"></i></a>
-                                <a className="jp-unmute hid" title="unmute"><i className="icon-volume-off"></i></a>
-                              </div>
-                              <div className="hidden-xs hidden-sm jp-volume">
-                                <div className="jp-volume-bar dk">
-                                  <div className="jp-volume-bar-value lter"></div>
-                                </div>
-                              </div>
-                              <div>
-                                <a className="jp-full-screen" title="full screen"><i className="fa fa-expand"></i></a>
-                                <a className="jp-restore-screen" title="restore screen"><i className="fa fa-compress text-lt"></i></a>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="jp-no-solution hide">
-                          <span>Update Required</span>
-                          To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-                        </div>
-                      </div>
-                    </div>
+                    {/* key: load the new source when the video changes; pause the music when the video starts */}
+                    <video key={video.id} className="video-player" controls preload="metadata" poster={video.image} onPlay={player.pause}>
+                      <source src={video.src} />
+                      Your browser does not support the video tag.
+                    </video>
                     <div className="wrapper-lg">
-                      <h2 className="m-t-none text-black">Big Buck Bunny Trailer</h2>
+                      <h2 className="m-t-none text-black">{video.title}</h2>
                       <div className="post-sum">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat. 
-                        <br /><br />
-                        Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
+                        <p>{video.description}</p>
                       </div>
                       <div className="line b-b"></div>
                       <div className="text-muted">
-                        <i className="fa fa-user icon-muted"></i> by <a href="#" className="m-r-sm">Admin</a>
-                        <i className="fa fa-clock-o icon-muted"></i> Feb 20, 2013
-                        <a href="#" className="m-l-sm"><i className="fa fa-comment-o icon-muted"></i> 3 comments</a>
+                        <i className="fa fa-user icon-muted"></i> by <span className="m-r-sm text-info">{video.cast}</span>
+                        <i className="fa fa-film icon-muted"></i> {video.category}
+                        <i className="fa fa-calendar icon-muted m-l-sm"></i> {video.year}
+                        <i className="fa fa-clock-o icon-muted m-l-sm"></i> {video.time}
+                        <a href="#" className="m-l-sm" onClick={scrollToComments}><i className="fa fa-comment-o icon-muted"></i> {comments.comments.length} comments</a>
                       </div>
                     </div>
                   </div>
-                  <h4 className="m-t-lg m-b">3 Comments</h4>
-                  <section className="comment-list block">
-                    <article id="comment-id-1" className="comment-item">
-                      <a className="pull-left thumb-sm">
-                        <img src="images/a0.png" className="img-circle" />
-                      </a>
-                      <section className="comment-body m-b">
-                        <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label className="label bg-info m-l-xs">Editor</label> 
-                          <span className="text-muted text-xs block m-t-xs">
-                            24 minutes ago
-                          </span>
-                        </header>
-                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum.</div>
-                      </section>
-                    </article>
-                    
-                    <article id="comment-id-2" className="comment-item comment-reply">
-                      <a className="pull-left thumb-sm">
-                        <img src="images/a1.png" className="img-circle" />
-                      </a>
-                      <section className="comment-body m-b">
-                        <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label className="label bg-dark m-l-xs">Admin</label> 
-                          <span className="text-muted text-xs block m-t-xs">
-                            26 minutes ago
-                          </span>
-                        </header>
-                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                      </section>
-                    </article>
-                   
-                    <article id="comment-id-2" className="comment-item">
-                      <a className="pull-left thumb-sm">
-                        <img src="images/a2.png" className="img-circle" />
-                      </a>
-                      <section className="comment-body m-b">
-                        <header>
-                          <a href="#"><strong>John smith</strong></a>
-                          <label className="label bg-dark m-l-xs">Admin</label> 
-                          <span className="text-muted text-xs block m-t-xs">
-                            26 minutes ago
-                          </span>
-                        </header>
-                        <blockquote className="m-t">
-                          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                          <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-                        </blockquote>
-                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                      </section>
-                    </article>
-                  </section>
-                  <h4 className="m-t-lg m-b">Leave a comment</h4>
-                  <form>
-                    <div className="form-group pull-in clearfix">
-                      <div className="col-sm-6">
-                        <label>Your name</label>
-                        <input type="text" className="form-control" placeholder="Name" />
-                      </div>
-                      <div className="col-sm-6">
-                        <label >Email</label>
-                        <input type="email" className="form-control" placeholder="Enter email" />
-                      </div>
-                    </div>
-                    <div className="form-group">
-                      <label>Comment</label>
-                      <textarea className="form-control" rows="5" placeholder="Type your comment"></textarea>
-                    </div>
-                    <div className="form-group">
-                      <button type="submit" className="btn btn-success">Submit comment</button>
-                    </div>
-                  </form>
+                  <div className="clearfix m-b">
+                    {prev && <Link to={'/video/' + prev.id} className="btn btn-default btn-rounded"><i className="fa fa-chevron-left m-r-xs"></i> {prev.title}</Link>}
+                    {next && <Link to={'/video/' + next.id} className="btn btn-default btn-rounded pull-right">{next.title} <i className="fa fa-chevron-right m-l-xs"></i></Link>}
+                  </div>
+                  <div ref={commentsRef}>
+                    <CommentSection {...comments} />
+                  </div>
                 </div>
                 <div className="col-sm-4">
                   <div className="panel panel-default">
                     <div className="panel-heading">Suggestions</div>
                     <div className="panel-body">
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m40.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Bootstrap 3: What you need to know</a>
-                          <div className="text-xs block m-t-xs"><a href="#">Travel</a> 2 minutes ago</div>
-                        </div>
-                      </article>
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m41.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Lorem ipsum dolor sit amet it.</a>
-                          <div className="text-xs block m-t-xs"><a href="#">Design</a> 2 hours ago</div>
-                        </div>
-                      </article>
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m42.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Sed diam nonummy tincidunt ut laoreet</a>
-                          <div className="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m43.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Lonummy nibh euismod sed laoreet</a>
-                          <div className="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m44.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Mibh euismod tincidunt ut laoreet</a>
-                          <div className="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
-                      <article className="media">
-                        <a href="#" className="pull-left thumb-lg m-t-xs">
-                          <img src="images/m45.jpg" />
-                        </a>
-                        <div className="media-body">                        
-                          <a href="#" className="font-semibold">Siam nonummy nibh oreet</a>
-                          <div className="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                        </div>
-                      </article>
+                      {suggestions.map((item) => (
+                        <article className="media" key={item.id}>
+                          <Link to={'/video/' + item.id} className="pull-left thumb-lg m-t-xs">
+                            <img src={item.image} alt={item.title} className="video-thumb" />
+                          </Link>
+                          <div className="media-body">
+                            <Link to={'/video/' + item.id} className="font-semibold">{item.title}</Link>
+                            <div className="text-xs block m-t-xs">{item.category} · {item.time}</div>
+                          </div>
+                        </article>
+                      ))}
                     </div>
                   </div>
                 </div>

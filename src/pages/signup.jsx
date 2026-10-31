@@ -5,13 +5,8 @@ import { toast } from 'react-toastify';
 export default function SignupPage() {
 
     const [id, idchange] = useState("");
-    const [name, namechange] = useState("");
     const [password, passwordchange] = useState("");
     const [email, emailchange] = useState("");
-    const [gender, genderchange] = useState("male");
-    const [phone, phonechange] = useState("");
-    const [country, countrychange] = useState("");
-    const [address, addresschange] = useState("");
 
     const navigate = useNavigate();
 
@@ -19,7 +14,7 @@ export default function SignupPage() {
         let isproceed = true;
         let errormessage = 'Please enter ';
 
-        if (id === null || id === '') {
+        if (id === null || id.trim() === '') {
             isproceed = false;
             errormessage += 'Name ';
         }
@@ -33,13 +28,9 @@ export default function SignupPage() {
         }
         if (!isproceed) {
             toast.warning(errormessage);
-        } else {
-            if (/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)) {
-                toast.warning('Correct');
-            } else {
-                isproceed = false;
-                toast.warning('Please enter the valid email');
-            }
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            isproceed = false;
+            toast.warning('Please enter the valid email');
         }
 
         return isproceed;
@@ -47,14 +38,22 @@ export default function SignupPage() {
 
     const handlesubmit = (e) => {
         e.preventDefault();
-        let regobj = { id, password, email };
+        let regobj = { id: id.trim(), password, email };
         // console.log(regobj);
         if (IsValidate()) {
-            fetch("http://localhost:8000/user", {
-                method: "POST",
-                headers: { "content-type": "application/json" },
-                body: JSON.stringify(regobj)
+            fetch("http://localhost:8000/user/" + encodeURIComponent(regobj.id)).then((res) => {
+                if (res.ok) {
+                    throw new Error('Username already exists');
+                }
+                return fetch("http://localhost:8000/user", {
+                    method: "POST",
+                    headers: { "content-type": "application/json" },
+                    body: JSON.stringify(regobj)
+                });
             }).then((res) => {
+                if (!res.ok) {
+                    throw new Error('Server responded with ' + res.status);
+                }
                 toast.success('Registered Successfully');
                 navigate('/login');
             }).catch((err) => {

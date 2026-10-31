@@ -1,4 +1,9 @@
+import CommentSection from '../common-pages/commentSection';
+import useComments from '../common-pages/useComments';
+
 export default function BlogPage() {
+    const comments = useComments('blog');
+
     return (
         <>
             <section className="scrollable wrapper-lg noJsplayer">
@@ -54,78 +59,7 @@ export default function BlogPage() {
                                     <li><a href="#"><i className="fa fa-chevron-right"></i></a></li>
                                 </ul>
                             </div>
-                            <h4 className="m-t-lg m-b">3 Comments</h4>
-                            <section className="comment-list block">
-                                <article id="comment-id-1" className="comment-item">
-                                    <a className="pull-left thumb-sm">
-                                        <img src="images/a0.png" className="img-circle" />
-                                    </a>
-                                    <section className="comment-body m-b">
-                                        <header>
-                                            <a href="#"><strong>John smith</strong></a>
-                                            <label className="label bg-info m-l-xs">Editor</label>
-                                            <span className="text-muted text-xs block m-t-xs">
-                                                24 minutes ago
-                                            </span>
-                                        </header>
-                                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum.</div>
-                                    </section>
-                                </article>
-                                <article id="comment-id-2" className="comment-item comment-reply">
-                                    <a className="pull-left thumb-sm">
-                                        <img src="images/a1.png" className="img-circle" />
-                                    </a>
-                                    <section className="comment-body m-b">
-                                        <header>
-                                            <a href="#"><strong>John smith</strong></a>
-                                            <label className="label bg-dark m-l-xs">Admin</label>
-                                            <span className="text-muted text-xs block m-t-xs">
-                                                26 minutes ago
-                                            </span>
-                                        </header>
-                                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                                    </section>
-                                </article>
-                                <article id="comment-id-2" className="comment-item">
-                                    <a className="pull-left thumb-sm">
-                                        <img src="images/a2.png" className="img-circle" />
-                                    </a>
-                                    <section className="comment-body m-b">
-                                        <header>
-                                            <a href="#"><strong>John smith</strong></a>
-                                            <label className="label bg-dark m-l-xs">Admin</label>
-                                            <span className="text-muted text-xs block m-t-xs">
-                                                26 minutes ago
-                                            </span>
-                                        </header>
-                                        <blockquote className="m-t">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                                            <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
-                                        </blockquote>
-                                        <div className="m-t-sm">Lorem ipsum dolor sit amet, consecteter adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</div>
-                                    </section>
-                                </article>
-                            </section>
-                            <h4 className="m-t-lg m-b">Leave a comment</h4>
-                            <form>
-                                <div className="form-group pull-in clearfix">
-                                    <div className="col-sm-6">
-                                        <label>Your name</label>
-                                        <input type="text" className="form-control" placeholder="Name" />
-                                    </div>
-                                    <div className="col-sm-6">
-                                        <label >Email</label>
-                                        <input type="email" className="form-control" placeholder="Enter email" />
-                                    </div>
-                                </div>
-                                <div className="form-group">
-                                    <label>Comment</label>
-                                    <textarea className="form-control" rows="5" placeholder="Type your comment"></textarea>
-                                </div>
-                                <div className="form-group">
-                                    <button type="submit" className="btn btn-success">Submit comment</button>
-                                </div>
-                            </form>
+                            <CommentSection {...comments} />
                         </div>
                         <div className="col-sm-3">
                             <h5 className="font-bold">Categories</h5>

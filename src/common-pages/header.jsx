@@ -1,15 +1,41 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { timeAgo } from './useNotifications';
+import { UserAvatar } from './avatar';
 
-export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
+export default function HeaderPage({leftLogoOpen, isLogo, personName, mobileNavToggle, notifications, isNoti, setIsNoti}) {
     const [isActive, setIsActive] = useState(false);
-    const [isNoti, setIsNoti] = useState(false);
+    const [isUserMenu, setIsUserMenu] = useState(false);   // 👈 mobile user menu
+    const { pathname } = useLocation();
+
+    // Close the menus after moving to another page
+    useEffect(() => {
+        setIsActive(false);
+        setIsUserMenu(false);
+    }, [pathname]);
+    const { notifications: list, unreadCount, markRead, markAllRead } = notifications;
 
     const userRef = useRef(null);       // 👈 user dropdown
     const notiRef = useRef(null);       // 👈 notification dropdown
 
-    const ToggleClass = () => setIsActive(!isActive);
-    const notificationOpen = () => setIsNoti(!isNoti);
+    const ToggleClass = (e) => {
+        e.preventDefault();
+        setIsActive(!isActive);
+    };
+    const notificationOpen = (e) => {
+        e.preventDefault();
+        setIsNoti(!isNoti);
+    };
+    // Open the bell dropdown from the "Notifications" item in the user menu
+    const showNotifications = (e) => {
+        e.preventDefault();
+        setIsActive(false);
+        setIsNoti(true);
+    };
+    const markAllClick = (e) => {
+        e.preventDefault();
+        markAllRead();
+    };
 
     // 🔥 Close dropdown when clicking outside
     useEffect(() => {
@@ -32,7 +58,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
     return (
         <header className="bg-white-only header header-md navbar navbar-fixed-top-xs">
             <div className={isLogo ? "navbar-header aside bg-info nav-xs" : "navbar-header aside bg-info"}>
-                <a className="btn btn-link visible-xs">
+                <a className="btn btn-link visible-xs" onClick={mobileNavToggle}>
                     <i className="icon-list"></i>
                 </a>
                 <Link to='/' className="navbar-brand text-lt">
@@ -40,7 +66,7 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                     <img src="../images/logo.png" alt="." className="hide" />
                     <span className="hidden-nav-xs m-l-sm">Online Song</span>
                 </Link>
-                <a className="btn btn-link visible-xs">
+                <a className="btn btn-link visible-xs" onClick={() => setIsUserMenu(!isUserMenu)}>
                     <i className="icon-settings"></i>
                 </a>
             </div>
@@ -62,38 +88,40 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                 </div>
             </form>
             <div className="navbar-right">
-                <ul className="nav navbar-nav m-n hidden-xs nav-user user">
+                <ul className={isUserMenu ? "nav navbar-nav m-n hidden-xs nav-user user show" : "nav navbar-nav m-n hidden-xs nav-user user"}>
                 {/* 🔔 Notification Dropdown */}
                     <li className={isNoti ? "hidden-xs open" : "hidden-xs"} ref={notiRef}>
                         <a href="#" className="dropdown-toggle lt" onClick={notificationOpen}>
                             <i className="icon-bell"></i>
-                            <span className="badge badge-sm up bg-danger count">2</span>
+                            {unreadCount > 0 && <span className="badge badge-sm up bg-danger count">{unreadCount}</span>}
                         </a>
                         <section className="dropdown-menu aside-xl animated fadeInUp">
                             <section className="panel bg-white">
                                 <div className="panel-heading b-light bg-light">
-                                    <strong>You have <span className="count">2</span> notifications</strong>
+                                    <strong>You have <span className="count">{unreadCount}</span> new notification{unreadCount === 1 ? '' : 's'}</strong>
                                 </div>
-                                <div className="list-group list-group-alt">
-                                    <a href="#" className="media list-group-item">
-                                        <span className="pull-left thumb-sm">
-                                            <img src="../images/a0.png" alt="..." className="img-circle" />
-                                        </span>
-                                        <span className="media-body block m-b-none">
-                                            Use awesome animate.css<br />
-                                            <small className="text-muted">10 minutes ago</small>
-                                        </span>
-                                    </a>
-                                    <a href="#" className="media list-group-item">
-                                        <span className="media-body block m-b-none">
-                                            1.0 initial released<br />
-                                            <small className="text-muted">1 hour ago</small>
-                                        </span>
-                                    </a>
+                                <div className="list-group list-group-alt notification-list">
+                                    {list.length === 0 && (
+                                        <span className="list-group-item text-muted">No notifications</span>
+                                    )}
+                                    {list.map((item) => (
+                                        <Link key={item.id} to={item.link}
+                                            className={item.read ? "media list-group-item notification-item" : "media list-group-item notification-item unread"}
+                                            onClick={() => { markRead(item.id); setIsNoti(false); }}>
+                                            <span className="pull-left thumb-sm">
+                                                <img src={item.image} alt="..." className="img-circle" />
+                                            </span>
+                                            <span className="media-body block m-b-none">
+                                                {item.text}<br />
+                                                <small className="text-muted">{timeAgo(item.time)}</small>
+                                            </span>
+                                        </Link>
+                                    ))}
                                 </div>
                                 <div className="panel-footer text-sm">
-                                    <a href="#" className="pull-right"><i className="fa fa-cog"></i></a>
-                                    <a href="#notes">See all the notifications</a>
+                                    {unreadCount > 0
+                                        ? <a href="#" onClick={markAllClick}>Mark all as read</a>
+                                        : <span className="text-muted">You&apos;re all caught up</span>}
                                 </div>
                             </section>
                         </section>
@@ -103,21 +131,21 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName}) {
                     <li className={isActive ? "dropdown open" : "dropdown"} ref={userRef}>
                         <a href="#" className="dropdown-toggle bg clear userName" onClick={ToggleClass}>
                             <span className="thumb-sm avatar pull-right m-t-n-sm m-b-n-sm m-l-sm">
-                                <img src="../images/a0.png" alt="..." />
+                                <UserAvatar />
                             </span>
                             {personName} <b className="caret"></b>
                         </a>
                         <ul className="dropdown-menu">
                             <li>
                                 <span className="arrow top"></span>
-                                <a href="#">Settings</a>
+                                <Link to='/settings'>Settings</Link>
                             </li>
                             <li>
                                 <Link to='/profile'>Profile</Link>
                             </li>
                             <li>
-                                <a href="#">
-                                    <span className="badge bg-danger pull-right">3</span>
+                                <a href="#" onClick={showNotifications}>
+                                    {unreadCount > 0 && <span className="badge bg-danger pull-right">{unreadCount}</span>}
                                     Notifications
                                 </a>
                             </li>

@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "title": "Big Buck Bunny Trailer",
+        "cast": "Blender Foundation",
+        "category": "Trailer",
+        "year": 2008,
+        "image": "../images/videos/video-1.jpg",
+        "src": "https://download.blender.org/peach/trailer/trailer_480p.mov",
+        "time": "00:33",
+        "featured": true,
+        "description": "The trailer for Big Buck Bunny, a comedy about a large rabbit who gets even with three bullying rodents. It was made by the Blender Institute as an open movie and released under a Creative Commons licence."
+    },
+    {
+        "id": 2,
+        "title": "Sintel Trailer",
+        "cast": "Blender Foundation",
+        "category": "Trailer",
+        "year": 2010,
+        "image": "../images/videos/video-2.jpg",
+        "src": "https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4",
+        "time": "00:52",
+        "featured": true,
+        "description": "The trailer for Sintel, a fantasy short about a young woman searching for the baby dragon she raised. It is the third open movie from the Blender Foundation."
+    },
+    {
+        "id": 3,
+        "title": "Tears of Steel",
+        "cast": "Blender Foundation",
+        "category": "Short film",
+        "year": 2012,
+        "image": "../images/videos/video-3.jpg",
+        "src": "https://download.blender.org/demo/movies/ToS/tears_of_steel_720p.mov",
+        "time": "12:14",
+        "featured": true,
+        "description": "A science-fiction short set in a future Amsterdam, where a group of scientists tries to save the world from robots. It combines live action with visual effects made in Blender."
+    },
+    {
+        "id": 4,
+        "title": "Flower",
+        "cast": "MDN Web Docs",
+        "category": "Clip",
+        "year": 2020,
+        "image": "../images/videos/video-4.jpg",
+        "src": "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+        "time": "00:05",
+        "featured": false,
+        "description": "A short public-domain (CC0) clip of a flower, used as a sample video in the MDN Web Docs examples."
+    },
+    {
+        "id": 5,
+        "title": "Big Buck Bunny",
+        "cast": "Blender Foundation",
+        "category": "Short film",
+        "year": 2008,
+        "image": "../images/videos/video-5.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/transcoded/c/c0/Big_Buck_Bunny_4K.webm/Big_Buck_Bunny_4K.webm.480p.vp9.webm",
+        "time": "10:35",
+        "featured": false,
+        "description": "The full Big Buck Bunny short film. A giant rabbit enjoys a quiet day in the forest until three rodents start causing trouble."
+    },
+    {
+        "id": 6,
+        "title": "Sintel",
+        "cast": "Blender Foundation",
+        "category": "Short film",
+        "year": 2010,
+        "image": "../images/videos/video-6.jpg",
+        "src": "https://upload.wikimedia.org/wikipedia/commons/transcoded/f/f1/Sintel_movie_4K.webm/Sintel_movie_4K.webm.480p.vp9.webm",
+        "time": "14:48",
+        "featured": false,
+        "description": "The full Sintel short film. A lonely young woman sets out on a long journey to find her lost dragon friend, Scales."
+    }
+]

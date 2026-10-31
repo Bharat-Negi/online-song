@@ -4,41 +4,47 @@
         "connectImg": "../images/a1.png",
         "connectName": "Chris Fox",
         "connectCity": "New York",
-        "connectOn" : "online"
+        "connectOn": "online",
+        "listening": 2
     },
     {
         "id": 2,
         "connectImg": "../images/a1.png",
         "connectName": "Amanda Conlan",
         "connectCity": "France",
-        "connectOn" : "online"
+        "connectOn": "online",
+        "listening": 7
     },
     {
         "id": 3,
         "connectImg": "../images/a1.png",
         "connectName": "Dan Doorack",
         "connectCity": "Hamburg",
-        "connectOn" : "away"
+        "connectOn": "away",
+        "lastSeen": 15
     },
     {
         "id": 4,
         "connectImg": "../images/a1.png",
         "connectName": "Lauren Taylor",
         "connectCity": "London",
-        "connectOn" : "offline"
+        "connectOn": "offline",
+        "lastSeen": 120
     },
     {
         "id": 5,
         "connectImg": "../images/a1.png",
         "connectName": "Bharat Negi",
         "connectCity": "India",
-        "connectOn" : "online"
+        "connectOn": "online",
+        "listening": 10
     },
     {
         "id": 6,
         "connectImg": "../images/m0.jpg",
         "connectName": "Pinky",
         "connectCity": "India",
-        "connectOn" : "offline"
+        "connectOn": "offline",
+        "lastSeen": 1440
     }
 ]

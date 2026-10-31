@@ -1,0 +1,237 @@
+{
+    "artist": {
+        "name": "Soph Ashe",
+        "followers": "101,400",
+        "image": "../images/m43.jpg"
+    },
+    "album": [
+        {
+            "id": "album-1",
+            "name": "E.T.M",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+            "time": "05:25",
+            "cover": "../images/m40.jpg"
+        },
+        {
+            "id": "album-2",
+            "name": "Vestibulum id ligula porta",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+            "time": "06:29",
+            "cover": "../images/m41.jpg"
+        },
+        {
+            "id": "album-3",
+            "name": "Praesent commodo cursus magna",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+            "time": "08:47",
+            "cover": "../images/m42.jpg"
+        },
+        {
+            "id": "album-4",
+            "name": "Curabitur blandit tempus",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+            "time": "09:11",
+            "cover": "../images/m44.jpg"
+        },
+        {
+            "id": "album-5",
+            "name": "Faucibus dolor auctor",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+            "time": "08:34",
+            "cover": "../images/m45.jpg"
+        },
+        {
+            "id": "album-6",
+            "name": "Get lacinia odio sem nec elit cibus dolor auctor sed odio dui mollis ornare",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3",
+            "time": "07:50",
+            "cover": "../images/m43.jpg"
+        },
+        {
+            "id": "album-7",
+            "name": "Faucibus dolor auctor",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3",
+            "time": "08:36",
+            "cover": "../images/m21.jpg"
+        },
+        {
+            "id": "album-8",
+            "name": "Donec sed odio dui",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3",
+            "time": "07:18",
+            "cover": "../images/m22.jpg"
+        },
+        {
+            "id": "album-9",
+            "name": "Urna mollis ornare vel eu leo",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3",
+            "time": "08:03",
+            "cover": "../images/p0.jpg"
+        },
+        {
+            "id": "album-10",
+            "name": "Vivamus sagittis lacus vel augue",
+            "artist": "Soph Ashe",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3",
+            "time": "11:16",
+            "cover": "../images/p2.jpg"
+        }
+    ],
+    "songs": [
+        {
+            "id": "song-1",
+            "name": "Little Town",
+            "artist": "Soph Ashe",
+            "image": "../images/m0.jpg",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+            "time": "06:13",
+            "cover": "../images/p3.jpg"
+        },
+        {
+            "id": "song-2",
+            "name": "Get lacinia odio sem nec elit",
+            "artist": "Filex",
+            "image": "../images/a1.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3",
+            "time": "07:06",
+            "cover": "../images/p4.jpg"
+        },
+        {
+            "id": "song-3",
+            "name": "Donec sed odio du",
+            "artist": "Dan Doorack",
+            "image": "../images/a2.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3",
+            "time": "05:44",
+            "cover": "../images/p5.jpg"
+        },
+        {
+            "id": "song-4",
+            "name": "Curabitur blandit tempu",
+            "artist": "Foxes",
+            "image": "../images/a3.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3",
+            "time": "05:03",
+            "cover": "../images/p6.jpg"
+        },
+        {
+            "id": "song-5",
+            "name": "Urna mollis ornare vel eu leo",
+            "artist": "Chris Fox",
+            "image": "../images/a4.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3",
+            "time": "05:54",
+            "cover": "../images/p7.jpg"
+        },
+        {
+            "id": "song-6",
+            "name": "Faucibus dolor auctor",
+            "artist": "Lauren Taylor",
+            "image": "../images/a5.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3",
+            "time": "04:40",
+            "cover": "../images/p8.jpg"
+        },
+        {
+            "id": "song-7",
+            "name": "Praesent commodo cursus magn",
+            "artist": "Chris Fox",
+            "image": "../images/a6.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3",
+            "time": "07:01",
+            "cover": "../images/p9.jpg"
+        },
+        {
+            "id": "song-8",
+            "name": "Vestibulum id",
+            "artist": "Milian",
+            "image": "../images/a7.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3",
+            "time": "05:25",
+            "cover": "../images/p10.jpg"
+        },
+        {
+            "id": "song-9",
+            "name": "Blandit tempu",
+            "artist": "Amanda Conlan",
+            "image": "../images/a8.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3",
+            "time": "06:29",
+            "cover": "../images/p11.jpg"
+        },
+        {
+            "id": "song-10",
+            "name": "Vestibulum ullamcorpe quis malesuada augue mco rpe",
+            "artist": "Dan Doorack",
+            "image": "../images/a9.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3",
+            "time": "08:47",
+            "cover": "../images/p12.jpg"
+        },
+        {
+            "id": "song-11",
+            "name": "Natis ipsum ac feugiat",
+            "artist": "Hamburg",
+            "image": "../images/a10.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3",
+            "time": "09:11",
+            "cover": "../images/p13.jpg"
+        },
+        {
+            "id": "song-12",
+            "name": "Sec condimentum au",
+            "artist": "Amanda Conlan",
+            "image": "../images/a0.png",
+            "src": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3",
+            "time": "08:34",
+            "cover": "../images/p1.jpg"
+        }
+    ],
+    "artists": {
+        "Soph Ashe": {
+            "image": "../images/m43.jpg",
+            "followers": "101,400"
+        },
+        "Filex": {
+            "image": "../images/m40.jpg",
+            "followers": "48,250"
+        },
+        "Dan Doorack": {
+            "image": "../images/m41.jpg",
+            "followers": "73,900"
+        },
+        "Foxes": {
+            "image": "../images/m42.jpg",
+            "followers": "212,300"
+        },
+        "Chris Fox": {
+            "image": "../images/m44.jpg",
+            "followers": "35,120"
+        },
+        "Lauren Taylor": {
+            "image": "../images/m45.jpg",
+            "followers": "88,640"
+        },
+        "Milian": {
+            "image": "../images/p0.jpg",
+            "followers": "12,870"
+        },
+        "Amanda Conlan": {
+            "image": "../images/m21.jpg",
+            "followers": "56,410"
+        },
+        "Hamburg": {
+            "image": "../images/m22.jpg",
+            "followers": "9,350"
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from "react-toastify";
+import { usePlayer } from "../common-pages/playerContext";
 
 const LoginPage = () => {
 
@@ -8,9 +9,13 @@ const LoginPage = () => {
     const [password, passwordupdate] = useState('');
 
     const usenavigate = useNavigate();
+    const { pause } = usePlayer();
 
+    // Logging out (or landing on login) stops the music
     useEffect(() => {
         sessionStorage.clear();
+        pause();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const ProceedLogin = (e) => {
@@ -19,8 +24,8 @@ const LoginPage = () => {
         if (validate()) {
             // implentation
             // console.log('proceed');
-            fetch("http://localhost:8000/user/" + username).then((res) => {
-                return res.json();
+            fetch("http://localhost:8000/user/" + encodeURIComponent(username)).then((res) => {
+                return res.ok ? res.json() : {};
             }).then((resp) => {
                 // console.log(resp)
                 if (Object.keys(resp).length === 0) {
