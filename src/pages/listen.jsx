@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import JsPlayer from '../common-pages/jsPlayer';
 import { usePlayer } from '../common-pages/playerContext';
-import ListenData from '../json-data/listen.json';
+import { audiusNew, audiusTrending, useApiSongs, onCoverError } from '../common-pages/musicApi';
+
+// 12345 -> "12,345"
+const followers = (n) => (n || 0).toLocaleString('en-IN');
 
 const tiles = [
-    { title: 'Find', text: 'Search the music you like', color: 'text-info', image: '../images/m40.jpg', to: '/genres/acoustic' },
+    { title: 'Find', text: 'Search the music you like', color: 'text-info', image: '../images/m40.jpg', to: '/search' },
     { title: 'Listen', text: 'Find the peace in your heart', color: 'text-warning', image: '../images/m41.jpg', action: 'play', right: true },
     { title: 'Share', text: 'Share the good songs with your loves', color: 'text-success', image: '../images/m42.jpg', action: 'share' },
     { title: '2014', text: 'Find, Listen & Share', color: 'text-white', image: '../images/m44.jpg', to: '/events', right: true },
@@ -15,20 +18,24 @@ const tiles = [
 
 export default function Listen() {
     const player = usePlayer();
-    const [album, setAlbum] = useState(ListenData.album);
-    const { artist, artists, songs } = ListenData;
+    // Left: this month's top full songs. Middle: fresh songs from new artists. Both from Audius.
+    const top = useApiSongs(() => audiusTrending('', 10, 'month'), 'listen-top');
+    const fresh = useApiSongs(() => audiusNew(12), 'new-songs');
+    const [removed, setRemoved] = useState([]);
+    const album = top.songs.filter((song) => !removed.includes(song.id));
+    const songs = fresh.songs;
 
     const isAlbumPlaying = player.isPlaying && album.some((song) => song.id === player.current.id);
 
-    // Header follows the song in the player; Soph Ashe until something has been played.
-    // Picture: the song's own cover, else its artist's picture, else its thumbnail
+    // Header follows the song in the player; before that, the month's #1 artist.
+    // Picture: the artist's Audius cover photo, else the song cover
     const nowPlaying = player.hasSong ? player.current : null;
-    const known = nowPlaying && artists[nowPlaying.artist];
-    const header = !nowPlaying ? artist : {
-        name: nowPlaying.artist,
-        image: nowPlaying.cover || (known && known.image) || nowPlaying.image || artist.image,
-        followers: known ? known.followers : null
-    };
+    const featured = nowPlaying || album[0];
+    const header = featured ? {
+        name: featured.artist,
+        image: featured.artistCover || featured.image,
+        followers: featured.source === 'audius' ? followers(featured.artistFollowers) : null
+    } : { name: 'Loading…', image: '../images/m43.jpg', followers: null };
 
     // Header click: pause/resume the current song, or start the album
     const headerClick = () => {
@@ -48,7 +55,7 @@ export default function Listen() {
     };
 
     const removeFromAlbum = (song) => {
-        setAlbum(album.filter((item) => item.id !== song.id));
+        setRemoved([...removed, song.id]);
         toast.info(`"${song.name}" removed from the list`);
     };
 
@@ -105,10 +112,13 @@ export default function Listen() {
                                         )}
                                     </div>
                                     {/* key: fade in again when the picture changes */}
-                                    <img key={header.image} className="img-full listen-cover animated fadeIn" src={header.image} alt={header.name} />
+                                    <img key={header.image} className="img-full listen-cover animated fadeIn" src={header.image} alt={header.name} onError={onCoverError} />
                                 </div>
                                 <ul className="list-group list-group-lg no-radius no-border no-bg m-t-n-xxs m-b-none auto">
-                                    {album.length === 0 && (
+                                    <li className="list-group-item text-muted text-xs text-u-c">Top of the month · Audius</li>
+                                    {top.status === 'loading' && <li className="list-group-item text-muted">Loading songs…</li>}
+                                    {top.status === 'error' && <li className="list-group-item text-muted">Could not load songs. Check your internet connection.</li>}
+                                    {top.status === 'ok' && album.length === 0 && (
                                         <li className="list-group-item text-muted">No songs left in this list</li>
                                     )}
                                     {album.map((song) => (
@@ -137,6 +147,9 @@ export default function Listen() {
                         <section className="vbox">
                             <section className="scrollable hover">
                                 <ul className="list-group list-group-lg no-bg auto m-b-none m-t-n-xxs">
+                                    <li className="list-group-item text-muted text-xs text-u-c">Fresh from new artists · Audius</li>
+                                    {fresh.status === 'loading' && <li className="list-group-item text-muted">Loading songs…</li>}
+                                    {fresh.status === 'error' && <li className="list-group-item text-muted">Could not load songs.</li>}
                                     {songs.map((song) => (
                                         <li className="list-group-item clearfix" key={song.id}>
                                             <a className={player.isSongPlaying(song.id) ? "jp-play-me pull-right m-t-sm m-l text-md cus-hand active" : "jp-play-me pull-right m-t-sm m-l text-md cus-hand"}
@@ -145,7 +158,7 @@ export default function Listen() {
                                                 <i className="icon-control-pause text-active"></i>
                                             </a>
                                             <a className="pull-left thumb-sm m-r cus-hand" onClick={() => player.toggleSong(song, songs)}>
-                                                <img src={song.cover || song.image} alt={song.name} className="square-thumb" />
+                                                <img src={song.image} alt={song.name} className="square-thumb cover-loading" loading="lazy" onError={onCoverError} />
                                             </a>
                                             <a className="clear cus-hand" onClick={() => player.toggleSong(song, songs)}>
                                                 <span className={player.current.id === song.id ? "block text-ellipsis text-info" : "block text-ellipsis"}>{song.name}</span>

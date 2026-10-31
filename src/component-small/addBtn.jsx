@@ -45,16 +45,19 @@ export default function AddBtnPage({ song, onMenuChange = () => {} }) {
     }, [isMenu]);
 
     const toggleHeart = () => {
+        library.rememberSong(song);
         const added = library.toggleFavourite(song.id);
         toast.info(added ? `Added "${song.name}" to favourites` : `Removed "${song.name}" from favourites`);
     };
 
     const toggleMine = () => {
+        library.rememberSong(song);
         const added = library.togglePlaylist(song.id);
         toast.success(added ? `Added "${song.name}" to My Playlist` : `Removed "${song.name}" from My Playlist`);
     };
 
     const toggleCustom = (pl) => {
+        library.rememberSong(song);
         const added = library.toggleSongInPlaylist(pl.id, song.id);
         toast.success(added ? `Added "${song.name}" to ${pl.name}` : `Removed "${song.name}" from ${pl.name}`);
     };
@@ -72,6 +75,7 @@ export default function AddBtnPage({ song, onMenuChange = () => {} }) {
             return;
         }
         const playlistId = library.createPlaylist(name);
+        library.rememberSong(song);
         library.toggleSongInPlaylist(playlistId, song.id);
         toast.success(`Created "${name}" and added "${song.name}"`);
         openMenu(false);

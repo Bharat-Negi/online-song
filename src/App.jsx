@@ -12,11 +12,15 @@ import VideoPage from "./pages/video";
 import ProfilePage from "./pages/profile";
 import Layout from './pages/layout';
 import BlogPage from './pages/blog';
+import BlogPostPage from './pages/blog-post';
+import BlogEditorPage from './pages/blog-editor';
 import InvoicePage from './pages/invoice';
 import VideoDetailPage from './pages/video-detail';
 import MyPlaylistPage from './pages/my-playlist';
 import EventDetailPage from './pages/event-detail';
 import SettingsPage from './pages/settings';
+import SearchPage from './pages/search';
+import BookmarksPage from './pages/bookmarks';
 
 import GenrePage from './genres-pages/genre';
 
@@ -40,7 +44,12 @@ export default function App() {
           <Route path="/video" element={<Layout><VideoPage /></Layout>} />
           <Route path="/profile" element={<Layout><ProfilePage /></Layout>} />
           <Route path="/settings" element={<Layout><SettingsPage /></Layout>} />
+          <Route path="/search" element={<Layout><SearchPage /></Layout>} />
+          <Route path="/bookmarks" element={<Layout><BookmarksPage /></Layout>} />
           <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
+          <Route path="/blog/new" element={<Layout><BlogEditorPage /></Layout>} />
+          <Route path="/blog/:id" element={<Layout><BlogPostPage /></Layout>} />
+          <Route path="/blog/:id/edit" element={<Layout><BlogEditorPage /></Layout>} />
           <Route path="/invoice" element={<Layout><InvoicePage /></Layout>} />
           <Route path="/video/:id" element={<Layout><VideoDetailPage /></Layout>} />
           <Route path="/events/:id" element={<Layout><EventDetailPage /></Layout>} />

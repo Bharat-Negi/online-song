@@ -1,10 +1,9 @@
 import { usePlayer } from '../common-pages/playerContext'
-import { topSongs } from '../common-pages/songCatalog'
+import { audiusChart, useApiSongs, onCoverError } from '../common-pages/musicApi'
 
-const maxPlays = Math.max(...topSongs.map((song) => song.plays));
 
-// 2480000 -> "2.5M", 980000 -> "980K"
-const shortNumber = (n) => n >= 1000000 ? (n / 1000000).toFixed(1).replace('.0', '') + 'M' : Math.round(n / 1000) + 'K';
+// 2480000 -> "2.5M", 980000 -> "980K", 640 -> "640"
+const shortNumber = (n) => n >= 1000000 ? (n / 1000000).toFixed(1).replace('.0', '') + 'M' : n >= 1000 ? (n / 1000).toFixed(n >= 10000 ? 0 : 1).replace('.0', '') + 'K' : String(n);
 
 // Arrow, colour and tooltip for the chart movement
 const trendInfo = (song) => {
@@ -12,20 +11,27 @@ const trendInfo = (song) => {
         return { label: 'NEW', className: 'tc-trend-new', title: 'New entry this week' };
     }
     if (song.trend === 'up') {
-        return { label: '▲', className: 'tc-trend-up', title: `Up from #${song.lastWeek}` };
+        return { label: '▲', className: 'tc-trend-up', title: `Up from #${song.lastWeek} this month` };
     }
     if (song.trend === 'down') {
-        return { label: '▼', className: 'tc-trend-down', title: `Down from #${song.lastWeek}` };
+        return { label: '▼', className: 'tc-trend-down', title: `Down from #${song.lastWeek} this month` };
     }
-    return { label: '–', className: 'tc-trend-same', title: 'Same as last week' };
+    return { label: '–', className: 'tc-trend-same', title: 'Same position as this month' };
 };
 
 export default function TopSongs() {
     const player = usePlayer();
+    // This week's most-trending full songs on Audius, with real play counts
+    const chart = useApiSongs(() => audiusChart(5), 'top-songs');
+    const topSongs = chart.songs;
+    const maxPlays = Math.max(1, ...topSongs.map((song) => song.plays));
     const isChartPlaying = player.isPlaying && topSongs.some((song) => song.id === player.current.id);
 
     // Pause if the chart is playing, otherwise play it from #1
     const playAll = () => {
+        if (topSongs.length === 0) {
+            return;
+        }
         const playing = isChartPlaying && topSongs.find((song) => song.id === player.current.id);
         player.toggleSong(playing || topSongs[0], topSongs);
     };
@@ -40,6 +46,8 @@ export default function TopSongs() {
                 </button>
             </div>
             <div className="tc-list">
+                {chart.status === 'loading' && topSongs.length === 0 && <p className="text-muted padder m-t m-b">Loading this week's chart…</p>}
+                {chart.status === 'error' && <p className="text-muted padder m-t m-b">Could not load the chart. Check your internet connection.</p>}
                 {topSongs.map((song) => {
                     const isPlaying = player.isSongPlaying(song.id);
                     const isCurrent = player.current.id === song.id;
@@ -52,7 +60,7 @@ export default function TopSongs() {
                                 <small className={trend.className} title={trend.title}>{trend.label}</small>
                             </div>
                             <div className="tc-cover">
-                                <img src={song.image} alt={song.name} />
+                                <img src={song.image} alt={song.name} className="cover-loading" onError={onCoverError} />
                                 <span className="tc-cover-btn">
                                     {isPlaying ? (
                                         <span className="musicbar animate tc-bars">
@@ -70,7 +78,7 @@ export default function TopSongs() {
                             <div className="tc-info">
                                 <span className="tc-name text-ellipsis">{song.name}</span>
                                 <span className="tc-artist text-ellipsis">{song.artist}</span>
-                                <span className="tc-bar" title={`${song.plays.toLocaleString('en-IN')} plays this week`}>
+                                <span className="tc-bar" title={`${song.plays.toLocaleString('en-IN')} plays`}>
                                     <span style={{ width: (song.plays / maxPlays) * 100 + '%' }}></span>
                                 </span>
                             </div>

@@ -69,7 +69,7 @@ export default function Video() {
         <>
             <section className="scrollable padder-lg noJsplayer">
                 <h2 className="font-thin m-b">Video</h2>
-                <div className="row row-sm">
+                <div className="row row-sm card-grid">
                     {featured.map((video) => (
                         <div className="col-xs-12 col-sm-4" key={video.id}>
                             <VideoCard video={video} large />
@@ -90,7 +90,7 @@ export default function Video() {
                     </ul>
                 </div>
 
-                <div className="row row-sm">
+                <div className="row row-sm card-grid">
                     {pageVideos.length === 0 && (
                         <div className="col-xs-12 text-muted m-b">No videos found.</div>
                     )}

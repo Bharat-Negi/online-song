@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { usePlayer } from "../common-pages/playerContext";
 import { useLibrary } from "../common-pages/libraryContext";
-import { findSong } from "../common-pages/songCatalog";
 import { timeAgo } from "../common-pages/useNotifications";
 import { formatDay, isPast, whenLabel } from "../common-pages/eventUtils";
 import EventData from "../json-data/events.json";
 
-// Where a comment was posted: "blog" or "video-3"
+// Where a comment was posted: "blog-2" or "video-3"
 const commentPlace = (page) => {
-    if (page === 'blog') {
-        return { label: 'Blog', link: '/blog' };
+    const post = /^blog-(\d+)$/.exec(page);
+    if (post) {
+        return { label: 'Blog post', link: '/blog/' + post[1] + '#comments' };
     }
     const match = /^video-(\d+)$/.exec(page);
     return match ? { label: 'Video', link: '/video/' + match[1] } : { label: page, link: '/' };
@@ -30,6 +30,15 @@ export default function ProfileTab() {
     const player = usePlayer();
     const library = useLibrary();
     const [tab, setTab] = useState('favourites');
+    const { hash } = useLocation();
+
+    // /profile#events etc. opens that tab (used by the stat tiles)
+    useEffect(() => {
+        const wanted = hash.replace('#', '');
+        if (['favourites', 'playlists', 'events', 'comments'].includes(wanted)) {
+            setTab(wanted);
+        }
+    }, [hash]);
     const [comments, setComments] = useState([]);
     const user = sessionStorage.getItem('username') || '';
 
@@ -40,7 +49,7 @@ export default function ProfileTab() {
         }).then(setComments).catch(() => setComments([]));
     }, [user]);
 
-    const favourites = library.favourites.map(findSong).filter(Boolean);
+    const favourites = library.favourites.map(library.findSong).filter(Boolean);
     const playlists = [
         { id: 'mine', name: 'My Playlist', link: '/my-playlist', songs: library.playlist },
         ...library.playlists.map((pl) => ({ id: pl.id, name: pl.name, link: '/playlist/' + pl.id, songs: pl.songs }))
@@ -98,7 +107,7 @@ export default function ProfileTab() {
                     {tab === 'playlists' && (
                         <ul className="list-group no-radius m-b-none list-group-lg no-border">
                             {playlists.map((pl) => {
-                                const cover = pl.songs.map(findSong).find(Boolean);
+                                const cover = pl.songs.map(library.findSong).find(Boolean);
                                 return (
                                     <li className="list-group-item profile-row" key={pl.id}>
                                         {cover

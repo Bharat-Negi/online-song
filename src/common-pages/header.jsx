@@ -1,12 +1,25 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { timeAgo } from './useNotifications';
 import { UserAvatar } from './avatar';
 
 export default function HeaderPage({leftLogoOpen, isLogo, personName, mobileNavToggle, notifications, isNoti, setIsNoti}) {
     const [isActive, setIsActive] = useState(false);
     const [isUserMenu, setIsUserMenu] = useState(false);   // 👈 mobile user menu
-    const { pathname } = useLocation();
+    const { pathname, search } = useLocation();
+    const navigate = useNavigate();
+    const [query, setQuery] = useState('');
+
+    // Keep the box in sync with /search?q=...
+    useEffect(() => {
+        setQuery(pathname === '/search' ? new URLSearchParams(search).get('q') || '' : '');
+    }, [pathname, search]);
+
+    const submitSearch = (e) => {
+        e.preventDefault();
+        const text = query.trim();
+        navigate(text ? '/search?q=' + encodeURIComponent(text) : '/search');
+    };
 
     // Close the menus after moving to another page
     useEffect(() => {
@@ -77,13 +90,14 @@ export default function HeaderPage({leftLogoOpen, isLogo, personName, mobileNavT
                     </a>
                 </li>
             </ul>
-            <form className="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search">
+            <form className="navbar-form navbar-left input-s-lg m-t m-l-n-xs hidden-xs" role="search" onSubmit={submitSearch}>
                 <div className="form-group">
                     <div className="input-group">
                         <span className="input-group-btn">
                             <button type="submit" className="btn btn-sm bg-white btn-icon rounded"><i className="fa fa-search"></i></button>
                         </span>
-                        <input type="text" className="form-control input-sm no-border rounded" placeholder="Search songs, albums..." />
+                        <input type="text" className="form-control input-sm no-border rounded" placeholder="Search songs, artists..."
+                            value={query} onChange={e => setQuery(e.target.value)} aria-label="Search songs" />
                     </div>
                 </div>
             </form>

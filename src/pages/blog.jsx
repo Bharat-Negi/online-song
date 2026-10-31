@@ -1,132 +1,157 @@
-import CommentSection from '../common-pages/commentSection';
-import useComments from '../common-pages/useComments';
+import { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { Avatar } from '../common-pages/avatar';
+import { categories, excerpt, formatPostDate, readTime, toggleLike, useBlogPosts } from '../common-pages/blogApi';
 
+const PAGE_SIZE = 4;
+
+// /blog: all posts with search, category and tag filters (?category=Tips&tag=Audius)
 export default function BlogPage() {
-    const comments = useComments('blog');
+    const blog = useBlogPosts();
+    const [params, setParams] = useSearchParams();
+    const [search, setSearch] = useState('');
+    const [page, setPage] = useState(1);
+    const user = sessionStorage.getItem('username') || '';
+
+    const category = params.get('category') || '';
+    const tag = params.get('tag') || '';
+    const setFilter = (key, value) => {
+        const next = new URLSearchParams(params);
+        value ? next.set(key, value) : next.delete(key);
+        setParams(next);
+        setPage(1);
+    };
+
+    const query = search.trim().toLowerCase();
+    const posts = blog.posts.filter((p) =>
+        (!category || p.category === category) &&
+        (!tag || (p.tags || []).includes(tag)) &&
+        (p.title.toLowerCase().includes(query) || p.content.toLowerCase().includes(query) || p.author.toLowerCase().includes(query))
+    );
+    const pageCount = Math.max(1, Math.ceil(posts.length / PAGE_SIZE));
+    const currentPage = Math.min(page, pageCount);
+    const pagePosts = posts.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
+
+    const allTags = [...new Set(blog.posts.flatMap((p) => p.tags || []))].sort();
+    const countIn = (c) => blog.posts.filter((p) => p.category === c).length;
+
+    const like = (post) => {
+        toggleLike(post, user).then(blog.replace).catch(() => toast.error('Could not save your like'));
+    };
+
+    const goTo = (e, n) => {
+        e.preventDefault();
+        if (n >= 1 && n <= pageCount) {
+            setPage(n);
+        }
+    };
 
     return (
-        <>
-            <section className="scrollable wrapper-lg noJsplayer">
-                <div className="row">
-                    <div className="col-sm-9">
-                        <div className="blog-post">
-                            <div className="post-item">
-                                <div className="post-media">
-                                    <img src="images/m42.jpg" className="img-full" />
-                                </div>
-                                <div className="caption wrapper-lg">
-                                    <h2 className="post-title"><a href="#">7 things you need to know about the flat design</a></h2>
-                                    <div className="post-sum">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
-                                            <br /><br />
-                                                Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
-                                            </div>
-                                            <div className="line line-lg"></div>
-                                            <div className="text-muted">
-                                                <i className="fa fa-user icon-muted"></i> by <a href="#" className="m-r-sm">Admin</a>
-                                                <i className="fa fa-clock-o icon-muted"></i> Feb 20, 2013
-                                                <a href="#" className="m-l-sm"><i className="fa fa-comment-o icon-muted"></i> 2 comments</a>
-                                            </div>
-                                    </div>
-                                </div>
-                                <div className="post-item">
-                                    <div className="caption wrapper-lg">
-                                        <h2 className="post-title"><a href="#">Bootstrap 3: What you need to know</a></h2>
-                                        <div className="post-sum">
-                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi id neque quam. Aliquam sollicitudin venenatis ipsum ac feugiat. Vestibulum ullamcorper sodales nisi nec condimentum. Mauris convallis mauris at pellentesque volutpat.
-                                            </p>
-                                            <h3>Html5 and CSS3</h3>
-                                            <p>
-                                                Phasellus at ultricies neque, quis malesuada augue. Donec eleifend condimentum nisl eu consectetur. Integer eleifend, nisl venenatis consequat iaculis, lectus arcu malesuada sem, dapibus porta quam lacus eu neque.</p>
-                                        </div>
-                                        <div className="line line-lg"></div>
-                                        <div className="text-muted">
-                                            <i className="fa fa-user icon-muted"></i> by <a href="#" className="m-r-sm">Admin</a>
-                                            <i className="fa fa-clock-o icon-muted"></i> Feb 15, 2013
-                                            <a href="#" className="m-l-sm"><i className="fa fa-comment-o icon-muted"></i> 4 comments</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="text-center m-t-lg m-b-lg">
-                                <ul className="pagination pagination-md">
-                                    <li><a href="#"><i className="fa fa-chevron-left"></i></a></li>
-                                    <li className="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
-                                    <li><a href="#"><i className="fa fa-chevron-right"></i></a></li>
-                                </ul>
-                            </div>
-                            <CommentSection {...comments} />
+        <section className="scrollable wrapper-lg noJsplayer blog-page">
+            <div className="clearfix m-b">
+                <Link to="/blog/new" className="btn btn-info btn-rounded pull-right"><i className="fa fa-pencil m-r-xs"></i>Write a post</Link>
+                <h2 className="font-thin m-t-none m-b-xs">Blog</h2>
+                <span className="text-muted">
+                    News, tips and stories from the Online Song community
+                    {(category || tag) && (
+                        <> · showing <strong>{category || '#' + tag}</strong> <a className="cus-hand text-info" onClick={() => { setParams({}); setPage(1); }}>(clear)</a></>
+                    )}
+                </span>
+            </div>
+            <div className="row">
+                <div className="col-sm-9">
+                    {blog.status === 'loading' && <p className="text-muted">Loading posts…</p>}
+                    {blog.status === 'error' && <p className="text-muted"><i className="fa fa-exclamation-circle m-r-xs"></i>Could not load posts. Is the json-server running?</p>}
+                    {blog.status === 'ok' && pagePosts.length === 0 && (
+                        <div className="pl-empty">
+                            <i className="icon-note"></i>
+                            <h4>No posts found</h4>
+                            <p className="text-muted">Try another search or category, or write the first one.</p>
+                            <Link to="/blog/new" className="btn btn-info btn-rounded">Write a post</Link>
                         </div>
-                        <div className="col-sm-3">
-                            <h5 className="font-bold">Categories</h5>
-                            <ul className="list-group">
-                                <li className="list-group-item">
-                                    <a href="#">
-                                        <span className="badge pull-right">15</span>
-                                        Photograph
-                                    </a>
-                                </li>
-                                <li className="list-group-item">
-                                    <a href="#">
-                                        <span className="badge pull-right">30</span>
-                                        Life style
-                                    </a>
-                                </li>
-                                <li className="list-group-item">
-                                    <a href="#">
-                                        <span className="badge pull-right">9</span>
-                                        Food
-                                    </a>
-                                </li>
-                                <li className="list-group-item">
-                                    <a href="#">
-                                        <span className="badge pull-right">4</span>
-                                        Travel world
-                                    </a>
-                                </li>
-                            </ul>
-                            <div className="tags m-b-lg l-h-2x">
-                                <a href="#" className="label bg-primary">Bootstrap</a> <a href="#" className="label bg-primary">Application</a> <a href="#" className="label bg-primary">Apple</a> <a href="#" className="label bg-primary">Less</a> <a href="#" className="label bg-primary">Theme</a> <a href="#" className="label bg-primary">Wordpress</a>
-                            </div>
-                            <h5 className="font-bold">Recent Posts</h5>
-                            <div>
-                                <article className="media">
-                                    <a className="pull-left thumb thumb-wrapper m-t-xs">
-                                        <img src="images/m1.jpg" />
-                                    </a>
-                                    <div className="media-body">
-                                        <a href="#" className="font-semibold">Bootstrap 3: What you need to know</a>
-                                        <div className="text-xs block m-t-xs"><a href="#">Travel</a> 2 minutes ago</div>
+                    )}
+                    {pagePosts.map((post) => {
+                        const liked = (post.likes || []).includes(user);
+                        return (
+                            <article className="blog-card" key={post.id}>
+                                <Link to={'/blog/' + post.id} className="blog-card-cover">
+                                    <img src={post.image} alt={post.title} />
+                                    <span className="blog-chip">{post.category}</span>
+                                </Link>
+                                <div className="blog-card-body">
+                                    <Link to={'/blog/' + post.id} className="blog-card-title">{post.title}</Link>
+                                    <p className="text-muted">{excerpt(post.content)}</p>
+                                    <div className="blog-meta">
+                                        <span className="blog-author">
+                                            <span className="blog-author-avatar"><Avatar name={post.author} /></span>
+                                            <strong className="text-capitalize">{post.author}</strong>
+                                        </span>
+                                        <span><i className="fa fa-clock-o"></i> {formatPostDate(post.date)} · {readTime(post.content)}</span>
+                                        <span className="blog-actions">
+                                            <a className={liked ? 'cus-hand blog-like on' : 'cus-hand blog-like'} onClick={() => like(post)} title={liked ? 'Unlike' : 'Like'}>
+                                                <i className={liked ? 'fa fa-heart' : 'fa fa-heart-o'}></i> {(post.likes || []).length}
+                                            </a>
+                                            <Link to={'/blog/' + post.id + '#comments'}><i className="fa fa-comment-o"></i> {blog.comments['blog-' + post.id] || 0}</Link>
+                                        </span>
                                     </div>
-                                </article>
-                                <div className="line"></div>
-                                <article className="media m-t-none">
-                                    <a className="pull-left thumb thumb-wrapper m-t-xs">
-                                        <img src="images/m2.jpg" />
-                                    </a>
-                                    <div className="media-body">
-                                        <a href="#" className="font-semibold">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
-                                        <div className="text-xs block m-t-xs"><a href="#">Design</a> 2 hours ago</div>
-                                    </div>
-                                </article>
-                                <div className="line"></div>
-                                <article className="media m-t-none">
-                                    <a className="pull-left thumb thumb-wrapper m-t-xs">
-                                        <img src="images/m3.jpg" />
-                                    </a>
-                                    <div className="media-body">
-                                        <a href="#" className="font-semibold">Sed diam nonummy nibh euismod tincidunt ut laoreet</a>
-                                        <div className="text-xs block m-t-xs"><a href="#">MFC</a> 1 week ago</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
+                                </div>
+                            </article>
+                        );
+                    })}
+                    {pageCount > 1 && (
+                        <ul className="pagination pagination-md">
+                            <li className={currentPage === 1 ? 'disabled' : ''}><a href="#" onClick={(e) => goTo(e, currentPage - 1)}><i className="fa fa-chevron-left"></i></a></li>
+                            {Array.from({ length: pageCount }, (_, i) => i + 1).map((n) => (
+                                <li key={n} className={n === currentPage ? 'active' : ''}><a href="#" onClick={(e) => goTo(e, n)}>{n}</a></li>
+                            ))}
+                            <li className={currentPage === pageCount ? 'disabled' : ''}><a href="#" onClick={(e) => goTo(e, currentPage + 1)}><i className="fa fa-chevron-right"></i></a></li>
+                        </ul>
+                    )}
+                </div>
+
+                <div className="col-sm-3">
+                    <div className="blog-search m-b">
+                        <i className="fa fa-search"></i>
+                        <input type="text" className="form-control" placeholder="Search posts..." value={search}
+                            onChange={(e) => { setSearch(e.target.value); setPage(1); }} />
                     </div>
-            </section>
-        </>
-    )
+                    <h5 className="font-bold">Categories</h5>
+                    <ul className="list-group">
+                        {categories.map((c) => (
+                            <li className={category === c ? 'list-group-item active' : 'list-group-item'} key={c}>
+                                <a className="cus-hand" onClick={() => setFilter('category', category === c ? '' : c)}>
+                                    <span className="badge pull-right">{countIn(c)}</span>
+                                    {c}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                    {allTags.length > 0 && (
+                        <>
+                            <h5 className="font-bold">Tags</h5>
+                            <div className="tags m-b-lg l-h-2x">
+                                {allTags.map((t) => (
+                                    <a key={t} className={tag === t ? 'label bg-info m-r-xs cus-hand' : 'label bg-primary m-r-xs cus-hand'}
+                                        onClick={() => setFilter('tag', tag === t ? '' : t)}>{t}</a>
+                                ))}
+                            </div>
+                        </>
+                    )}
+                    <h5 className="font-bold">Recent posts</h5>
+                    {blog.posts.slice(0, 3).map((p) => (
+                        <article className="media" key={p.id}>
+                            <Link to={'/blog/' + p.id} className="pull-left thumb thumb-wrapper m-t-xs">
+                                <img src={p.image} alt={p.title} className="square-thumb" />
+                            </Link>
+                            <div className="media-body">
+                                <Link to={'/blog/' + p.id} className="font-semibold">{p.title}</Link>
+                                <div className="text-xs block m-t-xs">{p.category} · {formatPostDate(p.date)}</div>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }

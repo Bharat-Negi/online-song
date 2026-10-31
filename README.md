@@ -1,6 +1,9 @@
 # Online Song
 
-A music-streaming web app built with **React 18** and **Vite**. You can browse and play songs, build playlists, follow genres, watch videos, find live events and manage your own profile. A small **json-server** backend stores accounts, comments, notifications and each user's library.
+A music-streaming web app built with **React 18** and **Vite**. You can browse and play songs, build playlists, follow genres, watch videos, find live events and manage your own profile.
+
+- **Songs:** all music comes live from two free APIs. **[Audius](https://audius.co)** provides full-length songs, and the **[iTunes Search API](https://performance-partners.apple.com/search-api)** provides popular songs as 30-second previews.
+- **Backend:** a small **json-server** stores accounts, comments, notifications and each user's library.
 
 > **Demo project.** Login, passwords and the API are not secure yet (see [Known limitations](#known-limitations)). Run it locally; do not deploy it as is.
 
@@ -36,24 +39,36 @@ A music-streaming web app built with **React 18** and **Vite**. You can browse a
   - download your data as JSON
   - clear favourites, reset your library or delete your account
 
+### Music (Audius + iTunes)
+- **Search (new):** the header search box opens `/search`, with full songs from Audius and popular songs from iTunes (30-second previews), plus quick-search chips.
+- **Everything else is live from Audius:** Discover, New Songs, the Top Songs chart, every genre page and the Listen page.
+- **Online songs work like the app's own:** favourite them or add them to playlists, and they're remembered in your library.
+
 ### Music player
-- **One player for the whole app,** so music keeps playing when you change page.
+- **One player for the whole app,** so music keeps playing when you change page. It shows "Nothing playing" until you pick a song.
 - **Controls:** play/pause, previous/next, seek bar, volume, mute, shuffle, repeat and a playlist pop-up.
 - **The current list becomes the queue:** whatever list you start from (Discover, a genre, a playlist, the charts…).
 - **Visual cues:** animated equaliser bars and live time badges show what's playing.
 
 ### What's new (home)
-- **Discover:** song cards with play, a star rating, bookmark, ♥ favourite and an **add-to-playlist** menu. All of these are saved per user. Refresh shuffles the cards.
-- **New Songs:** fresh releases with "NEW · 2d" badges and a progress line on the playing cover.
-- **Top Songs:** a weekly chart with gold, silver and bronze ranks, ▲▼ trend arrows and popularity bars.
-- **Connected:** friends grouped by Online, Away and Offline. You can see what they're listening to and **listen along**, and search the list.
+- **Discover:** this week's trending songs on Audius.
+  - **Card controls:** play, bookmark, ♥ favourite and an **add-to-playlist** menu, saved per user.
+  - **Star rating:** your own rating, plus the average of all users' ratings.
+  - **Refresh** shuffles the cards.
+- **New Songs:** the newest uploads from up-and-coming Audius artists, with "NEW · 2d" badges based on the real release date.
+- **Top Songs:** a weekly Audius chart.
+  - **Ranks:** gold, silver and bronze for the top 3.
+  - **Play counts:** real plays, with popularity bars.
+  - **▲▼ trend:** this week's rank compared with this month's.
+- **Connected:** friends grouped by Online, Away and Offline. You can see which trending song they're listening to and **listen along**, and search the list.
 
 ### Genres
-- **22 genres,** each on its own page (`/genres/rock`, `/genres/jazz`…).
+- **22 genres,** each on its own page (`/genres/rock`, `/genres/jazz`…). Each page shows the 24 trending Audius songs for that genre this week.
 - **On each genre page:** Play all, search within the genre, pagination, and the same card controls as Discover.
 
 ### Listen
-- **An artist album and a recommendations list.** The banner picture and artist details change with the song that's playing.
+- **Two lists:** "Top of the month" and "Fresh from new artists", both from Audius.
+- **Banner:** shows the playing song's artist, with their Audius cover photo and real follower count.
 - **Song actions:** download, add to queue, and remove from the list.
 
 ### Playlists
@@ -61,7 +76,7 @@ A music-streaming web app built with **React 18** and **Vite**. You can browse a
 - **Playlist page:**
   - a cover collage, Play all and Shuffle
   - rename and delete
-  - an **Add songs** search across every song in the app
+  - an **Add songs** search of Audius and iTunes
 
 ### Video
 - **6 openly licensed videos** with filters, search and pagination.
@@ -111,7 +126,7 @@ A music-streaming web app built with **React 18** and **Vite**. You can browse a
 
 - [Node.js](https://nodejs.org/) 18 or newer (tested with Node 24)
 - npm
-- An internet connection: the sample audio and video files are streamed from other websites (see [Media credits](#media-credits))
+- An internet connection: all music comes from the Audius and iTunes APIs, and the videos are streamed from other websites (see [Media credits](#media-credits))
 
 ### 1. Get the code
 
@@ -214,10 +229,7 @@ The app calls `http://localhost:8000` directly. To change the address, search th
 
 | File | Content |
 |---|---|
-| `discover.json` | Discover cards (also the default play queue) |
-| `new-song.json`, `top-song.json` | Home page New Songs and the Top Songs chart (plays, trend) |
-| `genres.json` | 22 genres and their songs |
-| `listen.json` | Listen page album, recommendations and artist details |
+| `genres.json` | The 22 genres (name and description). Their songs come from Audius. |
 | `videos.json` | Videos, sources and descriptions |
 | `events.json` | Events: date, venue, city, price, category, featured |
 | `connected.json` | Friends in the Connected panel and what they're listening to |
@@ -231,17 +243,18 @@ The app calls `http://localhost:8000` directly. To change the address, search th
 
 ## Customising content
 
-- **Add a song to a genre:** add an entry to that genre's `songs` in `src/json-data/genres.json` (`id`, `name`, `artist`, `image`, `src`, `time`). It appears on the genre page, in search and in the playlist "Add songs" search.
-- **Add a genre:** add a new object to `genres.json` with a unique `slug`. The sidebar link and page are created automatically.
+- **Add a genre:** add a new object to `genres.json` with a unique `slug`, `name` and `description`, then map the slug to an Audius genre in `audiusGenres` in `src/common-pages/musicApi.js`. The sidebar link and page are created automatically.
+- **Change where songs come from:** every API call lives in `src/common-pages/musicApi.js`. Each service's results are converted to the app's song format (`id`, `name`, `artist`, `image`, `src`, `time`), so a new source only needs a converter like `fromAudius`.
 - **Add an event or video:** add an entry to `events.json` or `videos.json` with the same fields as the others. Filters, counts and banners update automatically.
-- **Use your own music:** put MP3 files in `public/audio/` and point a song's `src`/`disAudio`/`newAudio`/`topAudio` to `/audio/your-file.mp3`.
 - **Add a notification:** add an entry to `notification` in `db.json` while json-server is running.
 
 ---
 
 ## Media credits
 
-- **Music:** sample tracks by T. Schürger from [SoundHelix](https://www.soundhelix.com/) (`SoundHelix-Song-1…17.mp3`), streamed from soundhelix.com. Song titles and artist names in the app are placeholders and don't match the audio.
+- **Music:**
+  - **Audius:** streamed live from [Audius](https://audius.co). The songs belong to the artists who uploaded them, and artist names link to their Audius pages.
+  - **iTunes:** 30-second previews from the [iTunes Search API](https://performance-partners.apple.com/search-api), © their owners. Song names link to Apple Music.
 - **Videos:**
   - *Big Buck Bunny*, *Sintel* and *Tears of Steel* © Blender Foundation, [CC BY](https://creativecommons.org/licenses/by/3.0/), streamed from download.blender.org and Wikimedia Commons.
   - *Flower* from [MDN Web Docs](https://developer.mozilla.org/) (CC0).
@@ -260,6 +273,7 @@ This is a learning/demo project. Before putting it online:
 - **The API is open.** json-server lets anyone read or change any data, and allows requests from any website. Use a real backend (for example `json-server-auth` or an Express server with hashed passwords and tokens) before deploying.
 - **`db.json` is in the repository,** including the sample accounts. Don't use real passwords for them.
 - **Dependencies:** `npm audit` reports known issues, mostly from the unused `react-scripts` package, which can be removed.
-- **External media:** the music and videos are streamed from other websites, so they need an internet connection and may become unavailable.
+- **External media:** the music (Audius, iTunes) and videos are streamed from other websites, so they need an internet connection and may become unavailable.
+- **Audius songs are user uploads,** so results vary and some uploads may not be official releases. iTunes only allows 30-second previews.
 - **Some template pages are static:** Blog posts and Invoice.
 - **No licence file** has been added yet.

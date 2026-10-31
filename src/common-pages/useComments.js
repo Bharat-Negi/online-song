@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const API = "http://localhost:8000/comment";
 
-// Loads and adds comments for one page ("blog", "video-1", ...)
+// Loads and adds comments for one page ("blog-1", "video-1", ...)
 export default function useComments(page) {
     const [comments, setComments] = useState([]);
 

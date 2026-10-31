@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import ConnectedData from '../json-data/connected.json'
-import { usePlayer, discoverSongs } from './playerContext';
+import { usePlayer } from './playerContext';
+import { useTrending } from './musicApi';
 import { initials, colorFor } from './avatar';
 
 const statusOrder = ['online', 'away', 'offline'];
@@ -19,6 +20,9 @@ const ago = (minutes) => {
 
 export default function Connected() {
     const player = usePlayer();
+    // Friends listen to songs from this week's trending list ("listening" picks one by number)
+    const trending = useTrending().songs;
+    const songFor = (member) => member.listening && trending.length ? trending[(member.listening - 1) % trending.length] : null;
     const [search, searchchange] = useState('');
     const [onlineOnly, setOnlineOnly] = useState(false);
 
@@ -58,7 +62,7 @@ export default function Connected() {
                         <div key={group.status}>
                             <div className="cn-group">{statusTitle[group.status]} — {group.members.length}</div>
                             {group.members.map((member) => {
-                                const song = member.listening && discoverSongs.find((item) => item.id === member.listening);
+                                const song = songFor(member);
                                 const isSame = song && player.isSongPlaying(song.id);
                                 return (
                                     <div className={`cn-member cn-${member.connectOn}`} key={member.id}>

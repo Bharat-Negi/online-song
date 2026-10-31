@@ -13,7 +13,7 @@ const LeftBar = ({isLogo, personName, isNavOpen, unreadCount, openNotifications}
     useEffect(() => {
         setIsActive(false);
     }, [location.pathname]);
-    const isPagesRoute = ['/profile', '/blog', '/invoice'].includes(location.pathname.toLowerCase());
+    const isPagesRoute = ['/profile', '/invoice'].includes(location.pathname.toLowerCase()) || location.pathname.startsWith('/blog');
     const [isleft, setIsleft] = useState(isPagesRoute);
     const dropdownRef = useRef(null);
     const library = useLibrary();
@@ -104,6 +104,13 @@ const LeftBar = ({isLogo, personName, isNavOpen, unreadCount, openNotifications}
                                         <Link to='/video'>
                                         <i className="icon-social-youtube icon text-primary"></i>
                                             <span className="font-bold">Video</span>
+                                        </Link>
+                                    </li>
+                                    <li className={`nav-item ${location.pathname === '/bookmarks' ? 'active' : ''}`}>
+                                        <Link to='/bookmarks' title="Songs saved for later">
+                                            <i className="fa fa-bookmark-o icon text-warning"></i>
+                                            {library.bookmarks.length > 0 && <b className="badge bg-warning pull-right">{library.bookmarks.length}</b>}
+                                            <span className="font-bold">Bookmarks</span>
                                         </Link>
                                     </li>
                                     <li className="m-b hidden-nav-xs"></li>

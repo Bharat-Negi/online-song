@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Navigate, useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import JsPlayer from '../common-pages/jsPlayer';
 import { usePlayer } from '../common-pages/playerContext';
 import { useLibrary } from '../common-pages/libraryContext';
-import { allSongs, findSong } from '../common-pages/songCatalog';
+import { audiusSearch, audiusTrending, itunesSearch, useApiSongs } from '../common-pages/musicApi';
 
 // "05:25" -> 325
 const toSeconds = (time) => {
@@ -32,16 +32,25 @@ export default function PlaylistPage() {
     const toggleSong = (songId) => isMine ? library.togglePlaylist(songId) : library.toggleSongInPlaylist(id, songId);
 
     // Saved songs in the order they were added
-    const songs = songIds.map(findSong).filter(Boolean);
+    const songs = songIds.map(library.findSong).filter(Boolean);
 
     const totalSeconds = songs.reduce((sum, song) => sum + toSeconds(song.time), 0);
     const totalTime = `${Math.floor(totalSeconds / 60)} min`;
     const isPlaylistPlaying = player.isPlaying && songs.some((song) => song.id === player.current.id);
 
-    const query = search.trim().toLowerCase();
-    const searchResults = allSongs.filter((song) =>
-        song.name.toLowerCase().includes(query) || song.artist.toLowerCase().includes(query)
-    );
+    // "Add songs": search Audius (full songs) and iTunes (previews); trending when the box is empty.
+    // The search waits until typing pauses for 400 ms.
+    const [query, setQuery] = useState('');
+    useEffect(() => {
+        const timer = setTimeout(() => setQuery(search.trim()), 400);
+        return () => clearTimeout(timer);
+    }, [search]);
+    const found = useApiSongs(isAdding
+        ? (query
+            ? () => Promise.all([audiusSearch(query, 8), itunesSearch(query, 8).catch(() => [])]).then(([a, b]) => [...a, ...b])
+            : () => audiusTrending('', 12))
+        : null, (isAdding ? 'on' : 'off') + ':' + query);
+    const searchResults = found.songs;
 
     // A custom playlist that does not exist (deleted, or library still loading)
     if (id && !custom) {
@@ -60,6 +69,7 @@ export default function PlaylistPage() {
     };
 
     const addOrRemove = (song) => {
+        library.rememberSong(song);
         const added = toggleSong(song.id);
         toast.info(added ? `Added "${song.name}" to ${name}` : `Removed "${song.name}" from ${name}`);
     };
@@ -79,6 +89,14 @@ export default function PlaylistPage() {
         const trimmed = newName.trim();
         if (trimmed === '') {
             toast.warning('Please enter a playlist name');
+            return;
+        }
+        if (trimmed === name) {
+            setIsRenaming(false);
+            return;
+        }
+        if (library.playlists.some((pl) => pl.id !== id && pl.name.toLowerCase() === trimmed.toLowerCase())) {
+            toast.warning(`You already have a playlist called "${trimmed}"`);
             return;
         }
         library.renamePlaylist(id, trimmed);
@@ -121,11 +139,24 @@ export default function PlaylistPage() {
                             <span className="pl-type">{isMine ? 'Your playlist' : 'Playlist'}</span>
                             {isRenaming ? (
                                 <form className="pl-rename" onSubmit={saveRename}>
-                                    <input type="text" className="form-control input-lg playlist-name-input" value={newName} autoFocus maxLength={40}
-                                        onChange={e => setNewName(e.target.value)}
-                                        onKeyDown={e => { if (e.key === 'Escape') setIsRenaming(false); }} />
-                                    <button type="submit" className="btn btn-info m-l-xs">Save</button>
-                                    <button type="button" className="btn btn-default m-l-xs" onClick={() => setIsRenaming(false)}>Cancel</button>
+                                    <div className="pl-rename-field">
+                                        <i className="icon-pencil"></i>
+                                        <input type="text" value={newName} autoFocus maxLength={40} aria-label="Playlist name"
+                                            placeholder="Playlist name" onFocus={(e) => e.target.select()}
+                                            onChange={e => setNewName(e.target.value)}
+                                            onKeyDown={e => { if (e.key === 'Escape') setIsRenaming(false); }} />
+                                        <button type="submit" className="pl-rename-btn save" title="Save (Enter)"
+                                            disabled={newName.trim() === '' || newName.trim() === name}>
+                                            <i className="fa fa-check"></i>
+                                        </button>
+                                        <button type="button" className="pl-rename-btn" title="Cancel (Esc)" onClick={() => setIsRenaming(false)}>
+                                            <i className="fa fa-times"></i>
+                                        </button>
+                                    </div>
+                                    <div className="pl-rename-hint">
+                                        <span><kbd>Enter</kbd> to save · <kbd>Esc</kbd> to cancel</span>
+                                        <span>{newName.length}/40</span>
+                                    </div>
                                 </form>
                             ) : (
                                 <h1 className="pl-title">{name}</h1>
@@ -174,12 +205,14 @@ export default function PlaylistPage() {
                                 <button className="btn btn-sm btn-default btn-rounded" onClick={() => setIsAdding(false)}>Done</button>
                             </div>
                             <ul className="list-unstyled add-songs-list">
-                                {searchResults.length === 0 && <li className="pl-add-row text-muted">No songs found</li>}
+                                {found.status === 'loading' && <li className="pl-add-row text-muted">Searching…</li>}
+                                {found.status === 'error' && <li className="pl-add-row text-muted">Could not search right now. Check your internet connection.</li>}
+                                {found.status === 'ok' && searchResults.length === 0 && <li className="pl-add-row text-muted">No songs found</li>}
                                 {searchResults.map((song) => (
                                     <li className="pl-add-row" key={song.id}>
                                         <img src={song.image} alt={song.name} className="pl-thumb" />
                                         <span className="pl-add-name text-ellipsis">
-                                            {song.name} <small className="text-muted">· {song.artist}</small>
+                                            {song.name} <small className="text-muted">· {song.artist}{song.source === 'itunes' ? ' · 30s preview' : ''}</small>
                                         </span>
                                         <span className="text-muted hidden-xs m-r">{song.time}</span>
                                         <button className={hasSong(song.id) ? "btn btn-sm btn-info btn-rounded" : "btn btn-sm btn-default btn-rounded"} onClick={() => addOrRemove(song)}>

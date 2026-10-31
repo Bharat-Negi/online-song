@@ -3,11 +3,13 @@ import { Link } from 'react-router-dom'
 import ProfileTab from '../component-small/profile-tab'
 import ProfileDetails from '../component-small/profile-details'
 import { Avatar } from '../common-pages/avatar'
-import { usePlayer, discoverSongs } from '../common-pages/playerContext'
+import { usePlayer } from '../common-pages/playerContext'
+import { useTrending } from '../common-pages/musicApi'
 import ConnectedData from '../json-data/connected.json'
 
 export default function Profile() {
   const player = usePlayer();
+  const trending = useTrending().songs;
   const user = sessionStorage.getItem('username') || '';
   const [email, setEmail] = useState('');
 
@@ -23,7 +25,7 @@ export default function Profile() {
   return (
     <>
       <section className="scrollable noJsplayer">
-        <section className="hbox stretch">
+        <section className="hbox stretch profile-hbox">
           <ProfileDetails />
           <ProfileTab />
           <aside className="col-lg-3 b-l">
@@ -50,7 +52,7 @@ export default function Profile() {
                   <ul className="list-group">
                     {friends.length === 0 && <li className="list-group-item text-muted">Nobody is online right now.</li>}
                     {friends.map((f) => {
-                      const song = f.listening && discoverSongs.find((s) => s.id === f.listening);
+                      const song = f.listening && trending.length ? trending[(f.listening - 1) % trending.length] : null;
                       const isSame = song && player.isSongPlaying(song.id);
                       return (
                         <li className="list-group-item profile-friend" key={f.id}>

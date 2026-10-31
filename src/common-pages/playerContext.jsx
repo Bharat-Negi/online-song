@@ -1,5 +1,4 @@
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
-import DiscoverData from '../json-data/discover.json';
 
 // One audio element for the whole app, so music keeps playing between pages
 const PlayerContext = createContext(null);
@@ -25,14 +24,8 @@ const readSettings = () => {
     }
 };
 
-// Songs from the Discover section, used as the default queue
-export const discoverSongs = DiscoverData.map((item) => ({
-    id: item.id,
-    name: item.disName,
-    artist: item.disSinger,
-    image: item.disImg,
-    src: item.disAudio
-}));
+// Shown in the player before any song has been chosen
+const nothingPlaying = { id: null, name: 'Nothing playing', artist: 'pick a song to start', image: '', src: '' };
 
 export function PlayerProvider({ children }) {
     const audioRef = useRef(null);
@@ -42,7 +35,7 @@ export function PlayerProvider({ children }) {
     }
     const audio = audioRef.current;
 
-    const [queue, setQueue] = useState(discoverSongs);
+    const [queue, setQueue] = useState([]);
     const [index, setIndex] = useState(0);
     const [isPlaying, setIsPlaying] = useState(false);
     const [currentTime, setCurrentTime] = useState(0);
@@ -70,6 +63,9 @@ export function PlayerProvider({ children }) {
 
     const nextIndex = () => {
         const { queue, index, isShuffle } = stateRef.current;
+        if (queue.length === 0) {
+            return 0;
+        }
         if (isShuffle && queue.length > 1) {
             let i = index;
             while (i === index) {
@@ -90,7 +86,7 @@ export function PlayerProvider({ children }) {
             if (stateRef.current.isRepeat) {
                 audio.currentTime = 0;
                 audio.play();
-            } else if (stateRef.current.autoplay) {
+            } else if (stateRef.current.autoplay && stateRef.current.queue.length > 0) {
                 load(stateRef.current.queue, nextIndex(), true);
             }
         };
@@ -110,9 +106,12 @@ export function PlayerProvider({ children }) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    const current = queue[index];
+    const current = queue[index] || nothingPlaying;
 
     const togglePlay = () => {
+        if (queue.length === 0) {
+            return;
+        }
         if (!audio.src) {
             load(queue, index, true);
         } else if (audio.paused) {
@@ -123,7 +122,7 @@ export function PlayerProvider({ children }) {
     };
 
     // Play/pause a song from a list; the list becomes the queue
-    const toggleSong = (song, list = discoverSongs) => {
+    const toggleSong = (song, list = [song]) => {
         if (current && current.id === song.id && audio.src) {
             togglePlay();
             return;
@@ -145,9 +144,16 @@ export function PlayerProvider({ children }) {
 
     const isSongPlaying = (id) => isPlaying && current && current.id === id;
 
-    const next = () => load(queue, nextIndex(), true);
+    const next = () => {
+        if (queue.length > 0) {
+            load(queue, nextIndex(), true);
+        }
+    };
 
     const prev = () => {
+        if (queue.length === 0) {
+            return;
+        }
         if (audio.currentTime > 3) {
             audio.currentTime = 0;
         } else {

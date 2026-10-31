@@ -7,6 +7,7 @@ import Connected from '../common-pages/connected'
 import DiscoverPage from '../component/discover'
 import NewSongs from '../component-small/new-songs'
 import TopSongs from '../component-small/top-songs'
+import IndianHits from '../component-small/indian-hits'
 
 export default function WhatsNew() {
     const player = usePlayer();
@@ -46,6 +47,7 @@ export default function WhatsNew() {
                             </h2>
 
                             <DiscoverPage refreshKey={refreshKey} />
+                            <IndianHits />
                             <div className="row home-charts">
                                 <NewSongs />
                                 <TopSongs />

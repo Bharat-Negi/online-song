@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { usePlayer } from '../common-pages/playerContext'
-import { newSongs } from '../common-pages/songCatalog'
+import { audiusNew, useApiSongs, onCoverError } from '../common-pages/musicApi'
 import AddBtnPage from './addBtn'
+import BookmarkButton from './bookmark'
 
-// "2026-10-30" -> "1d", "Today"
+// Release date -> "Today", "3d", "2w"
 const releasedLabel = (date) => {
-    const days = Math.round((new Date(new Date().toDateString()) - new Date(date + 'T00:00:00')) / 86400000);
+    if (!date) {
+        return 'New';
+    }
+    const days = Math.floor((Date.now() - new Date(date).getTime()) / 86400000);
     if (days <= 0) {
         return 'Today';
     }
@@ -14,12 +18,18 @@ const releasedLabel = (date) => {
 
 export default function NewSongs() {
     const player = usePlayer();
+    // Newest uploads from up-and-coming artists on Audius
+    const state = useApiSongs(() => audiusNew(8), 'new-songs');
+    const newSongs = state.songs;
     // Card whose "add to playlist" menu is open, so its controls stay visible
     const [menuCardId, setMenuCardId] = useState(null);
     const isListPlaying = player.isPlaying && newSongs.some((song) => song.id === player.current.id);
 
     // Pause if a new song is playing, otherwise play the list from the first song
     const playAll = () => {
+        if (newSongs.length === 0) {
+            return;
+        }
         const playing = isListPlaying && newSongs.find((song) => song.id === player.current.id);
         player.toggleSong(playing || newSongs[0], newSongs);
     };
@@ -34,7 +44,11 @@ export default function NewSongs() {
                 </button>
             </div>
             <div className="ns-panel">
+                {state.status === 'error' && <p className="text-muted m-b-none">Could not load new songs. Check your internet connection.</p>}
                 <div className="ns-grid">
+                    {state.status === 'loading' && newSongs.length === 0 && Array.from({ length: 8 }, (_, i) => (
+                        <div className="song-skeleton m-b-none" key={i}><span></span><i></i><b></b></div>
+                    ))}
                     {newSongs.map((song) => {
                         const isPlaying = player.isSongPlaying(song.id);
                         const isCurrent = player.current.id === song.id;
@@ -45,8 +59,9 @@ export default function NewSongs() {
                         return (
                             <div className={cardClass} key={song.id}>
                                 <div className="ns-cover">
-                                    <img src={song.image} alt={song.name} />
+                                    <img src={song.image} alt={song.name} className="cover-loading" loading="lazy" onError={onCoverError} />
                                     <span className="ns-badge">New · {releasedLabel(song.released)}</span>
+                                    <BookmarkButton song={song} />
                                     <span className="ns-time">{song.time}</span>
                                     <div className="ns-overlay">
                                         <button className="ns-play" onClick={() => player.toggleSong(song, newSongs)} title={isPlaying ? 'Pause' : 'Play'}>

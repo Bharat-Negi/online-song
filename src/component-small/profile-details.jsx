@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import { UserAvatar } from '../common-pages/avatar';
@@ -85,10 +86,12 @@ export default function ProfileDetails() {
         { key: 'instagram', icon: 'fa-instagram', url: 'https://instagram.com/', color: '#c13584' }
     ].filter((s) => profile[s.key]);
 
+    // Each tile opens the matching tab (/profile#favourites…) or the Bookmarks page
     const stats = [
-        { label: 'Favourites', value: library.favourites.length },
-        { label: 'Playlists', value: library.playlists.length + 1 },
-        { label: 'Events', value: library.goingEvents.length }
+        { label: 'Favourites', value: library.favourites.length, icon: 'fa fa-heart', tone: 'fav', to: '/profile#favourites' },
+        { label: 'Playlists', value: library.playlists.length + 1, icon: 'icon-playlist', tone: 'list', to: '/profile#playlists' },
+        { label: 'Events', value: library.goingEvents.length, icon: 'fa fa-ticket', tone: 'event', to: '/profile#events' },
+        { label: 'Bookmarks', value: library.bookmarks.length, icon: 'fa fa-bookmark', tone: 'mark', to: '/bookmarks' }
     ];
 
     return (
@@ -120,32 +123,53 @@ export default function ProfileDetails() {
                                 )}
                             </div>
                         </div>
-                        <div className="panel wrapper">
-                            <div className="row text-center">
-                                {stats.map((stat) => (
-                                    <div className="col-xs-4" key={stat.label}>
-                                        <span className="m-b-xs h4 block">{stat.value}</span>
-                                        <small className="text-muted">{stat.label}</small>
-                                    </div>
-                                ))}
-                            </div>
+                        <div className="stat-grid m-b">
+                            {stats.map((stat) => (
+                                <Link to={stat.to} className={`stat-tile stat-${stat.tone}`} key={stat.label} title={`Show ${stat.label.toLowerCase()}`}>
+                                    <span className="stat-icon"><i className={stat.icon}></i></span>
+                                    <span className="stat-text">
+                                        <strong>{stat.value}</strong>
+                                        <small>{stat.label}</small>
+                                    </span>
+                                </Link>
+                            ))}
                         </div>
 
                         {isEditing ? (
-                            <form className="profile-edit m-b" onSubmit={saveProfile}>
-                                <label>City</label>
-                                <input type="text" className="form-control input-sm" placeholder="e.g. Dehradun, India" maxLength={60} {...field('city')} />
-                                <label>About me</label>
-                                <textarea className="form-control input-sm" rows="3" placeholder="A few words about you and your music" maxLength={300} {...field('bio')}></textarea>
-                                <label>Twitter</label>
-                                <input type="text" className="form-control input-sm" placeholder="username" {...field('twitter')} />
-                                <label>Facebook</label>
-                                <input type="text" className="form-control input-sm" placeholder="username" {...field('facebook')} />
-                                <label>Instagram</label>
-                                <input type="text" className="form-control input-sm" placeholder="username" {...field('instagram')} />
-                                <div className="m-t">
-                                    <button type="submit" className="btn btn-info btn-rounded btn-sm m-r-xs">Save</button>
-                                    <button type="button" className="btn btn-default btn-rounded btn-sm" onClick={() => setIsEditing(false)}>Cancel</button>
+                            <form className="profile-edit m-b" onSubmit={saveProfile} onKeyDown={(e) => { if (e.key === 'Escape') setIsEditing(false); }}>
+                                <div className="pe-head">
+                                    <strong><i className="fa fa-pencil m-r-xs"></i>Edit profile</strong>
+                                    <button type="button" className="pe-close" title="Close (Esc)" onClick={() => setIsEditing(false)}><i className="fa fa-times"></i></button>
+                                </div>
+
+                                <div className="pe-section">About you</div>
+                                <label className="pe-label" htmlFor="pe-city">City</label>
+                                <div className="pe-field">
+                                    <span className="pe-icon"><i className="fa fa-map-marker"></i></span>
+                                    <input id="pe-city" type="text" placeholder="e.g. Dehradun, India" maxLength={60} autoFocus {...field('city')} />
+                                </div>
+                                <label className="pe-label" htmlFor="pe-bio">About me <span className="pe-count">{(form.bio || '').length}/300</span></label>
+                                <div className="pe-field pe-textarea">
+                                    <textarea id="pe-bio" rows="4" placeholder="A few words about you and your music" maxLength={300} {...field('bio')}></textarea>
+                                </div>
+
+                                <div className="pe-section">Social links</div>
+                                {[
+                                    { key: 'twitter', label: 'Twitter', icon: 'fa-twitter', color: '#1da1f2' },
+                                    { key: 'facebook', label: 'Facebook', icon: 'fa-facebook', color: '#3b5998' },
+                                    { key: 'instagram', label: 'Instagram', icon: 'fa-instagram', color: '#c13584' }
+                                ].map((s) => (
+                                    <div className="pe-field pe-social" key={s.key}>
+                                        <span className="pe-icon" style={{ color: s.color }} title={s.label}><i className={'fa ' + s.icon}></i></span>
+                                        <span className="pe-at">@</span>
+                                        <input type="text" placeholder={`${s.label} username`} aria-label={`${s.label} username`} maxLength={60}
+                                            value={form[s.key]} onChange={(e) => setForm({ ...form, [s.key]: e.target.value.replace(/^@+/, '') })} />
+                                    </div>
+                                ))}
+
+                                <div className="pe-actions">
+                                    <button type="submit" className="btn btn-info btn-rounded btn-block"><i className="fa fa-check m-r-xs"></i>Save changes</button>
+                                    <button type="button" className="btn btn-link btn-block pe-cancel" onClick={() => setIsEditing(false)}>Cancel</button>
                                 </div>
                             </form>
                         ) : (
